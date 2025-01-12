@@ -1,0 +1,57 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    background-color: rgb(250, 233, 211);
+    height: 70px;
+    width: 100%;
+    padding: 3px;
+    margin: 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: space-between;
+    align-items: center;
+}
+
+#langues {
+    display: grid;
+    grid-template-rows: 15px 50px;
+    padding: 10px;
+}
+
+.drapeaux {
+    height: 30px;
+    width: 50px; 
+    padding-top: 3px;
+}
+
+#logo {
+    display: grid;
+    justify-items: center;
+}
+
+#logoimg {
+    height: 65px;
+    width: 300px;
+}
+
+#droite {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: flex-end;
+}
+
+#qui_sommes {
+}
+
+#minilogo {
+    height: 60px;
+    width: 60px;
+    padding: 10px;
+}
+
+#carte {
+    width: 100%;
+}
