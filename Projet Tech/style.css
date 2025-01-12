@@ -1,0 +1,187 @@
+/* Réinitialisation des styles par défaut du navigateur */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styles globaux */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #000000;
+}
+
+/* Styles pour les en-têtes */
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+
+/* Styles pour la navigation */
+nav {
+    background: #444;
+    color: #fff;
+    padding: 0.5rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Styles pour le contenu principal */
+main {
+    padding: 2rem;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+section h2 {
+    margin-bottom: 1rem;
+}
+
+.search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    background-color: #f0f0f0;
+}
+
+.search-container input[type="text"] {
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 200px;
+}
+
+.search-container select {
+    padding: 5px;
+    width: 220px;
+    height: auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#map {
+    height: 500px; /* Ajustez la hauteur selon vos besoins */
+    width: 100%;
+}
+
+.custom-infowindow {
+    background-color: #e71a1a;
+    border: 1px solid #db0470;
+    padding: 10px;
+    border-radius: 5px;
+    color: #070707;
+    font-family: Arial, sans-serif;
+}
+
+.custom-infowindow {
+    padding: 10px;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+}
+
+/* Couleur pour les villes qui parlent portugais */
+.custom-infowindow.pt {
+    background-color: #1e90ff; /* Bleu */
+    border: 1px solid #1c86ee;
+    color: #fff;
+}
+
+/* Couleur pour les villes qui parlent français */
+.custom-infowindow.fr {
+    background-color: #e71a1a; /* Rouge */
+    border: 1px solid #db0470;
+    color: #fff;
+}
+
+/* Couleur pour les villes qui parlent espagnol */
+.custom-infowindow.es {
+    background-color: #ffcc00; /* Jaune */
+    border: 1px solid #ffb700;
+    color: #000;
+}
+
+/* Couleur pour les villes qui parlent italien */
+.custom-infowindow.it {
+    background-color: #32cd32; /* Vert */
+    border: 1px solid #2eb82e;
+    color: #fff;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f3f2f2;
+}
+
+.left-align, .center-align, .right-align {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.left-align {
+    justify-content: left;
+}
+
+.center-align {
+    justify-content: center;
+}
+
+.right-align {
+    justify-content: flex-end;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Styles pour le pied de page */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
