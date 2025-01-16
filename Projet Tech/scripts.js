@@ -9,17 +9,19 @@ function initMap() {
     // Gestion des points interactifs
     const points = [
         { coords: { lat: 48.8566, lng: 2.3522 }, lang: 'fr', text: 'Accent parisien' }, // Paris, France
-        { coords: { lat: -27.5954, lng: -48.5480 }, lang: 'pt', text: 'Sotaque florianopolitano' }, // Florianópolis, Brésil
-        { coords: { lat: -3.7172, lng: -38.5434 }, lang: 'pt', text: 'Sotaque fortalezense' }, // Fortaleza, Brésil
+        { coords: { lat: -27.5954, lng: -48.5480 }, lang: 'pt', text: 'Sotaque florianopolitano', img: 'flo.jpg' }, // Florianópolis, Brésil
+        { coords: { lat: -3.7172, lng: -38.5434 }, lang: 'pt', text: 'Sotaque fortalezense', img: 'forta.jpg' }, // Fortaleza, Brésil
         { coords: { lat: 45.5017, lng: -73.5673 }, lang: 'fr', text: 'Accent montréalais' }, // Montréal, Canada
         { coords: { lat: 40.4168, lng: -3.7038 }, lang: 'es', text: 'Acento madrileño' }, // Madrid, Espagne
         { coords: { lat: 45.1885, lng: 5.7245 }, lang: 'fr', text: 'Accent grenoblois' }, // Grenoble, France
         { coords: { lat: 43.2965, lng: 5.3698 }, lang: 'fr', text: 'Accent marseillais' }, // Marseille, France
         { coords: { lat: 45.4408, lng: 12.3155 }, lang: 'it', text: 'Accento veneziano' }, // Venise, Italie
-        { coords: { lat: -23.5505, lng: -46.6333 }, lang: 'pt', text: 'Sotaque paulistano' }, // São Paulo, Brésil
+        { coords: { lat: -23.5505, lng: -46.6333 }, lang: 'pt', text: 'Sotaque paulistano', img: 'sp.jpg'}, // São Paulo, Brésil
         { coords: { lat: 41.9028, lng: 12.4964 }, lang: 'it', text: 'Accento romano' }, // Rome, Italie
         { coords: { lat: 40.1209, lng: 9.0129 }, lang: 'it', text: 'Accento sardo' } // Sardaigne, Italie
     ];
+
+    let currentInfoWindow = null;
 
     points.forEach(point => {
         const marker = new google.maps.Marker({
@@ -27,13 +29,22 @@ function initMap() {
             map: map,
             title: point.text
         });
-
+    
+        let contentString = `<div class="custom-infowindow ${point.lang}"><b>${point.text}</b></div>`;
+        if (point.text === 'Sotaque fortalezense' || point.text === 'Sotaque florianopolitano' || point.text === 'Sotaque paulistano') {
+            contentString = `<div class="custom-infowindow ${point.lang}"><b>${point.text}</b><br><img src="${point.img}" alt="${point.text}" style="width:200px;height:auto;"></div>`;
+        }
+    
         const infowindow = new google.maps.InfoWindow({
-            content: `<div class="custom-infowindow ${point.lang}"><b>${point.text}</b></div>`
+            content: contentString
         });
-
+    
         marker.addListener('click', () => {
+            if (currentInfoWindow) {
+                currentInfoWindow.close();
+            }
             infowindow.open(map, marker);
+            currentInfoWindow = infowindow;
         });
     });
 }

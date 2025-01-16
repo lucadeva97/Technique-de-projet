@@ -4,38 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cartophonie</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="sty.css">
 </head>
-<body>
-    <header>
-        <h1>Cartophonie</h1>
-    </header>
-    <nav>
-        <ul class="left-align">
-            <li><a href="#dfr">France</a></li>
-            <li><a href="#dbr">Brésil</a></li>
-            <li><a href="#dit">Italie</a></li>
-            <li><a href="#desp">Espagne</a></li>
-        </ul>
-
-        <li><a href="#logo">LOGO</a></li>
-        </ul>
-        <ul>
-        <ul class="right-align">        
-            <li><a href="#nous">Qui sommes-nous ?</a></li>
-            <li><a href="#connexion">Connexion</a></li>
-        </ul>
-    </nav>
-    <main>
-        <div class="info-box">
-            <ul>
-                <h3>Les accents des langues</h3>
-                <a href="#" class="accent" data-lang="fr">Français</a><br>
-                <a href="#" class="accent" data-lang="it">Italien</a><br>
-                <a href="#" class="accent" data-lang="pt">Portugais</a><br>
-                <a href="#" class="accent" data-lang="es">Espagnol</a>
-            </ul>
+<header>
+    <div class="header-container">
+        <div class="left-align">
+            <div class="language-selector">
+                <select id="language-select" onchange="changeLanguage()">
+                    <option value="">Sélectionnez une langue</option>
+                    <option value="fr">Français</option>
+                    <option value="pt">Portugais</option>
+                    <option value="it">Italien</option>
+                    <option value="es">Espagnol</option>
+                </select>
+            </div>
         </div>
+        <a class="logo-container"><img src="logo.png" width="300px" alt="Logo"></a>
+        <div class="right-align">
+            <a class="nous" href="apropos.html"><img src="about.png" width="70" height="50"></a>
+            <a class="minilogo" href="inscription.html"><img src="login.png" width="70" height="50"></a>
+        </div>
+    </div>
+</header>
+    <!-- Fin header -->
         <div class="search-container">
             <input type="text" id="search" placeholder="Vous cherchez une ville ?" list="search-options">
             <datalist id="search-options">
@@ -43,10 +34,10 @@
                 <option value="Florianópolis"></option>
                 <option value="Fortaleza"></option>
                 <option value="São Paulo"></option>
-                <!-- Canada -->
-                <option value="Montréal"></option>
                 <!-- Espagne -->
                 <option value="Madrid"></option>
+                <!-- Canada -->
+                <option value="Montréal"></option>
                 <!-- France -->
                 <option value="Grenoble"></option>
                 <option value="Marseille"></option>
@@ -59,9 +50,6 @@
         <div id="map"></div>
     </main>
     <br>
-    <footer>
-        <p>&copy; 2025 Cartophonie </p>
-    </footer>
     <!-- Lien vers l'API Google Maps -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAHEI3GgF66F2QIfcXxQp9Eugqaysym5k&callback=initMap" async defer></script>
     <!-- Lien vers le fichier JavaScript -->

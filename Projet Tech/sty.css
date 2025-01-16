@@ -1,3 +1,31 @@
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.left-align {
+    display: flex;
+    align-items: center;
+}
+
+.logo-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.right-align {
+    display: flex;
+    align-items: center;
+}
+
+.right-align a {
+    margin-left: 20px;
+}
 
 .search-container {
     display: flex;
@@ -5,7 +33,6 @@
     align-items: center;
     text-align: center;
     padding: 10px;
-    background-color: rgb(250, 233, 211); /* Cor de fundo uniforme */
 }
 
 .search-container input[type="text"] {
@@ -21,56 +48,41 @@
 }
 
 .custom-infowindow {
-    background-color: #e71a1a;
-    border: 1px solid #db0470;
-    padding: 10px;
-    border-radius: 5px;
-    color: #070707;
-    font-family: Arial, sans-serif;
-}
-
-.custom-infowindow {
     padding: 10px;
     border-radius: 5px;
     font-family: Arial, sans-serif;
+    color: #fff; 
+    background-color: #000;
+    border: 1px solid #000; /* Bordure noire */
 }
 
 /* Couleur pour les villes qui parlent portugais */
 .custom-infowindow.pt {
     background-color: #1e90ff; /* Bleu */
     border: 1px solid #1c86ee;
-    color: #fff;
 }
 
 /* Couleur pour les villes qui parlent français */
 .custom-infowindow.fr {
     background-color: #e71a1a; /* Rouge */
     border: 1px solid #db0470;
-    color: #fff;
 }
 
 /* Couleur pour les villes qui parlent espagnol */
 .custom-infowindow.es {
     background-color: #ffcc00; /* Jaune */
-    border: 1px solid #ffb700;
-    color: #000;
+    border: 1px solid #ffcc00;
 }
 
 /* Couleur pour les villes qui parlent italien */
 .custom-infowindow.it {
     background-color: #32cd32; /* Vert */
     border: 1px solid #2eb82e;
-    color: #fff;
 }
 
-/* Styles pour le pied de page */
-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+/* Assurez-vous que le contenu de la pop-up utilise la couleur de fond */
+.custom-infowindow * {
+    background-color: inherit !important;
+    color: inherit !important;
+    border: none !important;
 }
-
