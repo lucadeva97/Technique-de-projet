@@ -86,3 +86,57 @@
     color: inherit !important;
     border: none !important;
 }
+
+
+/* Page qui sommes nous */
+
+.contenu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.nous4 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.nous_images {
+    height: 280px;
+    width: 280px;
+}
+
+.cadre_apropos {
+    border: solid rgb(36, 36, 36) 2px;
+    border-radius: 5px;
+    width: 500px;
+    height: 500px;
+    background-color: rgb(163, 162, 162);
+    margin: 20px;
+    padding: 20px;
+    font-size: 20px;
+}
+
+/* Page de Marseille - mais les deux premières containers 
+seront utilisés pour toutes les pages des accents, si on
+veut maintenir la même structure*/
+
+.accentContainer {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    padding: 0px;
+}
+
+.accentDroite {
+    margin: 20px;
+    background-color: #e71a1a6e;
+    height: 700px;
+    padding: 15px;
+    display: grid;
+    justify-content: center;
+    text-align: center;
+}
+
+.imageVille {
+    width: 370px;
+    height: 310px;
+}
