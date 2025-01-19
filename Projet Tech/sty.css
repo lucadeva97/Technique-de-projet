@@ -116,27 +116,106 @@
     font-size: 20px;
 }
 
-/* Page de Marseille - mais les deux premières containers 
-seront utilisés pour toutes les pages des accents, si on
-veut maintenir la même structure*/
+/*Page du français */
+
+
+/* titre de la page */
+.titre {
+    display: flex;
+    justify-content: center;
+}
+
+/* Tuiles du français */
+
+#tuiles_conteneur {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.tuiles {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.image_tuile {
+    height: 200px;
+    width: 350px;
+    border: solid black 1px;
+}
+
+
+/*Menu avec les buttons*/
+#menu {
+    margin: 0;
+    border: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.button {
+    height: 50px;
+    margin: 5px;
+    background-color: white;
+    font-size: 20px;
+    border-radius: 15px;
+}
+
+#esp {
+    border: solid rgba(255, 0, 0, 0.647) 3px;
+    color: rgba(255, 0, 0, 0.647);
+}
+
+#ita {
+    border: solid rgba(0, 128, 0, 0.768) 3px;
+    color: rgba(0, 128, 0, 0.768);
+}
+
+#por {
+    border: solid gold 3px;
+    color: gold;
+}
+
+/* changer la couleur de la langue seléctionnée */
+#fra {
+    border: solid rgba(0, 0, 255, 0.668) 3px;
+    background-color: rgba(0, 0, 255, 0.668);
+    color: white;
+}
+/* fin du menu avec le buttons*/
+
+/* Page de Marseille - à adapter pour les autres pages*/
 
 .accentContainer {
-    display: grid;
-    grid-template-columns: 3fr 2fr;
-    padding: 0px;
-}
-
-.accentDroite {
     margin: 20px;
-    background-color: #e71a1a6e;
-    height: 700px;
-    padding: 15px;
-    display: grid;
-    justify-content: center;
-    text-align: center;
 }
 
-.imageVille {
+.informations {
+    display: grid;
+    justify-items: center;
+}
+
+.imageMarseille1 {
     width: 370px;
     height: 310px;
+    float: left;
+    margin-right: 20px;
+}
+
+.autresRessources {
+    background-color: rgba(255, 0, 0, 0.338);
+}
+
+.ressourcesContenu {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 80px;
+    padding-right: 80px;
+
+}
+
+.bodyMarseille {
+    padding: 0px;
+    margin: 0px;
 }
