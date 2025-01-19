@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartophonie</title>
+    <link rel="stylesheet" href="sty.css">
+</head>
+<header>
+    <div class="header-container">
+        <div class="left-align">
+            <div class="language-selector">
+                <select id="language-select" onchange="changeLanguage()">
+                    <option value="">Sélectionnez une langue</option>
+                    <option value="fr">Français</option>
+                    <option value="pt">Portugais</option>
+                    <option value="it">Italien</option>
+                    <option value="es">Espagnol</option>
+                </select>
+            </div>
+        </div>
+        <a class="logo-container"><img src="logo.png" width="300px" alt="Logo"></a>
+        <div class="right-align">
+            <a class="nous" href="apropos.html"><img src="about.png" width="70" height="50"></a>
+            <a class="minilogo" href="inscription.html"><img src="login.png" width="70" height="50"></a>
+        </div>
+    </div>
+</header>
+    <!-- Fin header -->
+
+
+
+<h1 class="titre">Les accents du français</h1>
+
+<div id="tuiles_conteneur">
+    <div id="tuile_paris" class="tuiles">
+        <a href="paris.html"><img src="paris.jpeg" alt="paris" class="image_tuile"></a>
+        <br>
+        <i>L'accent parisien</i>
+    </div>
+    <div id="tuile_marseille" class="tuiles">
+        <a href="marseille.html"><img src="marseille.jpeg" alt="marseille" class="image_tuile"></a>
+        <br>    
+        <i>L'accent marseillais</i>
+    </div>
+    <div id="tuile_toulouse" class="tuiles">
+        <img src="toulouse.jpeg" alt="toulouse" class="image_tuile">
+        <br>
+        <i>L'accent toulousain</i>
+    </div>
+    <div id="tuile_montpellier" class="tuiles">
+        <img src="Montpellier.jpeg" alt="montpellier" class="image_tuile">
+        <br>    
+        <i>L'accent de Montpellier</i>
+    </div>
+    <div id="tuile_grenoble" class="tuiles">
+        <img src="grenoble.jpeg" alt="grenoble" class="image_tuile">
+        <br>    
+        <i>L'accent grenoblois</i>
+    </div>
+</div>
+<br> <br> <br>
+<div id="menu">
+    <button class="button" id="esp">L'espagnol</button>
+    <button class="button" id="fra">Le français</button>
+    <button class="button" id="ita">L'italien</button>
+    <button class="button" id="por">Le portugais</button>
+</div>
+
+</body>
+</html>
