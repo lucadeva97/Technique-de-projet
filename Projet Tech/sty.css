@@ -5,6 +5,14 @@
     padding: 10px;
 }
 
+header {
+    border-bottom: 1px solid black;
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+    background-color: white;
+}
+
 .left-align {
     display: flex;
     align-items: center;
@@ -259,4 +267,20 @@
 .bodyMarseille {
     padding: 0px;
     margin: 0px;
+}
+
+/* Paris */
+
+.imageParis1 {
+    width: 370px;
+    height: 310px;
+    float: right;
+    margin-right: 20px;
+}
+
+.imageMontreal1 {
+    width: 370px;
+    height: 310px;
+    float: left;
+    margin-right: 20px;
 }
