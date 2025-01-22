@@ -144,7 +144,7 @@ header {
     background-color: #EF4135; /* Rouge */
   }
   
-/* Page qui sommes nous */
+/* Page a propos */
 .contenu {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -197,45 +197,6 @@ header {
     border: solid black 1px;
 }
 
-/* Menu avec les buttons */
-#menu {
-    margin: 0;
-    border: none;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-}
-
-.button {
-    height: 50px;
-    margin: 5px;
-    background-color: white;
-    font-size: 20px;
-    border-radius: 15px;
-}
-
-#esp {
-    border: solid rgba(255, 0, 0, 0.647) 3px;
-    color: rgba(255, 0, 0, 0.647);
-}
-
-#ita {
-    border: solid rgba(0, 128, 0, 0.768) 3px;
-    color: rgba(0, 128, 0, 0.768);
-}
-
-#por {
-    border: solid gold 3px;
-    color: gold;
-}
-
-/* changer la couleur de la langue seléctionnée */
-#fra {
-    border: solid rgba(0, 0, 255, 0.668) 3px;
-    background-color: rgba(0, 0, 255, 0.668);
-    color: white;
-}
-/* fin du menu avec le buttons */
-
 /* Page de Marseille - à adapter pour les autres pages */
 .accentContainer {
     margin: 20px;
@@ -278,6 +239,7 @@ header {
     margin-right: 20px;
 }
 
+/* Montreal */
 .imageMontreal1 {
     width: 370px;
     height: 310px;
