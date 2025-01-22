@@ -58,6 +58,7 @@ header {
     height: 500px; /* Ajustez la hauteur selon vos besoins */
     width: 100%;
     border: #000;
+    margin: 10px;
 }
 
 .custom-infowindow {
