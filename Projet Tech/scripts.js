@@ -9,7 +9,7 @@ function initMap() {
     // Gestion des points interactifs
     const points = [
         { coords: { lat: 48.8566, lng: 2.3522 }, lang: 'fr', text: 'Accent de Paris', img: 'paris.jpeg' }, // Paris, France
-        { coords: { lat: -27.5954, lng: -48.5480 }, lang: 'pt', text: 'Sotaque de Florianópolis', img: 'flo.jpg' }, // Florianópolis, Brésil
+        { coords: { lat: -27.5954, lng: -48.5480 }, lang: 'pt', text: 'Sotaque de Florianópolis', img: 'flo.jpg', audio: '/extraits/florianopolis.ogg' }, // Florianópolis, Brésil
         { coords: { lat: -3.7172, lng: -38.5434 }, lang: 'pt', text: 'Sotaque de Fortaleza', img: 'forta.jpg', audio: '/extraits/fortaleza.ogg' }, // Fortaleza, Brésil
         { coords: { lat: 45.5017, lng: -73.5673 }, lang: 'fr', text: 'Accent de Montréal', img: 'montreal.jpeg' }, // Montréal, Canada
         { coords: { lat: 40.4168, lng: -3.7038 }, lang: 'es', text: 'Acento de Madrid', img: 'madrid.jpg' }, // Madrid, Espagne
@@ -26,10 +26,9 @@ function initMap() {
         { coords: { lat: 4.9224, lng: -52.3135 }, lang: 'fr', text: 'Accent de Cayenne', img: 'cayenne.jpg', audio: '/extraits/cayenne.mp3' }, // Cayenne, Guyane française
         { coords: { lat: -23.8683, lng: -49.3324 }, lang: 'pt', text: 'Sotaque de Itararé', img: 'itarare.jpg', audio: '/extraits/itarare.ogg' }, // Itararé, Brésil
         { coords: { lat: 0.0355, lng: -51.0705 }, lang: 'pt', text: 'Sotaque de Macapá', img: 'macapa.jpg', audio: '/extraits/macapa.ogg' }, // Macapá, Brésil
-        { coords: { lat: -31.7648, lng: -52.3376 }, lang: 'pt', text: 'Sotaque de Pelotas', img: 'pelotas.jpg', audio: '/extraits/pelotas.ogg' }, // Pelotas, Brésil
         { coords: { lat: -31.4475, lng: -53.0972 }, lang: 'pt', text: 'Sotaque de Piratini', img: 'piratini.jpg', audio: '/extraits/piratini.ogg' }, // Piratini, Brésil
         { coords: { lat: -30.0346, lng: -51.2177 }, lang: 'pt', text: 'Sotaque de Porto Alegre', img: 'portoalegre.jpg', audio: '/extraits/portoalegre.ogg' }, // Porto Alegre, Brésil
-        { coords: { lat: -19.9600, lng: -44.0400 }, lang: 'pt', text: 'Sotaque de Santa Bárbara', img: 'santabarbara.jpg', audio: '/extraits/santabarbara.ogg' }, // Santa Bárbara, Brésil
+        { coords: { lat: -29.1634, lng: -51.5183 }, lang: 'pt', text: 'Sotaque de Santa Bárbara', img: 'santabarbara.jpg', audio: '/extraits/santabarbara.ogg' }, // Santa Bárbara, Brésil
         { coords: { lat: -2.5307, lng: -44.3068 }, lang: 'pt', text: 'Sotaque de São Luís', img: 'saoluis.jpg', audio: '/extraits/saoluis.ogg' }, // São Luís, Brésil
         { coords: { lat: 14.6161, lng: -61.0588 }, lang: 'fr', text: 'Accent de Fort-de-France', img: 'fortdefrance.jpg', audio: '/extraits/fortdefrance.mpeg' } // Fort-de-France, Martinique
     ];
