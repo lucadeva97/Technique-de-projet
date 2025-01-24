@@ -81,10 +81,6 @@ function initMap() {
             }
             infowindow.open(map, marker);
             currentInfoWindow = infowindow;
-
-        // Centrer la carte sur le point trouvé
-        map.setCenter(point.coords);
-        map.setZoom(10);
         });
     });
 }
