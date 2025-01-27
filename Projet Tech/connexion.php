@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Insérer dans la base de données
             $stmt = $pdo->prepare("INSERT INTO login1 (email, mdp, nom, prenom, niveau, status) 
             VALUES (?, ?, ?, ?, ?, ?)");
-            if ($stmt->execute([$email, $password_hashed, $nom, $prenom, $sexe, $niveau])) {
+            if ($stmt->execute([$email, $mdp, $nom, $prenom, $status, $niveau])) {
                 // Afficher un message de succès et rediriger vers la page de connexion
                 echo "<script>
                         alert('Inscription réussie ! Veuillez entrer vos identifiants.');
