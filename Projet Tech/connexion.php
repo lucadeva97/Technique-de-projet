@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $password = htmlspecialchars($_POST['password']);
         $nom = htmlspecialchars($_POST['nom']);
         $prenom = htmlspecialchars($_POST['prenom']);
-        $sexe = htmlspecialchars($_POST['sexe']); 
+        $status = htmlspecialchars($_POST['status']);
         $niveau = htmlspecialchars($_POST['niveau']);
 
         // Vérifier si l'email existe déjà
@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $password_hashed = password_hash($password, PASSWORD_DEFAULT);
 
             // Insérer dans la base de données
-            $stmt = $pdo->prepare("INSERT INTO login1 (identifiant, pwd, nom, prenom, sexe, niveau_de_langue) 
+            $stmt = $pdo->prepare("INSERT INTO login1 (identifiant, pwd, nom, prenom, niveau, status) 
             VALUES (?, ?, ?, ?, ?, ?)");
             if ($stmt->execute([$email, $password_hashed, $nom, $prenom, $sexe, $niveau])) {
                 // Afficher un message de succès et rediriger vers la page de connexion
