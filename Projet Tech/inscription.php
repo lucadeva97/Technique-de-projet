@@ -7,15 +7,6 @@
     <link rel="stylesheet" href="sty.css">
 </head>
     
-    <?php
-session_start(); 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $_SESSION['nome'] = $_POST['nome']; 
-    header('Location: compte.php'); 
-    exit();
-}
-?>
-    
 <header>
     <div class="header-container">
         <div class="left-align">
@@ -36,6 +27,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     </div>
 </header>
+
+    <?php
+session_start(); 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $_SESSION['nom'] = $_POST['nom']; 
+    $_SESSION['prenom'] = $_POST['prenom']; 
+    $_SESSION['email'] = $_POST['email']; 
+    $_SESSION['password'] = $_POST['password'];
+    $_SESSION['categorie'] = $_POST['categorie'];
+    $_SESSION['niveau'] = $_POST['niveau'];
+    header('Location: compte.php'); 
+    exit();
+}
+?>
+    
 <body>
     <div class="form-container" id="signup-form" style="display:block;">
         <h2>Inscription</h2>
