@@ -31,7 +31,6 @@ if (isset($_SESSION['nom']) && isset($_SESSION['email']) && isset($_SESSION['pre
     echo "T'es un professeur";
     }
     ?>
-    <button>Changer le mot de passe</button>
 
     
 </body>
