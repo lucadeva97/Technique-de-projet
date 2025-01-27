@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <div class="form-container" id="signup-form" style="display:block;">
         <h2>Inscription</h2>
-        <form action="inscription.php" method="POST">
+        <form action="connexion.php" method="POST">
             <label for="email">Email :</label>
             <input type="email" id="email" name="email" required>
 
