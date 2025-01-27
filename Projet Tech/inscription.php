@@ -50,8 +50,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <label for="email">Email :</label>
             <input type="email" id="email" name="email" required>
 
-            <label for="password">Mot de passe :</label>
-            <input type="password" id="password" name="password" required>
+            <label for="mdp">Mot de passe :</label>
+            <input type="mdp" id="mdp" name="mdp" required>
 
             <label for="nom">Nom :</label>
             <input type="text" id="nom" name="nom" required>
@@ -59,8 +59,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <label for="prenom">Prénom :</label>
             <input type="text" id="prenom" name="prenom" required>
 
-            <label for="prof">Je suis :</label>
-            <select id="prof" name="catégorie" required>
+            <label for="status">Je suis :</label>
+            <select id="status" name="status" required>
                 <option value="prof">Professeur de langues</option>
                 <option value="apprenant">Apprenant</option>
             </select>
