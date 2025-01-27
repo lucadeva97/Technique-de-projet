@@ -32,6 +32,13 @@ if (isset($_SESSION['nom']) && isset($_SESSION['email']) && isset($_SESSION['pre
     }
     ?>
 
+    <?php
+    } else {
+        // Si les variables de session ne sont pas définies, afficher un message d'erreur
+        echo "Les informations de session ne sont pas définies.";
+    }
+    ?>
+
     
 </body>
 </html>
