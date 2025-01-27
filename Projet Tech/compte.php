@@ -25,7 +25,7 @@ if (isset($_SESSION['nom']) && isset($_SESSION['email']) && isset($_SESSION['pre
     <label>Email: <?php echo "$email"; ?> </label>
     <label>Ton statut: <?php echo "$status"; ?> </label>
     <?php
-    if ($status == apprenant) {
+    if ($status == 'apprenant') {
     echo "Ton niveau: $niveau";
     } else { 
     echo "T'es un professeur";
