@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $password_hashed = password_hash($password, PASSWORD_DEFAULT);
 
             // Insérer dans la base de données
-            $stmt = $pdo->prepare("INSERT INTO login1 (email, pwd, nom, prenom, niveau, status) 
+            $stmt = $pdo->prepare("INSERT INTO login1 (email, mdp, nom, prenom, niveau, status) 
             VALUES (?, ?, ?, ?, ?, ?)");
             if ($stmt->execute([$email, $password_hashed, $nom, $prenom, $sexe, $niveau])) {
                 // Afficher un message de succès et rediriger vers la page de connexion
