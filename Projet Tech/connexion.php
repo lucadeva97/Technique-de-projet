@@ -17,14 +17,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $niveau = htmlspecialchars($_POST['niveau']);
 
         // Vérifier si l'email existe déjà
-        $stmt = $pdo->prepare("SELECT * FROM login1 WHERE identifiant = ?");
+        $stmt = $pdo->prepare("SELECT * FROM login1 WHERE email = ?");
         $stmt->execute([$email]);
 
         if ($stmt->rowCount() > 0) {
             echo "Cet email est déjà enregistré.";
         } else {
             // Hacher le mot de passe
-            $password_hashed = password_hash($password, PASSWORD_DEFAULT);
+            $password_hashed = mdp_hash($mdp, PASSWORD_DEFAULT);
 
             // Insérer dans la base de données
             $stmt = $pdo->prepare("INSERT INTO login1 (email, mdp, nom, prenom, niveau, status) 
