@@ -6,6 +6,16 @@
     <title>Connexion</title>
     <link rel="stylesheet" href="sty.css">
 </head>
+    
+    <?php
+session_start(); 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $_SESSION['nome'] = $_POST['nome']; 
+    header('Location: compte.php'); 
+    exit();
+}
+?>
+    
 <header>
     <div class="header-container">
         <div class="left-align">
