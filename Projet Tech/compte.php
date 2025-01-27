@@ -15,18 +15,22 @@ if (isset($_SESSION['nom']) && isset($_SESSION['email']) && isset($_SESSION['pre
     $nom = $_SESSION['nom'];
     $email = $_SESSION['email'];
     $prenom = $_SESSION['prenom'];
-    $categorie = $_SESSION['categorie'];
+    $status = $_SESSION['status'];
     $niveau = $_SESSION['niveau'];
-    $password = $_SESSION['password'];
+    $mdp = $_SESSION['mdp'];
 
 ?>
     
     <label>Nom: <?php echo "$nom"; ?> <br> </label> 
     <label>Email: <?php echo "$email"; ?> </label>
-    <label>Ton statut: <?php echo "$categorie"; ?> </label>
+    <label>Ton statut: <?php echo "$status"; ?> </label>
     <?php
-    if ($categorie == apprenant) {
-    echo "Ton niveau: "$niveau"; ?>
+    if ($status == apprenant) {
+    echo "Ton niveau: $niveau";
+    } else { 
+    echo "T'es un professeur";
+    }
+    ?>
     <button>Changer le mot de passe</button>
 
     
