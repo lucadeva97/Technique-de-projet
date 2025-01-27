@@ -74,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <option value="C2">C2</option>
             </select>
 
-            <button type="submit">Je m'inscris</button>
+            <a href="compte.php"> <button type="submit">Je m'inscris</button></a>
         </form>
     </div>
     <div class="form-container" id="login-form" style="display:block;">
