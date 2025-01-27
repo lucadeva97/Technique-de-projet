@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 // Afficher un message de succès et rediriger vers la page de connexion
                 echo "<script>
                         alert('Inscription réussie ! Veuillez entrer vos identifiants.');
-                        window.location.href = 'connexion.html';
+                        window.location.href = 'compte.php';
                       </script>";
                 exit();
             } else {
