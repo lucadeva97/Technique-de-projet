@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo "Cet email est déjà enregistré.";
         } else {
             // Hacher le mot de passe
-            $password_hashed = mdp_hash($mdp, PASSWORD_DEFAULT);
+            $password_hashed = password_hash($mdp, PASSWORD_DEFAULT);
 
             // Insérer dans la base de données
             $stmt = $pdo->prepare("INSERT INTO login1 (email, mdp, nom, prenom, niveau, status) 
