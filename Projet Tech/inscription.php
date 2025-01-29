@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connexion</title>
+    <title>Cartophonie</title>
     <link rel="stylesheet" href="sty.css">
-    <link rel="icon" href="minilogo.png" type="image/x-icon">
+    <link rel="icon" href="minilogo.png" type="image/png">
 </head>
-    
 <header>
     <div class="header-container">
+        
         <div class="left-align">
             <div class="language-selector">
                 <select id="language-select" onchange="changeLanguage()">
@@ -21,11 +21,19 @@
                 </select>
             </div>
         </div>
-        <a href="index.html" class="logo-container"><img src="logo.png" width="300px" alt="Logo"></a>
-        <div class="right-align">
-            <a class="nous" href="apropos.html"><img src="about.png" width="70" height="50"></a>
-            <a class="minilogo" href="inscription.html"><img src="login.png" width="50" height="50"></a>
+        
+        <a href="index.html"><div class="logo" data-tooltip="homepage"></a>
         </div>
+
+        <div></div>
+
+        <div class="right-align">
+            <a href="apropos.html"><div class="apropos" data-tooltip="à propos"></a>
+            </div>
+            <a href="inscription.php"><div class="connexion" data-tooltip="connexion"></a>
+            </div>
+        </div>
+
     </div>
 </header>
 
