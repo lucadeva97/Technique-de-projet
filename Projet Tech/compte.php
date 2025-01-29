@@ -1,11 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cartophonie</title>
+    <link rel="stylesheet" href="sty.css">
+    <link rel="icon" href="minilogo.png" type="image/png">
 </head>
-<body> 
+<header>
+    <div class="header-container">
+        
+        <div class="left-align">
+            <div class="language-selector">
+                <select id="language-select" onchange="changeLanguage()">
+                    <option value="">Sélectionnez une langue</option>
+                    <option value="es">Espagnol</option>
+                    <option value="fr">Français</option>
+                    <option value="it">Italien</option>
+                    <option value="pt">Portugais</option>
+                </select>
+            </div>
+        </div>
+        
+        <a href="index.html"><div class="logo" data-tooltip="homepage"></a>
+        </div>
+
+        <div></div>
+
+        <div class="right-align">
+            <a href="apropos.html"><div class="apropos" data-tooltip="à propos"></a>
+            </div>
+            <a href="inscription.php"><div class="connexion" data-tooltip="connexion"></a>
+            </div>
+        </div>
+
+    </div>
+</header>
+    
     
     <?php
 session_start();
