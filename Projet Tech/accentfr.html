@@ -5,25 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cartophonie</title>
     <link rel="stylesheet" href="sty.css">
+    <link rel="icon" href="minilogo.png" type="image/png">
 </head>
 <header>
     <div class="header-container">
+        
         <div class="left-align">
             <div class="language-selector">
                 <select id="language-select" onchange="changeLanguage()">
                     <option value="">Sélectionnez une langue</option>
-                    <option value="fr">Français</option>
-                    <option value="pt">Portugais</option>
-                    <option value="it">Italien</option>
                     <option value="es">Espagnol</option>
+                    <option value="fr">Français</option>
+                    <option value="it">Italien</option>
+                    <option value="pt">Portugais</option>
                 </select>
             </div>
         </div>
-        <a class="logo-container" href="index.html"><img src="logo.png" width="300px" alt="Logo"></a>
-        <div class="right-align">
-            <a class="nous" href="apropos.html"><img src="about.png" width="70" height="50"></a>
-            <a class="minilogo" href="inscription.html"><img src="login.png" width="50" height="50"></a>
+        
+        <div class="logo" data-tooltip="homepage">
         </div>
+
+        <div></div>
+
+        <div class="right-align">
+            <div class="apropos" data-tooltip="à propos">
+            </div>
+            <div class="connexion" data-tooltip="connexion">
+            </div>
+        </div>
+
     </div>
 </header>
     <!-- Fin header -->
