@@ -1,0 +1,146 @@
+/* CSS pour L’histoire du français au Québec */
+
+/* Mise en forme générale */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    background-color: #0044cc;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+header h1 {
+    font-size: 1.8rem; /* Taille réduite */
+    margin: 0;
+}
+
+header p {
+    font-size: 0.9rem; /* Taille réduite */
+}
+
+/* Menu de navigation */
+.navbar {
+    background-color: #222;
+    padding: 10px;
+    text-align: center;
+}
+
+.navbar .menu {
+    list-style: none;
+    padding: 0;
+}
+
+.navbar .menu li {
+    display: inline;
+    margin-right: 15px;
+}
+
+.navbar .menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.navbar .menu li a:hover {
+    text-decoration: underline;
+}
+
+/* Style pour les sections */
+.sections-container {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.section {
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px; /* Réduit l'espace autour du texte */
+    margin-bottom: 15px; /* Réduit l'espace entre les sections */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+    font-size: 1.4rem; /* Taille réduite */
+    color: #0044cc;
+}
+
+.section ul {
+    list-style-type: disc;
+    margin-left: 15px;
+}
+
+.section ul li {
+    font-size: 0.9rem; /* Taille réduite */
+    color: #555;
+}
+
+.section p {
+    font-size: 0.95rem; /* Taille réduite */
+    line-height: 1.4; /* Espacement des lignes plus serré */
+}
+
+h2, p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Séparation de la catégorie "Histoire" */
+h2#histoire {
+    border-bottom: 2px solid #0044cc;
+    padding-bottom: 10px;
+}
+
+/* Images dans les sections */
+section img {
+    max-width: 120px; /* Réduit la taille des images */
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+/* Style pour l'exercice */
+iframe {
+    margin-top: 20px;
+    border: none;
+    width: 100%;
+    height: 300px; /* Taille réduite */
+}
+
+/* Style pour les sources */
+section ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 0;
+}
+
+section ul li {
+    list-style: none;
+}
+
+section a {
+    color: #0044cc;
+    text-decoration: none;
+}
+
+section a:hover {
+    text-decoration: underline;
+}
+
+/* Style pour le footer */
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
