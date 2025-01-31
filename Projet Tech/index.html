@@ -14,10 +14,10 @@
             <div class="language-selector">
                 <select id="language-select" onchange="changeLanguage()">
                     <option value="">Sélectionnez une langue</option>
-                    <option value="es">Espagnol</option>
-                    <option value="fr">Français</option>
-                    <option value="it">Italien</option>
-                    <option value="pt">Portugais</option>
+                    <option value="es"><a href="accentesp.html" class="accent" data-lang="es"></a>Espagnol</option>
+                    <option value="fr"><a href="accentfr.html" class="accent" data-lang="fr">Français</a></option>
+                    <option value="it"><a href="accentita.html" class="accent" data-lang="it"></a>Italien</option>
+                    <option value="pt"><a href="accentpt.html" class="accent" data-lang="pt"></a>Portugais</option>
                 </select>
             </div>
         </div>
@@ -30,15 +30,16 @@
         <div class="right-align">
             <a href="apropos.html"><div class="apropos" data-tooltip="à propos">
             </div></a>
-            <a href"inscription.php"><div class="connexion" data-tooltip="connexion">
+            <a href="inscription.php"><div class="connexion" data-tooltip="connexion">
             </div></a>
         </div>
 
     </div>
 </header>
-    
+
+
+
     <!-- Fin header -->
-    
         <div class="search-container">
             <input type="text" id="search" placeholder="Vous cherchez une ville ?" list="search-options">
             <datalist id="search-options">
@@ -69,3 +70,4 @@
     <script src="scripts.js"></script>
 </body>
 </html>
+
