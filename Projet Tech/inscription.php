@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
     
-<body>
+<body id="inscription">
     <div class="form-container" id="signup-form" style="display:block;">
         <h2>Inscription</h2>
         <form action="connexion.php" method="POST">
