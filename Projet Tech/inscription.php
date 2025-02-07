@@ -30,7 +30,7 @@
         <div class="right-align">
             <a href="apropos.html"><div class="apropos" data-tooltip="à propos">
             </div></a>
-            <a href"inscription.php"><div class="connexion" data-tooltip="connexion">
+            <a href="inscription.php"><div class="connexion" data-tooltip="connexion">
             </div></a>
         </div>
 
@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $_SESSION['prenom'] = $_POST['prenom']; 
     $_SESSION['email'] = $_POST['email']; 
     $_SESSION['password'] = $_POST['password'];
-    $_SESSION['categorie'] = $_POST['categorie'];
+    $_SESSION['statu'] = $_POST['statu'];
     $_SESSION['niveau'] = $_POST['niveau'];
     header('Location: compte.php'); 
     exit();
@@ -55,11 +55,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="form-container" id="signup-form" style="display:block;">
         <h2>Inscription</h2>
         <form action="connexion.php" method="POST">
+        <input type="hidden" name="action" value="register">
             <label for="email">Email :</label>
             <input type="email" id="email" name="email" required>
 
             <label for="mdp">Mot de passe :</label>
-            <input type="mdp" id="mdp" name="mdp" required>
+            <input type="password" id="mdp" name="mdp" required>
 
             <label for="nom">Nom :</label>
             <input type="text" id="nom" name="nom" required>
@@ -67,8 +68,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <label for="prenom">Prénom :</label>
             <input type="text" id="prenom" name="prenom" required>
 
-            <label for="status">Je suis :</label>
-            <select id="status" name="status" required>
+            <label for="statu">Je suis :</label>
+            <select id="statu" name="statu" required>
                 <option value="prof">Professeur de langues</option>
                 <option value="apprenant">Apprenant</option>
             </select>
@@ -89,10 +90,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="form-container" id="login-form" style="display:block;">
         <h2>Connexion</h2>
         <form method="post" action="connexion.php">
+        <input type="hidden" name="action" value="login">
             <label for="email">Email :</label>
             <input type="email" id="email" name="email" required>
-            <label for="password">Mot de passe :</label>
-            <input type="password" id="password" name="password" required>
+            <label for="mdp">Mot de passe :</label>
+            <input type="password" id="mdp" name="mdp" required>
             <button type="submit">Connexion</button>
         </form>
     </div>
