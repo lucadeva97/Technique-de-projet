@@ -377,3 +377,8 @@ header {
     float: left;
     margin-right: 20px;
 }
+
+#inscription {
+    display: grid;
+    grid-template-column: 1fr 1fr;
+}
