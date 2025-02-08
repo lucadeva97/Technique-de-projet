@@ -1,0 +1,329 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+header {
+    border-bottom: 1px solid black;
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+    background-color: white;
+    padding: 20px;
+}
+
+.header-container {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr;
+    padding-right: 10px;
+    padding-left: 10px;
+    justify-items: space-between;
+
+}
+
+.left-align {
+    display: flex;
+    align-items: center;
+}
+
+
+#language-select {
+    width: 200px;
+    font-size: 16px;
+}
+
+/* LOGO */
+.logo {
+    display: flex;
+    justify-self: center;
+    background-image: url('logo.png');
+    background-size: 300px 50px;
+    background-position: center;
+    width: 300px;
+    height: 50px;
+    position: relative;
+}
+.logo:hover::before,
+.logo:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    background-color: #cccccc37;
+    padding: 3px;
+    top: 2.9rem;
+    left: 14rem;
+    border-radius: 3px;
+    color:rgba(36, 36, 36, 0.483);
+    transform: translateY(-10px); 
+    opacity: 0;
+    transition: opacity 1s easy, transform 1s easy;
+}
+
+.logo:hover::before,
+.logo:hover::after {
+    opacity: 1;  /* Fade-in */
+    transform: translateY(0);  /* Move into its final position */
+}
+
+.right-align {
+    display: flex;
+    justify-content: space-around;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* APROPOS */
+.apropos {
+    background-image: url('about.png');
+    background-size: 70px 50px;
+    background-position: center;
+    width: 70px;
+    height: 50px;
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+}
+.apropos:hover::before,
+.apropos:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    background-color: #cccccc37;
+    padding: 3px;
+    top: 2.9rem;
+    border-radius: 3px;
+    color:rgba(36, 36, 36, 0.483);
+
+    white-space: nowrap;
+}
+
+/* CONNEXION */
+.connexion {
+    background-image: url('login.png');
+    background-size: 50px 50px;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    white-space: nowrap;
+}
+
+.connexion:hover::before,
+.connexion:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    background-color: #cccccc37;
+    padding: 3px;
+    top: 2.9rem;
+    border-radius: 3px;
+    color:rgba(36, 36, 36, 0.483);
+}
+
+
+
+/*Fin header*/
+
+
+.search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.search-container input[type="text"] {
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 200px;
+}
+
+#map {
+    height: 500px; /* Ajustez la hauteur selon vos besoins */
+    width: 100%;
+    border: #000;
+    margin: 0px;
+}
+
+.custom-infowindow {
+    padding: 10px;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    color: #fff; 
+    background-color: #000;
+    border: 1px solid #000; /* Bordure noire */
+}
+
+/* Couleur pour les villes qui parlent portugais */
+.custom-infowindow.pt {
+    background-color: #1e90ff; /* Bleu */
+    border: 1px solid #1c86ee;
+}
+
+/* Couleur pour les villes qui parlent français */
+.custom-infowindow.fr {
+    background-color: #e71a1a; /* Rouge */
+    border: 1px solid #db0470;
+}
+
+/* Couleur pour les villes qui parlent espagnol */
+.custom-infowindow.es {
+    background-color: #ffcc00; /* Jaune */
+    border: 1px solid #ffcc00;
+}
+
+/* Couleur pour les villes qui parlent italien */
+.custom-infowindow.it {
+    background-color: #32cd32; /* Vert */
+    border: 1px solid #2eb82e;
+}
+
+/* Assurez-vous que le contenu de la pop-up utilise la couleur de fond */
+.custom-infowindow * {
+    background-color: inherit !important;
+    color: inherit !important;
+    border: none !important;
+}
+
+/*page inscription*/
+
+.form-container {
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    align-items: center;
+  }
+  
+  .form-container h2 {
+    margin-top: 0;
+  }
+  
+  .form-container label {
+    display: block;
+    margin: 10px 0 5px;
+  }
+  
+  .form-container input[type="text"],
+  .form-container input[type="email"],
+  .form-container input[type="password"],
+  .form-container select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .form-container button,
+  .form-container input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #0055A4; /* Bleu */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .form-container button:hover,
+  .form-container input[type="submit"]:hover {
+    background-color: #EF4135; /* Rouge */
+  }
+  
+/* Page a propos */
+.contenu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.nous4 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.nous_images {
+    height: 280px;
+    width: 280px;
+}
+
+.cadre_apropos {
+    border: solid rgb(36, 36, 36) 2px;
+    border-radius: 5px;
+    width: 500px;
+    height: 500px;
+    background-color: rgb(163, 162, 162);
+    margin: 20px;
+    padding: 20px;
+    font-size: 20px;
+}
+
+/* Page du français */
+/* titre de la page */
+.titre {
+    display: flex;
+    justify-content: center;
+}
+
+/* Tuiles du français */
+#tuiles_conteneur {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.tuiles {
+    margin: 20px;
+    display: flex;
+    flex-direction: column; /* Ajouté pour aligner les éléments verticalement */
+    align-items: center; /* Centrer les éléments horizontalement */
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.image_tuile {
+    height: 200px;
+    width: 350px;
+    border: solid black 1px;
+    display: block; /* Assurez-vous que l'image est un bloc pour prendre toute la largeur */
+}
+
+.autresRessources {
+    background-color: rgba(255, 0, 0, 0.338);
+}
+
+.ressourcesContenu {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+/* Paris */
+
+.imageParis1 {
+    width: 370px;
+    height: 310px;
+    float: right;
+    margin-right: 20px;
+}
+
+/* Montreal */
+.imageMontreal1 {
+    width: 370px;
+    height: 310px;
+    float: left;
+    margin-right: 20px;
+}
+#inscription {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
