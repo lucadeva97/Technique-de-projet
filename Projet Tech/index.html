@@ -9,11 +9,10 @@
 </head>
 <header>
     <div class="header-container">
-        
         <div class="left-align">
             <div class="language-selector">
                 <select id="language-select" onchange="changeLanguage()">
-                    <option value="">Sélectionnez une langue</option>
+                    <option value="">Tu cherches une langue ? </option>
                     <option value="es"><a href="accentesp.html" class="accent" data-lang="es"></a>Espagnol</option>
                     <option value="fr"><a href="accentfr.html" class="accent" data-lang="fr">Français</a></option>
                     <option value="it"><a href="accentita.html" class="accent" data-lang="it"></a>Italien</option>
@@ -21,49 +20,45 @@
                 </select>
             </div>
         </div>
-        
         <a href="index.html"><div class="logo" data-tooltip="homepage">
         </div></a>
-
         <div></div>
-
         <div class="right-align">
             <a href="apropos.html"><div class="apropos" data-tooltip="à propos">
             </div></a>
             <a href="inscription.php"><div class="connexion" data-tooltip="connexion">
             </div></a>
         </div>
-
     </div>
 </header>
     <!-- Fin header -->
         <div class="search-container">
-            <input type="text" id="search" placeholder="Vous cherchez une ville ?" list="search-options">
+            <input type="text" id="search" placeholder="Tu cherches une ville ?" list="search-options">
             <datalist id="search-options">
+                 <!-- Argentine -->
+                 <option value="Buenos Aires"></option>                
                 <!-- Brésil -->
+                <option value="Curitiba"></option>
                 <option value="Florianópolis"></option>
                 <option value="Fortaleza"></option>
                 <option value="São Paulo"></option>
-                <option value="Curitiba"></option>
                 <!-- Espagne -->
                 <option value="Madrid"></option>
                 <!-- Canada -->
                 <option value="Montréal"></option>
+                <!-- Colombie -->
+                <option value="Bogotá"></option>                
                 <!-- France -->
+                <option value="Cayenne"></option>
+                <option value="Fort-de-France"></option>
                 <option value="Grenoble"></option>
                 <option value="Marseille"></option>
                 <option value="Paris"></option>
-                <option value="Cayenne"></option>
-                <option value="Fort-de-France"></option>
                 <option value="Toulouse"></option>
                 <!-- Italie -->
                 <option value="Messine"></option>
-                <option value="Venise"></option>
                 <option value="Rome"></option>
-                 <!-- Argentine -->
-                <option value="Buenos Aires"></option>
-                <!-- Colombie -->
-                <option value="Bogotá"></option>
+                <option value="Venise"></option>
                 <!-- Venezuela -->
                 <option value="Caracas"></option>
             </datalist>

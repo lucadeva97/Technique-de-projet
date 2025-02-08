@@ -306,8 +306,6 @@ header {
     padding-right: 80px;
 }
 
-
-
 /* Paris */
 
 .imageParis1 {
@@ -328,3 +326,4 @@ header {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
+
