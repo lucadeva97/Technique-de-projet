@@ -1,146 +1,115 @@
-/* CSS pour L’histoire du français au Québec */
-
-/* Mise en forme générale */
+/* Style général */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
+    background-color: #f8f9fa;
     color: #333;
 }
 
 header {
-    background-color: #0044cc;
+    background-color: #0056b3;
     color: white;
     text-align: center;
-    padding: 10px 0;
+    padding: 20px;
 }
 
-header h1 {
-    font-size: 1.8rem; /* Taille réduite */
+h1 {
     margin: 0;
+    font-size: 2em;
 }
 
-header p {
-    font-size: 0.9rem; /* Taille réduite */
-}
-
-/* Menu de navigation */
+/* Navigation */
 .navbar {
-    background-color: #222;
-    padding: 10px;
+    background-color: #003366;
+    padding: 10px 0;
     text-align: center;
 }
-
-.navbar .menu {
+.menu {
     list-style: none;
     padding: 0;
 }
-
-.navbar .menu li {
+.menu li {
     display: inline;
-    margin-right: 15px;
+    margin: 0 15px;
 }
-
-.navbar .menu li a {
+.menu a {
     color: white;
     text-decoration: none;
-    font-size: 1rem;
+    font-weight: bold;
 }
-
-.navbar .menu li a:hover {
+.menu a:hover {
     text-decoration: underline;
 }
 
-/* Style pour les sections */
-.sections-container {
-    display: flex;
-    flex-direction: column;
-    padding: 15px;
-}
-
-.section {
-    background-color: white;
+/* Contenu principal */
+main {
+    width: 80%;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
     border-radius: 8px;
-    padding: 10px; /* Réduit l'espace autour du texte */
-    margin-bottom: 15px; /* Réduit l'espace entre les sections */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-.section h2 {
-    font-size: 1.4rem; /* Taille réduite */
-    color: #0044cc;
+/* Histoire */
+#histoire {
+    padding: 20px;
+    background-color: #e3f2fd;
+    border-left: 5px solid #0056b3;
+    margin-bottom: 20px;
+}
+#histoire h2 {
+    color: #003366;
 }
 
-.section ul {
-    list-style-type: disc;
-    margin-left: 15px;
+/* Exercices */
+.exercices {
+    background-color: #d1ecf1;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
 }
-
-.section ul li {
-    font-size: 0.9rem; /* Taille réduite */
-    color: #555;
-}
-
-.section p {
-    font-size: 0.95rem; /* Taille réduite */
-    line-height: 1.4; /* Espacement des lignes plus serré */
-}
-
-h2, p {
-    margin-top: 10px;
+.exercices iframe {
+    width: 90%;
+    height: 300px;
     margin-bottom: 10px;
 }
 
-/* Séparation de la catégorie "Histoire" */
-h2#histoire {
-    border-bottom: 2px solid #0044cc;
-    padding-bottom: 10px;
+/* Sources */
+#sources {
+    background-color: #f8d7da;
+    padding: 15px;
+    border-left: 5px solid #c82333;
+}
+#sources h3 {
+    color: #721c24;
+}
+#sources ul {
+    list-style: none;
+    padding: 0;
+}
+#sources li {
+    margin: 5px 0;
 }
 
-/* Images dans les sections */
-section img {
-    max-width: 120px; /* Réduit la taille des images */
-    margin-right: 10px;
-    margin-bottom: 10px;
+/* Liens et images dans sources */
+#sources a {
+    color: #c82333;
+    font-weight: bold;
+    text-decoration: none;
 }
-
-/* Style pour l'exercice */
-iframe {
-    margin-top: 20px;
-    border: none;
-    width: 100%;
-    height: 300px; /* Taille réduite */
+#sources a:hover {
+    text-decoration: underline;
 }
-
-/* Style pour les sources */
-section ul {
+#sources .image-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
-    padding: 0;
+    gap: 10px;
 }
-
-section ul li {
-    list-style: none;
-}
-
-section a {
-    color: #0044cc;
-    text-decoration: none;
-}
-
-section a:hover {
-    text-decoration: underline;
-}
-
-/* Style pour le footer */
-footer {
-    background-color: #222;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+#sources img {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
 }
