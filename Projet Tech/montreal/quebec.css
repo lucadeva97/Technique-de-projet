@@ -1,3 +1,131 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+header {
+    border-bottom: 1px solid black;
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+    background-color: white;
+    padding: 20px;
+}
+
+.header-container {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr;
+    padding-right: 10px;
+    padding-left: 10px;
+    justify-items: space-between;
+}
+
+.left-align {
+    display: flex;
+    align-items: center;
+}
+
+
+#language-select {
+    width: 200px;
+    font-size: 16px;
+}
+
+/* LOGO */
+.logo {
+    display: flex;
+    justify-self: center;
+    background-image: url('logo.png');
+    background-size: 300px 50px;
+    background-position: center;
+    width: 300px;
+    height: 50px;
+    position: relative;
+}
+.logo:hover::before,
+.logo:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    background-color: #cccccc37;
+    padding: 3px;
+    top: 2.9rem;
+    left: 14rem;
+    border-radius: 3px;
+    color:rgba(36, 36, 36, 0.483);
+    transform: translateY(-10px); 
+    opacity: 0;
+    transition: opacity 1s easy, transform 1s easy;
+}
+
+.logo:hover::before,
+.logo:hover::after {
+    opacity: 1;  /* Fade-in */
+    transform: translateY(0);  /* Move into its final position */
+}
+
+.right-align {
+    display: flex;
+    justify-content: space-around;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* APROPOS */
+.apropos {
+    background-image: url('about.png');
+    background-size: 70px 50px;
+    background-position: center;
+    width: 70px;
+    height: 50px;
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+}
+.apropos:hover::before,
+.apropos:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    background-color: #cccccc37;
+    padding: 3px;
+    top: 2.9rem;
+    border-radius: 3px;
+    color:rgba(36, 36, 36, 0.483);
+
+    white-space: nowrap;
+}
+
+/* CONNEXION */
+.connexion {
+    background-image: url('login.png');
+    background-size: 50px 50px;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    white-space: nowrap;
+}
+
+.connexion:hover::before,
+.connexion:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    background-color: #cccccc37;
+    padding: 3px;
+    top: 2.9rem;
+    border-radius: 3px;
+    color:rgba(36, 36, 36, 0.483);
+}
+
+
+
+/*Fin header*/
 /* Style général */
 body {
     font-family: Arial, sans-serif;
