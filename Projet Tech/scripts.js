@@ -29,7 +29,7 @@ function initMap() {
         { coords: { lat: -30.0346, lng: -51.2177 }, lang: 'pt', text: 'Porto Alegre', img: 'images/portoalegre.jpg', audio: 'extraits/portoalegre.ogg' }, // Porto Alegre, Brésil
         { coords: { lat: -2.5307, lng: -44.3068 }, lang: 'pt', text: 'São Luís', img: 'images/saoluis.jpg', audio: 'extraits/saoluis.ogg' }, // São Luís, Brésil
         { coords: { lat: 14.6161, lng: -61.0588 }, lang: 'fr', text: 'Fort-de-France', img: 'images/fortdefrance.jpg', audio: 'extraits/fortdefrance.mpeg' }, // Fort-de-France, Martinique
-        { coords: { lat: 43.6045, lng: 1.4442 }, lang: 'fr', text: 'Toulouse', img: 'images/toulouse.jpeg', audio: 'extraits/toulouse.mp3' } // Toulouse, France
+        { coords: { lat: 43.6045, lng: 1.4442 }, lang: 'fr', text: 'Toulouse', img: 'images/toulouse.jpeg', audio: ['extraits/toulouse.mp3', 'extraits/toulouse_greg.mp3'] } // Toulouse, France
     ];
     let currentInfoWindow = null;
 
@@ -47,7 +47,13 @@ function initMap() {
             contentString += `<br><img src="${point.img}" alt="${point.text}" style="width:300px;height:auto;">`;
         }
         if (point.audio) {
-            contentString += `<br><audio controls style="margin-top: 10px;"><source src="${point.audio}" type="audio/ogg">Your browser does not support the audio element.</audio>`;
+            if (Array.isArray(point.audio)) {
+                point.audio.forEach(audioSrc => {
+                    contentString += `<br><audio controls style="margin-top: 10px;"><source src="${audioSrc}" type="audio/ogg">Your browser does not support the audio element.</audio>`;
+                });
+            } else {
+                contentString += `<br><audio controls style="margin-top: 10px;"><source src="${point.audio}" type="audio/ogg">Your browser does not support the audio element.</audio>`;
+            }
         }
         contentString += `</div>`;
 
@@ -99,7 +105,13 @@ function initMap() {
                 contentString += `<br><img src="${point.img}" alt="${point.text}" style="width:300px;height:auto;">`;
             }
             if (point.audio) {
-                contentString += `<br><audio controls style="margin-top: 10px;"><source src="${point.audio}" type="audio/ogg">Your browser does not support the audio element.</audio>`;
+                if (Array.isArray(point.audio)) {
+                    point.audio.forEach(audioSrc => {
+                        contentString += `<br><audio controls style="margin-top: 10px;"><source src="${audioSrc}" type="audio/ogg">Your browser does not support the audio element.</audio>`;
+                    });
+                } else {
+                    contentString += `<br><audio controls style="margin-top: 10px;"><source src="${point.audio}" type="audio/ogg">Your browser does not support the audio element.</audio>`;
+                }
             }
             contentString += `</div>`;
 
