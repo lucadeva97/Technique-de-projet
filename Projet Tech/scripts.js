@@ -23,7 +23,7 @@ function initMap() {
         { coords: { lat: -34.6037, lng: -58.3816 }, lang: 'es', text: 'Buenos Aires', img: 'images/buenosaires.jpg', audio: 'extraits/buenosaires.ogg' }, // Buenos Aires, Argentine
         { coords: { lat: 4.7110, lng: -74.0721 }, lang: 'es', text: 'Bogotá', img: 'images/bogota.jpg', audio: 'extraits/bogota.ogg' }, // Bogotá, Colombie
         { coords: { lat: 10.4806, lng: -66.9036 }, lang: 'es', text: 'Caracas', img: 'images/caracas.jpg', audio: 'extraits/caracas.ogg' }, // Caracas, Venezuela
-        { coords: { lat: 4.9224, lng: -52.3135 }, lang: 'fr', text: 'Cayenne', img: 'images/cayenne.jpg', audio: 'extraits/cayenne.mp3' }, // Cayenne, Guyane française
+        { coords: { lat: 4.9224, lng: -52.3135 }, lang: 'fr', text: 'Cayenne', img: 'images/cayenne.jpg', audio: 'extraits/cayenne.mp3', href: 'cayenne.html' }, // Cayenne, Guyane française
         { coords: { lat: -23.8683, lng: -49.3324 }, lang: 'pt', text: 'Itararé', img: 'images/itarare.jpg', audio: 'extraits/itarare.ogg' }, // Itararé, Brésil
         { coords: { lat: 0.0355, lng: -51.0705 }, lang: 'pt', text: 'Macapá', img: 'images/macapa.jpg', audio: 'extraits/macapa.ogg' }, // Macapá, Brésil
         { coords: { lat: -30.0346, lng: -51.2177 }, lang: 'pt', text: 'Porto Alegre', img: 'images/portoalegre.jpg', audio: 'extraits/portoalegre.ogg' }, // Porto Alegre, Brésil
@@ -40,13 +40,17 @@ function initMap() {
             title: point.text
         });
 
-        let contentString = `<div class="custom-infowindow ${point.lang}"><b>${point.text}</b><br><img src="${point.img}" alt="${point.text}" style="width:300px;height:auto;"></div>`;
-        if (point.audio) {
-            contentString += `<br><audio controls><source src="${point.audio}" type="audio/ogg">Your browser does not support the audio element.</audio>`;
-        }
+        let contentString = `<div class="custom-infowindow ${point.lang}"><b>${point.text}</b>`;
         if (point.href) {
-            contentString += `<br><a href="${point.href}">En savoir plus</a>`;
+            contentString += `<br><a href="${point.href}"><img src="${point.img}" alt="${point.text}" style="width:300px;height:auto;"></a>`;
+        } else {
+            contentString += `<br><img src="${point.img}" alt="${point.text}" style="width:300px;height:auto;">`;
         }
+        if (point.audio) {
+            contentString += `<br><audio controls style="margin-top: 10px;"><source src="${point.audio}" type="audio/ogg">Your browser does not support the audio element.</audio>`;
+        }
+        contentString += `</div>`;
+
         const infowindow = new google.maps.InfoWindow({
             content: contentString
         });
@@ -68,69 +72,73 @@ function initMap() {
             timeoutId = setTimeout(() => func.apply(this, args), delay);
         };
     }
-   // Fonction de recherche
-   function searchPoints(e) {
-    const searchValue = e.target.value.toLowerCase();
-    if (searchValue === '') {
-        if (currentInfoWindow) {
-            currentInfoWindow.close();
+
+    // Fonction de recherche
+    function searchPoints(e) {
+        const searchValue = e.target.value.toLowerCase();
+        if (searchValue === '') {
+            if (currentInfoWindow) {
+                currentInfoWindow.close();
+            }
+            return;
         }
-        return;
+
+        const point = points.find(p => p.text.toLowerCase().includes(searchValue));
+
+        if (point) {
+            const marker = new google.maps.Marker({
+                position: point.coords,
+                map: map,
+                title: point.text
+            });
+
+            let contentString = `<div class="custom-infowindow ${point.lang}"><b>${point.text}</b>`;
+            if (point.href) {
+                contentString += `<br><a href="${point.href}"><img src="${point.img}" alt="${point.text}" style="width:300px;height:auto;"></a>`;
+            } else {
+                contentString += `<br><img src="${point.img}" alt="${point.text}" style="width:300px;height:auto;">`;
+            }
+            if (point.audio) {
+                contentString += `<br><audio controls style="margin-top: 10px;"><source src="${point.audio}" type="audio/ogg">Your browser does not support the audio element.</audio>`;
+            }
+            contentString += `</div>`;
+
+            const infowindow = new google.maps.InfoWindow({
+                content: contentString
+            });
+
+            if (currentInfoWindow) {
+                currentInfoWindow.close();
+            }
+            infowindow.open(map, marker);
+            currentInfoWindow = infowindow;
+
+            // Centrer la carte sur le point trouvé
+            map.setCenter(point.coords);
+            map.setZoom(10);
+
+            // Effacer la barre de recherche
+            document.getElementById('search').value = '';
+        }
     }
 
-    const point = points.find(p => p.text.toLowerCase().includes(searchValue));
+    // Utiliser la fonction de debounce pour la recherche
+    const debouncedSearch = debounce(searchPoints, 1500);
 
-    if (point) {
-        const marker = new google.maps.Marker({
-            position: point.coords,
-            map: map,
-            title: point.text
-        });
-
-        let contentString = `<div class="custom-infowindow ${point.lang}"><b>${point.text}</b><br><img src="${point.img}" alt="${point.text}" style="width:300px;height:auto;"></div>`;
-        if (point.audio) {
-            contentString += `<br><audio controls><source src="${point.audio}" type="audio/ogg">Your browser does not support the audio element.</audio>`;
-        }
-        if (point.href) {
-            contentString += `<br><a href="${point.href}" target="_blank">En savoir plus</a>`;
-        }
-
-        const infowindow = new google.maps.InfoWindow({
-            content: contentString
-        });
-
-        if (currentInfoWindow) {
-            currentInfoWindow.close();
-        }
-        infowindow.open(map, marker);
-        currentInfoWindow = infowindow;
-
-        // Centrer la carte sur le point trouvé
-        map.setCenter(point.coords);
-        map.setZoom(10);
-
-        // Effacer la barre de recherche
-        document.getElementById('search').value = '';
-    }
-}
-
-// Utiliser la fonction de debounce pour la recherche
-const debouncedSearch = debounce(searchPoints, 1500);
-
-document.getElementById('search').addEventListener('input', debouncedSearch);
+    document.getElementById('search').addEventListener('input', debouncedSearch);
 }
 
 function changeLanguage() {
-const languageSelect = document.getElementById('language-select');
-const selectedLanguage = languageSelect.value;
+    const languageSelect = document.getElementById('language-select');
+    const selectedLanguage = languageSelect.value;
 
-if (selectedLanguage === 'fr') {
-    window.location.href = 'accentfr.html';
-} else if (selectedLanguage === 'es') {
-    window.location.href = 'accentesp.html';
-} else if (selectedLanguage === 'it') {
-    window.location.href = 'accentita.html';
-} else if (selectedLanguage === 'pt') {
-    window.location.href = 'accentpt.html';
+    if (selectedLanguage === 'fr') {
+        window.location.href = 'accentfr.html';
+    } else if (selectedLanguage === 'es') {
+        window.location.href = 'accentesp.html';
+    } else if (selectedLanguage === 'it') {
+        window.location.href = 'accentita.html';
+    } else if (selectedLanguage === 'pt') {
+        window.location.href = 'accentpt.html';
+    }
 }
-};
