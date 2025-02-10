@@ -124,11 +124,12 @@ header {
 }
 /*Fin header*/
 
-.custom-infowindow img {
+/*images cliquables*/
+.custom-infowindow .clickable-image {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.custom-infowindow img:hover {
+.custom-infowindow .clickable-image:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

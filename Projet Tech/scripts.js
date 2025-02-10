@@ -42,7 +42,7 @@ function initMap() {
 
         let contentString = `<div class="custom-infowindow ${point.lang}"><b>${point.text}</b>`;
         if (point.href) {
-            contentString += `<br><a href="${point.href}"><img src="${point.img}" alt="${point.text}" style="width:300px;height:auto;"></a>`;
+            contentString += `<br><a href="${point.href}"><img src="${point.img}" alt="${point.text}" class="clickable-image" style="width:300px;height:auto;"></a>`;
         } else {
             contentString += `<br><img src="${point.img}" alt="${point.text}" style="width:300px;height:auto;">`;
         }
@@ -94,7 +94,7 @@ function initMap() {
 
             let contentString = `<div class="custom-infowindow ${point.lang}"><b>${point.text}</b>`;
             if (point.href) {
-                contentString += `<br><a href="${point.href}"><img src="${point.img}" alt="${point.text}" style="width:300px;height:auto;"></a>`;
+                contentString += `<br><a href="${point.href}"><img src="${point.img}" alt="${point.text}" class="clickable-image" style="width:300px;height:auto;"></a>`;
             } else {
                 contentString += `<br><img src="${point.img}" alt="${point.text}" style="width:300px;height:auto;">`;
             }
