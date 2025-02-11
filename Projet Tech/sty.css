@@ -31,11 +31,6 @@ header {
 }
 
 
-#language-select {
-    width: 200px;
-    font-size: 16px;
-}
-
 /* LOGO */
 .logo {
     display: flex;
@@ -134,18 +129,40 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.search-container {
+/* Barres de recherche */
+
+#barres-recherche {
     display: flex;
-    flex-direction: column;
+    flex-direction: line;
+    justify-content: center;
     align-items: center;
     text-align: center;
     padding: 10px;
 }
 
+#language-select {
+    width: 200px;
+    font-size: 16px;
+    height: 50px;
+}
+
+
+.search-container {
+    width: 200px;
+    font-size: 16px;
+    height: 30px;
+}
+
 .search-container input[type="text"] {
     margin-bottom: 10px;
-    padding: 5px;
     width: 200px;
+    font-size: 50px;
+}
+
+#search {
+    width: 200px;
+    font-size: 16px;
+    height: 30px;
 }
 
 #map {
@@ -322,6 +339,7 @@ header {
     background-color: #EF4135; /* Rouge */
   }
 
+
 /* Inscription Formulaire */
 .form-wrapper {
     display: flex;
@@ -417,6 +435,10 @@ header {
         width: 90%;
     }
 }
+
+    .footer {
+        text-align: center;
+    }
 
     .footer {
         text-align: center;
