@@ -30,6 +30,38 @@ header {
     align-items: center;
 }
 
+#tutoriel-tooltip {
+    height: 40px;
+    width: 40px;
+    font-size: 16px;
+    background-color: white;
+    Border: black solid 1.5px;
+    border-radius: 50%;
+}
+#tutoriel {
+    font-size: 30px;
+}
+
+#tutoriel-tooltip:hover::before,
+#tutoriel-tooltip:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    background-color: #cccccc37;
+    padding: 3px;
+    top: 4rem;
+    left: 4.7rem;
+    border-radius: 3px;
+    color:rgba(36, 36, 36, 0.483);
+    transform: translateY(-10px); 
+    opacity: 0;
+    transition: opacity 1s easy, transform 1s easy;
+}
+
+#tutoriel-tooltip:hover::before,
+#tutoriel-tooltip:hover::after {
+    opacity: 1;  /* Fade-in */
+    transform: translateY(0);  /* Move into its final position */
+}
 
 /* LOGO */
 .logo {
@@ -435,10 +467,6 @@ header {
         width: 90%;
     }
 }
-
-    .footer {
-        text-align: center;
-    }
 
     .footer {
         text-align: center;
