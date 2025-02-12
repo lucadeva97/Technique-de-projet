@@ -1,108 +1,91 @@
-<?php 
+<?php
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Connexion à la base de données avec gestion des erreurs
     try {
-        $pdo = new PDO('mysql:host=localhost;dbname=devalerio', 'devalerio', '&devalerio;');
+        $pdo = new PDO('mysql:host=localhost;dbname=dasilva', 'dasilva', '&dasilva;');
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     } catch (PDOException $e) {
         die("Erreur de connexion : " . $e->getMessage());
     }
 
-    $action = $_POST['action'];  // Get action (login or register)
+    try {
+        $email = htmlspecialchars($_POST['email']);
+        $password = htmlspecialchars($_POST['password']);
 
-    
+        // Vérifier si l'email existe
+        $stmt = $pdo->prepare("SELECT * FROM login1 WHERE email = ?");
+        $stmt->execute([$email]);
 
-    if ($action == 'register') {
-        // Registration process
-        try {
-            $email = htmlspecialchars($_POST['email']);
-            $mdp = htmlspecialchars($_POST['mdp']);
-            $nom = htmlspecialchars($_POST['nom']);
-            $prenom = htmlspecialchars($_POST['prenom']);
-            $statu = htmlspecialchars($_POST['statu']);
-            $niveau = htmlspecialchars($_POST['niveau']);
+        if ($stmt->rowCount() > 0) {
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+            $password_hashed = $user['mdp'];
 
-            // Vérifier si l'email existe déjà
-            $stmt = $pdo->prepare("SELECT * FROM Projet WHERE email = ?");
-            $stmt->execute([$email]);
+            // Vérifier le mot de passe
+            if (password_verify($password, $password_hashed)) {
+                // Stocker les données utilisateur dans la session
+                $_SESSION['nom'] = $user['nom'];
+                $_SESSION['prenom'] = $user['prenom'];
+                $_SESSION['email'] = $user['email'];
+                $_SESSION['statu'] = $user['statu'];
+                $_SESSION['niveau'] = $user['niveau'];
 
-            if ($stmt->rowCount() > 0) {
-                echo "Cet email est déjà enregistré.";
+                // Rediriger vers la page d'accueil
+                header('Location: ../index.html');
+                exit();
             } else {
-                // Hacher le mot de passe
-                $password_hashed = password_hash($mdp, PASSWORD_DEFAULT);  // Corrected variable
-
-                // Insérer dans la base de données
-                $stmt = $pdo->prepare("INSERT INTO Projet (email, mdp, nom, prenom, statu, niveau) 
-                VALUES (?, ?, ?, ?, ?, ?)");
-                if ($stmt->execute([$email, $password_hashed, $nom, $prenom, $statu, $niveau])) {
-                    $_SESSION['nom'] = $nom;
-                    $_SESSION['prenom'] = $prenom;
-                    $_SESSION['email'] = $email;
-                    $_SESSION['statu'] = $statu;
-                    $_SESSION['niveau'] = $niveau;
-
-                    // Afficher un message de succès et rediriger vers la page de connexion
-                    echo "
-                        <script>
-                            alert('Inscription réussie ! Vous êtes maintenant connecté.');
-                            window.location.href = 'compte.php';
-                          </script>"; 
-                    exit();
-                } else {
-                    echo "Une erreur est survenue.";
-                }
+                echo "Mot de passe incorrect.";
             }
-        } catch (PDOException $e) {
-            die("Erreur lors de l'inscription : " . $e->getMessage());
+        } else {
+            echo "Cet email n'existe pas.";
         }
-    } elseif ($action == 'login') {
-        // Login process
-        try {
-            $email = htmlspecialchars($_POST['email']);
-            $mdp = htmlspecialchars($_POST['mdp']);
-
-            // Vérifier si l'email existe
-            $stmt = $pdo->prepare("SELECT * FROM Projet WHERE email = ?");
-            $stmt->execute([$email]);
-
-
-            if ($stmt->rowCount() == 0) {;
-
-                echo "Aucun utilisateur trouvé avec cet email.";
-            }
-
-            elseif ($stmt->rowCount() > 0) {
-                $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-                // Vérifier le mot de passe
-                if (password_verify($mdp, $user['mdp'])) {
-
-                    
-                    // Rediriger vers la page de compte
-                    header('Location: compte.php');
-                    
-                    // Démarrer une session et rediriger vers la page du compte
-                    $_SESSION['email'] = $user['email'];
-                    $_SESSION['nom'] = $user['nom'];
-                    $_SESSION['prenom'] = $user['prenom'];
-                    $_SESSION['statu'] = $user['statu'];
-                    $_SESSION['niveau'] = $user['niveau'];
-
-                    exit();
-                } else {
-                    echo "Mot de passe incorrect.";
-                }
-            } else {
-                echo "Aucun utilisateur trouvé avec cet email.";
-            }
-        } catch (PDOException $e) {
-            die("Erreur lors de la connexion : " . $e->getMessage());
-        }
+    } catch (PDOException $e) {
+        // Afficher l'erreur exacte
+        echo "Erreur : " . $e->getMessage();
     }
-} else {
-    echo "Accès non TT autorisé.";
 }
 ?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+    <link rel="stylesheet" href="../sty.css">
+    <link rel="icon" href="minilogo.png" type="image/png">
+</head>
+<body>
+<header>
+    <div class="header-container">
+        <div class="left-align">
+            <div class="language-selector">
+                <select id="language-select" onchange="changeLanguage()">
+                    <option value="">Tu cherches une langue ? </option>
+                    <option value="es"><a href="accentesp.html" class="accent" data-lang="es"></a>Espagnol</option>
+                    <option value="fr"><a href="accentfr.html" class="accent" data-lang="fr">Français</a></option>
+                    <option value="it"><a href="accentita.html" class="accent" data-lang="it"></a>Italien</option>
+                    <option value="pt"><a href="accentpt.html" class="accent" data-lang="pt"></a>Portugais</option>
+                </select>
+            </div>
+        </div>
+        <a href="../index.html"><div class="logo" data-tooltip="homepage"></div></a>
+        <div></div>
+        <div class="right-align">
+            <a href="../apropos.html"><div class="apropos" data-tooltip="à propos"></div></a>
+            <a href="inscription.php"><div class="connexion" data-tooltip="connexion"></div></a>
+        </div>
+    </div>
+</header>
+<div class="form-container" id="login-form" style="display:block;">
+    <h2>Connexion</h2>
+    <form method="post" action="connexion.php">
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" required>
+        <label for="password">Mot de passe :</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Connexion</button>
+    </form>
+</div>
+</body>
+</html>

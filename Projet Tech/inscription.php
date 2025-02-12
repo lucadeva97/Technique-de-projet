@@ -1,66 +1,99 @@
+<?php
+session_start();
+
+$inscription_reussie = false;
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Connexion à la base de données avec gestion des erreurs
+    try {
+        $pdo = new PDO('mysql:host=localhost;dbname=dasilva', 'dasilva', '&dasilva;');
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    } catch (PDOException $e) {
+        die("Erreur de connexion : " . $e->getMessage());
+    }
+
+    try {
+        $email = htmlspecialchars($_POST['email']);
+        $password = password_hash(htmlspecialchars($_POST['password']), PASSWORD_BCRYPT);
+        $nom = htmlspecialchars($_POST['nom']);
+        $prenom = htmlspecialchars($_POST['prenom']);
+        $niveau = htmlspecialchars($_POST['niveau']);
+        $statu = htmlspecialchars($_POST['catégorie']); // Ajout de la catégorie
+
+        // Vérifier si l'email existe déjà
+        $stmt = $pdo->prepare("SELECT * FROM login1 WHERE email = ?");
+        $stmt->execute([$email]);
+        if ($stmt->rowCount() > 0) {
+            die("Erreur : L'email existe déjà.");
+        }
+
+        // Insérer les données dans la table
+        $sql = "INSERT INTO login1 (nom, prenom, email, mdp, statu, niveau) VALUES (:nom, :prenom, :email, :mdp, :statu, :niveau)";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(':nom', $nom);
+        $stmt->bindParam(':prenom', $prenom);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':mdp', $password); // Utilisation de $password au lieu de $mdp
+        $stmt->bindParam(':statu', $statu);       
+        $stmt->bindParam(':niveau', $niveau);
+        $stmt->execute();
+
+        // Stocker les données dans la session
+        $_SESSION['nom'] = $nom;
+        $_SESSION['prenom'] = $prenom;
+        $_SESSION['email'] = $email;
+        $_SESSION['mdp'] = $password; // Utilisation de $password au lieu de $mdp
+        $_SESSION['statu'] = $statu;
+        $_SESSION['niveau'] = $niveau;
+
+        // Indiquer que l'inscription a réussi
+        $inscription_reussie = true;
+    } catch (PDOException $e) {
+        die("Erreur lors de l'inscription : " . $e->getMessage());
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cartophonie</title>
-    <link rel="stylesheet" href="sty.css">
+    <title>Inscription</title>
+    <link rel="stylesheet" href="../sty.css">
     <link rel="icon" href="minilogo.png" type="image/png">
 </head>
 <header>
     <div class="header-container">
-        
         <div class="left-align">
             <div class="language-selector">
                 <select id="language-select" onchange="changeLanguage()">
-                    <option value="">Sélectionnez une langue</option>
-                    <option value="es">Espagnol</option>
-                    <option value="fr">Français</option>
-                    <option value="it">Italien</option>
-                    <option value="pt">Portugais</option>
+                    <option value="">Tu cherches une langue ? </option>
+                    <option value="es"><a href="accentesp.html" class="accent" data-lang="es"></a>Espagnol</option>
+                    <option value="fr"><a href="accentfr.html" class="accent" data-lang="fr">Français</a></option>
+                    <option value="it"><a href="accentita.html" class="accent" data-lang="it"></a>Italien</option>
+                    <option value="pt"><a href="accentpt.html" class="accent" data-lang="pt"></a>Portugais</option>
                 </select>
             </div>
         </div>
-        
-        <a href="index.html"><div class="logo" data-tooltip="homepage">
-        </div></a>
-
-        <div></div>
-
+        <a href="../index.html"><div class="logo" data-tooltip="homepage"></div></a>
         <div class="right-align">
-            <a href="apropos.html"><div class="apropos" data-tooltip="à propos">
-            </div></a>
-            <a href="inscription.php"><div class="connexion" data-tooltip="connexion">
-            </div></a>
+            <a href="../apropos.html"><div class="apropos" data-tooltip="à propos"></div></a>
+            <a href="inscription.php"><div class="connexion" data-tooltip="connexion"></div></a>
         </div>
-
     </div>
 </header>
-
-    <?php
-session_start(); 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $_SESSION['nom'] = $_POST['nom']; 
-    $_SESSION['prenom'] = $_POST['prenom']; 
-    $_SESSION['email'] = $_POST['email']; 
-    $_SESSION['password'] = $_POST['password'];
-    $_SESSION['statu'] = $_POST['statu'];
-    $_SESSION['niveau'] = $_POST['niveau'];
-    header('Location: compte.php'); 
-    exit();
-}
-?>
-    
-<body id="inscription">
-    <div class="form-container" id="signup-form" style="display:block;">
+<body>
+    <div class="form-container" id="signup-form" style="display:block;">  
         <h2>Inscription</h2>
-        <form action="connexion.php" method="POST">
-        <input type="hidden" name="action" value="register">
+        <form id="signup-form" action="inscription.php" method="POST" onsubmit="return validatePasswords()">
             <label for="email">Email :</label>
             <input type="email" id="email" name="email" required>
 
-            <label for="mdp">Mot de passe :</label>
-            <input type="password" id="mdp" name="mdp" required>
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirm-password">Confirmer ton mot de passe :</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
 
             <label for="nom">Nom :</label>
             <input type="text" id="nom" name="nom" required>
@@ -68,13 +101,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <label for="prenom">Prénom :</label>
             <input type="text" id="prenom" name="prenom" required>
 
-            <label for="statu">Je suis :</label>
-            <select id="statu" name="statu" required>
+            <label for="prof">Tu es :</label>
+            <select id="prof" name="catégorie" required>
                 <option value="prof">Professeur de langues</option>
                 <option value="apprenant">Apprenant</option>
             </select>
 
-            <label for="niveau">Si vous êtes apprenant, précisez votre niveau :</label>
+            <label for="niveau">Si tu es apprenant, précise votre niveau :</label>
             <select id="niveau" name="niveau" required>
                 <option value="A1">A1</option>
                 <option value="A2">A2</option>
@@ -83,20 +116,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <option value="C1">C1</option>
                 <option value="C2">C2</option>
             </select>
-
-            <a href="compte.php"> <button type="submit">Je m'inscris</button></a>
+            <br>
+            <button type="submit">Je m'inscris</button>
         </form>
-    </div>
-    <div class="form-container" id="login-form" style="display:block;">
-        <h2>Connexion</h2>
-        <form method="post" action="connexion.php">
-        <input type="hidden" name="action" value="login">
-            <label for="email">Email :</label>
-            <input type="email" id="email" name="email" required>
-            <label for="mdp">Mot de passe :</label>
-            <input type="password" id="mdp" name="mdp" required>
-            <button type="submit">Connexion</button>
-        </form>
+    <br>
+    <div class="already-account">
+        <a href="connexion.php"><button>J'ai déjà un compte</button></a>
+    </div>      
     </div>
     <script>
         function checkNomOnFocus() {
@@ -112,6 +138,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 alert("N’oubliez pas de renseigner le champ prénom");
             }
         }
+
+        function validatePasswords() {
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirm-password').value;
+            if (password !== confirmPassword) {
+                alert("Les mots de passe ne correspondent pas.");
+                return false;
+            }
+            return true;
+        }
+
+        <?php if ($inscription_reussie): ?>
+        alert("Inscription réussie !");
+        window.location.href = "connexion.php";
+        <?php endif; ?>
     </script>
 </body>
 </html>
