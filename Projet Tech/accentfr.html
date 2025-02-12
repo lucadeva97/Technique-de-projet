@@ -3,22 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Variations du français</title>
+    <title>Cartophonie</title>
     <link rel="stylesheet" href="sty.css">
     <link rel="icon" href="minilogo.png" type="image/png">
 </head>
 <header>
     <div class="header-container">
         <div class="left-align">
-            <div class="language-selector">
-                <select id="language-select" onchange="changeLanguage()">
-                    <option value="">Tu cherches une langue ? </option>
-                    <option value="es"><a href="accentesp.html" class="accent" data-lang="es"></a>Espagnol</option>
-                    <option value="fr"><a href="accentfr.html" class="accent" data-lang="fr">Français</a></option>
-                    <option value="it"><a href="accentita.html" class="accent" data-lang="it"></a>Italien</option>
-                    <option value="pt"><a href="accentpt.html" class="accent" data-lang="pt"></a>Portugais</option>
-                </select>
-            </div>
+            <button id="tutoriel-tooltip" data-tooltip="tutoriel">
+                <div id="tutoriel" >!</div></button>
         </div>
         <a href="index.html"><div class="logo" data-tooltip="homepage">
         </div></a>
@@ -31,8 +24,9 @@
         </div>
     </div>
 </header>
-<!-- Fin header -->
+    <!-- Fin header -->
 
+<br>
 <h1 class="titre">Les variations du français</h1>
 
 <div id="tuiles_conteneur">
@@ -42,9 +36,9 @@
     <i>Cayenne (Guyane Française)</i>
 </div>
 <div id="tuile_fortdefrance" class="tuiles">
-    <a href="fortdefrance.html"><img src="images/fortdefrance.jpg" alt="fortdefrance" class="image_tuile"></a>
+    <img src="fortdefrance.jpg" alt="fortdefrance" class="image_tuile">
     <br>    
-    <i>Fort de France (Martinique)</i>
+    <i class="indisponible">Fort de France (Martinique) - pas encore disponible </i>
 </div>
 <div id="tuile_grenoble" class="tuiles">
     <a href="grenoble.html"><img src="images/grenoble.jpeg" alt="grenoble" class="image_tuile"></a>
@@ -52,14 +46,14 @@
     <i>Grenoble</i>
 </div>
 <div id="tuile_marseille" class="tuiles">
-    <a href="marseille.html"><img src="images/marseille.jpeg" alt="marseille" class="image_tuile"></a>
+    <img src="images/marseille.jpeg" alt="marseille" class="image_tuile">
     <br>    
-    <i>Marseille</i>
+    <i class="indisponible">Marseille - pas encore disponible </i>
 </div>
 <div id="tuile_montpellier" class="tuiles">
     <img src="images/montpellier.jpeg" alt="montpellier" class="image_tuile">
     <br>    
-    <i>Montpellier</i>
+    <i class="indisponible">Montpellier - pas encore disponible </i>
 </div>
 <div id="tuile_montreal" class="tuiles">
     <a href="montreal/quebec.html"><img src="images/montreal.jpeg" alt="montreal" class="image_tuile"></a>
@@ -67,14 +61,14 @@
     <i>Montréal (Québec)</i>
 </div>
 <div id="tuile_paris" class="tuiles">
-    <a href="paris.html"><img src="images/paris.jpeg" alt="paris" class="image_tuile"></a>
+    <img src="images/paris.jpeg" alt="paris" class="image_tuile">
     <br>
-    <i>Paris</i>
+    <i class="indisponible">Paris - pas encore disponible </i>
 </div>
 <div id="tuile_toulouse" class="tuiles">
     <img src="images/toulouse.jpeg" alt="toulouse" class="image_tuile">
     <br>
-    <i>Toulouse</i>
+    <i class="indisponible">Toulouse - pas encore disponible </i>
 </div>
 </div>
 <br> <br> <br>
