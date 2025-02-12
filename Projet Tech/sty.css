@@ -152,12 +152,22 @@ header {
 }
 /*Fin header*/
 
+
 /*images cliquables*/
 .custom-infowindow .clickable-image {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .custom-infowindow .clickable-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* images clickables page du français*/
+.clickable{
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.clickable:hover{
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -301,6 +311,11 @@ header {
     padding-bottom: 40px;
     padding-left: 80px;
     padding-right: 80px;
+}
+
+
+.indisponible {
+    color:rgba(0, 0, 0, 0.529);
 }
 
 /* Paris */
