@@ -31,6 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $_SESSION['statu'] = $user['statu'];
                 $_SESSION['niveau'] = $user['niveau'];
 
+                echo 'inscription reussie';
                 // Rediriger vers la page d'accueil
                 header('Location: ../index.html');
                 exit();
