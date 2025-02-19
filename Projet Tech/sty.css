@@ -217,25 +217,25 @@ header {
 
 /* Couleur pour les villes qui parlent portugais */
 .custom-infowindow.pt {
-    background-color: #1e90ff; /* Bleu */
+    background-color: #1e90ff;
     border: 1px solid #1c86ee;
 }
 
 /* Couleur pour les villes qui parlent français */
 .custom-infowindow.fr {
-    background-color: #e71a1a; /* Rouge */
+    background-color: #e71a1a;
     border: 1px solid #db0470;
 }
 
 /* Couleur pour les villes qui parlent espagnol */
 .custom-infowindow.es {
-    background-color: #ffcc00; /* Jaune */
+    background-color: #ffcc00;
     border: 1px solid #ffcc00;
 }
 
 /* Couleur pour les villes qui parlent italien */
 .custom-infowindow.it {
-    background-color: #32cd32; /* Vert */
+    background-color: #32cd32;
     border: 1px solid #2eb82e;
 }
 
@@ -250,11 +250,16 @@ header {
 .contenu {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    padding: 20px;
 }
 
 .nous4 {
     display: grid;
     grid-template-columns: 1fr 1fr;
+}
+
+.nous-div {
+    padding: 5px;
 }
 
 .nous_images {
@@ -313,9 +318,15 @@ header {
     padding-right: 80px;
 }
 
-
 .indisponible {
     color:rgba(0, 0, 0, 0.529);
+}
+
+/* Marseille */
+
+#grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
 /* Paris */
@@ -477,4 +488,18 @@ header {
 
     .footer {
         text-align: center;
+    }
+
+
+    /* connexion */
+
+    .form-container {
+
+        width: 600px;
+    }
+
+    form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 200px;
     }
