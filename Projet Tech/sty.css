@@ -196,7 +196,11 @@ header {
     height: 30px;
     margin-left: 5px;
 }
-
+#language-select, #search {
+    background-color: white; /* Assurez-vous qu'ils ont la même couleur de fond */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
 /* Fin barre de recherche */
 
 #map {

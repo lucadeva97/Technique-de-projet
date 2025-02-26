@@ -13,7 +13,7 @@ function initMap() {
         { coords: { lat: -3.7172, lng: -38.5434 }, lang: 'pt', text: 'Fortaleza', img: 'images/forta.jpg', audio: 'extraits/fortaleza.ogg' }, // Fortaleza, Brésil
         { coords: { lat: 45.5017, lng: -73.5673 }, lang: 'fr', text: 'Montréal', img: 'images/montreal.jpeg', audio: 'extraits/montreal.mp3', href: 'montreal/quebec.html' }, // Montréal, Canada
         { coords: { lat: 40.4168, lng: -3.7038 }, lang: 'es', text: 'Madrid', img: 'images/madrid.jpg' }, // Madrid, Espagne
-        { coords: { lat: 45.1885, lng: 5.7245 }, lang: 'fr', text: 'Grenoble', img: 'images/grenoble.jpg', href: 'grenoble.html' }, // Grenoble, France
+        { coords: { lat: 45.1885, lng: 5.7245 }, lang: 'fr', text: 'Grenoble', img: 'images/grenoble.jpg', audio: 'extraits/grenoble.mp3', href: 'grenoble.html' }, // Grenoble, France
         { coords: { lat: 43.2965, lng: 5.3698 }, lang: 'fr', text: 'Marseille', img: 'images/marseille.jpeg', href: 'marseille.html' }, // Marseille, France
         { coords: { lat: 45.4408, lng: 12.3155 }, lang: 'it', text: 'Venise', img: 'images/venise.jpeg' }, // Venise, Italie
         { coords: { lat: -23.5505, lng: -46.6333 }, lang: 'pt', text: 'São Paulo', img: 'images/sp.jpg', audio: 'extraits/saopaulo.mp4' }, // São Paulo, Brésil
@@ -49,10 +49,10 @@ function initMap() {
         if (point.audio) {
             if (Array.isArray(point.audio)) {
                 point.audio.forEach(audioSrc => {
-                    contentString += `<br><audio controls style="margin-top: 10px;"><source src="${audioSrc}" type="audio/ogg">Your browser does not support the audio element.</audio>`;
+                    contentString += `<br><audio controls style="margin-top: 10px;"><source src="${audioSrc}" type="audio/ogg"><source src="${audioSrc}" type="audio/mpeg">Your browser does not support the audio element.</audio>`;
                 });
             } else {
-                contentString += `<br><audio controls style="margin-top: 10px;"><source src="${point.audio}" type="audio/ogg">Your browser does not support the audio element.</audio>`;
+                contentString += `<br><audio controls style="margin-top: 10px;"><source src="${point.audio}" type="audio/ogg"><source src="${point.audio}" type="audio/mpeg">Your browser does not support the audio element.</audio>`;
             }
         }
         contentString += `</div>`;
@@ -107,10 +107,10 @@ function initMap() {
             if (point.audio) {
                 if (Array.isArray(point.audio)) {
                     point.audio.forEach(audioSrc => {
-                        contentString += `<br><audio controls style="margin-top: 10px;"><source src="${audioSrc}" type="audio/ogg">Your browser does not support the audio element.</audio>`;
+                        contentString += `<br><audio controls style="margin-top: 10px;"><source src="${audioSrc}" type="audio/ogg"><source src="${audioSrc}" type="audio/mpeg">Your browser does not support the audio element.</audio>`;
                     });
                 } else {
-                    contentString += `<br><audio controls style="margin-top: 10px;"><source src="${point.audio}" type="audio/ogg">Your browser does not support the audio element.</audio>`;
+                    contentString += `<br><audio controls style="margin-top: 10px;"><source src="${point.audio}" type="audio/ogg"><source src="${point.audio}" type="audio/mpeg">Your browser does not support the audio element.</audio>`;
                 }
             }
             contentString += `</div>`;
@@ -139,6 +139,49 @@ function initMap() {
 
     document.getElementById('search').addEventListener('input', debouncedSearch);
 }
+
+// Modal tutorial
+document.addEventListener('DOMContentLoaded', (event) => {
+    const modal1 = document.getElementById('tutorialModal1');
+    const modal2 = document.getElementById('tutorialModal2');
+    const modal3 = document.getElementById('tutorialModal3');
+    const span1 = modal1.getElementsByClassName('close')[0];
+    const span2 = modal2.getElementsByClassName('close')[0];
+    const span3 = modal3.getElementsByClassName('close')[0];
+
+    // Show the first modal when the page loads
+    modal1.style.display = 'block';
+
+    // Close the first modal when the user clicks on <span> (x)
+    span1.onclick = function() {
+        modal1.style.display = 'none';
+        modal2.style.display = 'block'; // Show the second modal
+    }
+
+    // Close the second modal when the user clicks on <span> (x)
+    span2.onclick = function() {
+        modal2.style.display = 'none';
+        modal3.style.display = 'block'; // Show the third modal
+    }
+
+    // Close the third modal when the user clicks on <span> (x)
+    span3.onclick = function() {
+        modal3.style.display = 'none';
+    }
+
+    // Close the modal when the user clicks anywhere outside of the modal
+    window.onclick = function(event) {
+        if (event.target == modal1) {
+            modal1.style.display = 'none';
+            modal2.style.display = 'block'; // Show the second modal
+        } else if (event.target == modal2) {
+            modal2.style.display = 'none';
+            modal3.style.display = 'block'; // Show the third modal
+        } else if (event.target == modal3) {
+            modal3.style.display = 'none';
+        }
+    }
+});
 
 function changeLanguage() {
     const languageSelect = document.getElementById('language-select');
