@@ -200,11 +200,12 @@ header {
     background-color: white; /* Assurez-vous qu'ils ont la même couleur de fond */
     border: 1px solid #ccc;
     border-radius: 4px;
+    text-decoration-color: #000;
 }
 /* Fin barre de recherche */
 
 #map {
-    height: 500px; /* Ajustez la hauteur selon vos besoins */
+    height: 500px; /* Default height */
     width: 100%;
     border: #000;
     margin: 0px;
@@ -269,19 +270,30 @@ header {
 .nous_images {
     height: 280px;
     width: 280px;
+    display: center;
 }
 
 .cadre_apropos {
-    border: solid rgb(36, 36, 36) 2px;
-    border-radius: 5px;
-    width: 500px;
-    height: 500px;
-    background-color: rgb(163, 162, 162);
-    margin: 20px;
-    padding: 20px;
-    font-size: 20px;
+    text-align: center;
+    border: solid rgb(50, 50, 50) 1.5px;
+    border-radius: 15px;
+    max-width: 500px;
+    width: 90%;
+    height: auto;
+    background-color: rgb(250, 245, 245);
+    margin: 20px auto;
+    padding: 25px;
+    font-size: 18px;
+    line-height: 1.4; /* Augmente l'espacement entre les lignes */
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Effet au survol */
+.cadre_apropos:hover {
+    transform: scale(1.02);
+    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.15);
+}
 /* Page du français */
 /* titre de la page */
 .titre {
@@ -393,7 +405,6 @@ header {
     background-color: #EF4135; /* Rouge */
   }
 
-
 /* Inscription Formulaire */
 .form-wrapper {
     display: flex;
@@ -454,6 +465,35 @@ header {
     text-decoration: underline;
 }
 
+/* tuto styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1001; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
 /* Media Queries pour rendre le site adaptable */
 @media (max-width: 768px) {
     .header-container {
@@ -467,6 +507,10 @@ header {
 
     .form-container {
         width: 90%;
+    }
+
+    #map {
+        height: 300px; /* Adjust height for small screens */
     }
 }
 
@@ -487,6 +531,26 @@ header {
 
     .form-container {
         width: 90%;
+    }
+
+    #map {
+        height: 250px; /* Adjust height for extra small screens */
+    }
+
+    #barres-recherche {
+        flex-direction: column; /* Stack search bars vertically */
+        align-items: center;
+    }
+
+    #language-select, #search {
+        width: 90%; /* Full width on small screens */
+        margin: 5px 0; /* Add some margin between elements */
+    }
+}
+
+@media (max-width: 1200px) {
+    #map {
+        height: 400px; /* Adjust height for medium screens */
     }
 }
 
