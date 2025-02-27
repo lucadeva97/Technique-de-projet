@@ -365,95 +365,76 @@ header {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
-
-/*page inscription*/
-
+/*page d'inscription*/
+/* Conteneur du formulaire */
 .form-container {
     background-color: white;
     padding: 20px;
-    margin: 20px;
+    margin: 50px auto;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-  }
-  
-  .form-container h2 {
+    justify-content: center;
+    text-align: center;
+}
+
+/* Titres */
+.form-container h2 {
     margin-top: 0;
-  }
-  
-  .form-container label {
-    display: flex;
-    margin: 10px 0 5px;
-  }
-  
-  
-  .form-container button,
-  .form-container input[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    background-color: #0055A4; /* Bleu */
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  .form-container button:hover,
-  .form-container input[type="submit"]:hover {
-    background-color: #EF4135; /* Rouge */
-  }
-
-/* Inscription Formulaire */
-.form-wrapper {
-    display: flex;
-    justify-content: right;
-    gap: 20px;
-    flex-wrap: wrap;
 }
 
-.form-container {
-    max-width: 500px;
-    margin: 50px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff;
-}
-
+/* Formulaire */
 .form-container form {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
+/* Labels */
 .form-container label {
-    margin-bottom: 5px;
+    margin: 10px 0 5px;
+    text-align: left;
+    width: 80%; /* Aligné avec les champs */
 }
 
-.form-container input {
-    margin-bottom: 10px;
+/* Champs de saisie et Sélection */
+.form-container input,
+.form-container select {
+    width: 80%; /* Même taille pour tous les champs */
     padding: 10px;
+    margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 14px;
 }
 
-.form-container button {
+/* Boutons */
+.form-container button,
+.form-container input[type="submit"] {
+    width: 80%;
     padding: 10px;
     background-color: #0055A4;
-    color: #fff;
+    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
 }
 
-.form-container button:hover {
+/* Effet au survol des boutons */
+.form-container button:hover,
+.form-container input[type="submit"]:hover {
     background-color: #EF4135;
 }
 
+/* Lien d'inscription */
 .signup-link {
     margin-top: 20px;
-    text-align: center;
 }
 
 .signup-link a {
