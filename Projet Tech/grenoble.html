@@ -2,21 +2,21 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Histoire de Grenoble</title>
-    <link rel="stylesheet" href="style4.css">
+    <link rel="stylesheet" href="grenoble.css">
     <link rel="icon" href="minilogo.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <header>
     <div class="header-container">
         <div class="left-align">
             <div class="language-selector">
                 <select id="language-select" onchange="changeLanguage()">
-                    <option value="">Tu cherches une langue ? </option>
-                    <option value="es"><a href="accentesp.html" class="accent" data-lang="es"></a>Espagnol</option>
-                    <option value="fr"><a href="accentfr.html" class="accent" data-lang="fr">Français</a></option>
-                    <option value="it"><a href="accentita.html" class="accent" data-lang="it"></a>Italien</option>
-                    <option value="pt"><a href="accentpt.html" class="accent" data-lang="pt"></a>Portugais</option>
+                    <option value="" class="accent">Tu cherches une langue ? </option>
+                    <option value="es" disabled style="color: grey;">Espagnol</option>
+                    <option value="fr" data-url="accentfr.html">Français</option>
+                    <option value="it" disabled style="color: grey;">Italien</option>
+                    <option value="pt" disabled style="color: grey;">Portugais</option>
                 </select>
             </div>
         </div>
@@ -26,7 +26,7 @@
         <div class="right-align">
             <a href="apropos.html"><div class="apropos" data-tooltip="à propos">
             </div></a>
-            <a href="inscription.php"><div class="connexion" data-tooltip="connexion">
+            <a href="compte/inscription.php"><div class="connexion" data-tooltip="connexion">
             </div></a>
         </div>
     </div>
@@ -112,5 +112,15 @@
             <a class="exercise-link" href="https://learningapps.org/watch?v=p2hu77wpt25" target="_blank">Exercice d'association</a>
         </div>
     </div>
+    <script>
+        function changeLanguage() {
+            const select = document.getElementById('language-select');
+            const selectedOption = select.options[select.selectedIndex];
+            const url = selectedOption.getAttribute('data-url');
+            if (url) {
+                window.location.href = url;
+            }
+        }
+    </script>
 </body>
 </html>

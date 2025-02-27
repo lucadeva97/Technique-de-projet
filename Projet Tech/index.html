@@ -10,14 +10,6 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="mobile-web-app-capable" content="yes">
-    <style>
-        .hover-effect {
-            transition: transform 0.3s;
-        }
-        .hover-effect:hover {
-            transform: scale(1.1);
-        }
-    </style>
 </head>
 <header>
     <div class="header-container">
@@ -94,23 +86,24 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAHEI3GgF66F2QIfcXxQp9Eugqaysym5k&callback=initMap" async defer></script>
     <!-- Lien vers le fichier JavaScript -->
     <script src="scripts.js"></script>
+    <!-- Ensure JavaScript compatibility with different browsers -->
     <script>
         function showImage() {
             const img1 = document.createElement('img');
-            img1.src = 'images/tuto1.jpg'; // Change to the path of your first image
+            img1.src = 'images/tuto1.png'; // Change to the path of your first image
             img1.style.position = 'fixed';
-            img1.style.top = '100px';
-            img1.style.left = '650px';
+            img1.style.top = '10px';
+            img1.style.left = '850px';
             img1.style.zIndex = '1000';
             img1.classList.add('hover-effect');
             document.body.appendChild(img1);
 
             img1.addEventListener('click', () => {
                 const img2 = document.createElement('img');
-                img2.src = 'images/tuto2.jpg'; // Change to the path of your second image
+                img2.src = 'images/tuto2.png'; // Change to the path of your second image
                 img2.style.position = 'fixed';
                 img2.style.top = '100px';
-                img2.style.left = '100px'; // Adjust the position as needed
+                img2.style.left = '200px'; // Adjust the position as needed
                 img2.style.zIndex = '1000';
                 img2.classList.add('hover-effect');
                 document.body.appendChild(img2);
@@ -119,10 +112,10 @@
 
                 img2.addEventListener('click', () => {
                     const img3 = document.createElement('img');
-                    img3.src = 'images/tuto3.jpg'; // Change to the path of your third image
+                    img3.src = 'images/tuto3.png'; // Change to the path of your third image
                     img3.style.position = 'fixed';
                     img3.style.top = '100px';
-                    img3.style.right = '100px'; // Adjust the position as needed
+                    img3.style.right = '200px'; // Adjust the position as needed
                     img3.style.zIndex = '1000';
                     img3.classList.add('hover-effect');
                     document.body.appendChild(img3);
