@@ -58,15 +58,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
 <header>
-    <div class="header-container">
+<div class="header-container">
         <div class="left-align">
             <div class="language-selector">
                 <select id="language-select" onchange="changeLanguage()">
-                    <option value="">Tu cherches une langue ? </option>
-                    <option value="es"><a href="accentesp.html" class="accent" data-lang="es"></a>Espagnol</option>
-                    <option value="fr"><a href="accentfr.html" class="accent" data-lang="fr">Français</a></option>
-                    <option value="it"><a href="accentita.html" class="accent" data-lang="it"></a>Italien</option>
-                    <option value="pt"><a href="accentpt.html" class="accent" data-lang="pt"></a>Portugais</option>
+                    <option value="" class="accent">Tu cherches une langue ? </option>
+                    <option value="es" disabled style="color: grey;">Espagnol</option>
+                    <option value="fr" data-url="../accentfr.html">Français</option>
+                    <option value="it" disabled style="color: grey;">Italien</option>
+                    <option value="pt" disabled style="color: grey;">Portugais</option>
                 </select>
             </div>
         </div>
@@ -88,5 +88,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <button type="submit">Connexion</button>
     </form>
 </div>
+<script>
+    function changeLanguage() {
+        const select = document.getElementById('language-select');
+        const selectedOption = select.options[select.selectedIndex];
+        const url = selectedOption.getAttribute('data-url');
+        if (url) {
+            window.location.href = url;
+        }
+    }
+</script>
 </body>
 </html>
