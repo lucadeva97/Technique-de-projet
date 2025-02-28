@@ -32,11 +32,23 @@
     </div>
 </header>
 <body>
-    <div class="container">
-        <h1>Histoire de Grenoble</h1>
-        <img class="blason" src="blasongre.jpg" alt="Blason de Grenoble">
-        
-        <div class="history">
+    <nav>
+        <ul id="grid">
+          <li><a href="#" class="menu-item" data-content="histoire">
+ Histoire</a></li>
+          <li><a href="#" class="menu-item" data-content="exercices"
+ >Exercices</a></li>
+          <li><a href="#" class="menu-item" data-content="sources">
+ Ressources</a></li>
+        </ul>
+      </nav>
+
+    <div class="titre">
+    <h1>Histoire de Grenoble</h1>
+
+    <main id="main-content">
+     <div class="content" id="histoire">
+         
             <h2>Cularo et Gratianopolis</h2>
             <p>Grenoble apparaît dans l’histoire pour la première fois sous le nom de Cularo. C’est un nom Gaulois. A la fin du IIIème siècle, Cularo devient chef-lieu d’une cité. 
                 Au IVème siècle, elle prend le nom de l’empereur romain Gatien et devient Gratianopolis. 
@@ -101,18 +113,41 @@
                     <tr><td>Nachave</td><td>S’en aller</td></tr>
                     <tr><td>C’est quel heure</td><td>Quelle heure est-il ?</td></tr>
                 </table>
+            </div>
+    </div>
+
+     <div class="content" id="exercices" style="display:none;">
+    <div style="width: 100%;"><div style="position: relative; padding-bottom: 56.25%; padding-top: 0; height: 0;"><iframe title="Apprendre le français" frameborder="0" width="1200" height="675" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://view.genially.com/67b5dcf665d03b35e2f01d7d" type="text/html" allowscriptaccess="always" allowfullscreen="true" scrolling="yes" allownetworking="all"></iframe> </div> </div>
+</div>
+</div>
             
-            <div class="sources">
+<div class="content" id="sources" style="display:none;">        
                     <h3>Sources :</h3>
                     <p>L’histoire de Grenoble : (source : L'histoire de Grenoble - Grenoble.fr, Histoire de Grenoble — Wikipédia, Histoire de la ville de Grenoble)</p>
                 </div>
     </div>
 
-        <div class="link-container">
-            <a class="exercise-link" href="https://learningapps.org/watch?v=p2hu77wpt25" target="_blank">Exercice d'association</a>
-        </div>
-    </div>
-    <script>
+</main>
+<script>
+            document.querySelectorAll('.menu-item').forEach(item => {
+          item.addEventListener('click', (event) => {
+            event.preventDefault(); // Empêche le comportement par défaut du lien
+       
+            const contentId = item.getAttribute('data-content'); // Récupère l'id du contenu associé
+            const allContents = document.querySelectorAll('.content');
+           
+            // Masquer tous les contenus
+            allContents.forEach(content => {
+              content.style.display = 'none';
+            });
+       
+            // Afficher le contenu correspondant
+            document.getElementById(contentId).style.display = 'block';
+          });
+        });
+          </script>
+     
+       <script>
         function changeLanguage() {
             const select = document.getElementById('language-select');
             const selectedOption = select.options[select.selectedIndex];
@@ -122,5 +157,6 @@
             }
         }
     </script>
+    
 </body>
 </html>
