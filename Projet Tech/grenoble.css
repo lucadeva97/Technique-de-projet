@@ -1,16 +1,6 @@
-* {
-    padding: 0px;
-    margin: 0px;
-}
-
-body {
-    padding: 0px;
-    margin: 0px;
-}
-
 header {
     border-bottom: 1px solid black;
-    position: relative;
+    position: sticky;
     z-index: 1000;
     top: 0;
     background-color: white;
@@ -30,10 +20,38 @@ header {
     align-items: center;
 }
 
-
-#language-select {
-    width: 200px;
+#tutoriel-tooltip {
+    height: 40px;
+    width: 40px;
     font-size: 16px;
+    background-color: white;
+    Border: black solid 1.5px;
+    border-radius: 50%;
+}
+#tutoriel {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#tutoriel-tooltip:hover::before,
+#tutoriel-tooltip:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    background-color: #cccccc37;
+    padding: 3px;
+    top: 4rem;
+    left: 4.7rem;
+    border-radius: 3px;
+    color:rgba(36, 36, 36, 0.483);
+    transform: translateY(-10px); 
+    opacity: 0;
+    transition: opacity 1s easy, transform 1s easy;
+}
+
+#tutoriel-tooltip:hover::before,
+#tutoriel-tooltip:hover::after {
+    opacity: 1;  /* Fade-in */
+    transform: translateY(0);  /* Move into its final position */
 }
 
 /* LOGO */
@@ -122,103 +140,9 @@ header {
     border-radius: 3px;
     color:rgba(36, 36, 36, 0.483);
 }
-
-
-
-/*Fin header*/
-
-body {
-    font-family: Arial, sans-serif;
+/*Fin header*//* Reset and Global Styles */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    box-sizing: border-box;
 }
-
-.container {
-    width: 80%;
-    margin: auto;
-    padding: 20px;
-    background: white;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    text-align: center;
-}
-
-h1 {
-    color: #0055A4;
-}
-
-.blason {
-    width: 150px;
-    height: auto;
-    margin: 20px 0;
-}
-
-.history {
-    text-align: left;
-    padding: 20px;
-}
-
-h2 {
-    color: #EF4135;
-}
-
-p {
-    color: #333;
-    line-height: 1.6;
-}
-
-.lexical-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-.lexical-table th, .lexical-table td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: left;
-}
-
-.lexical-table th {
-    background-color: #f8f8f8;
-    font-weight: bold;
-}
-
-.link-container {
-    margin-top: 20px;
-}
-
-.iframe-button {
-    display: inline-block;
-    padding: 20px 40px; /* Augmente l'espace autour du texte pour un bouton plus grand */
-    background: #FF0000; /* Couleur de fond rouge */
-    color: white;
-    text-decoration: none;
-    border: none;
-    border-radius: 12px; /* Coins arrondis pour un effet plus moderne */
-    font-size: 20px; /* Taille du texte plus grande */
-    font-weight: bold; /* Rendre le texte en gras */
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Ajout de transition pour un effet fluide */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre légère pour donner un effet de profondeur */
-}
-
-.iframe-button:hover {
-    background: #FF4D4D; /* Couleur rouge plus claire au survol */
-    transform: scale(1.1); /* Agrandir légèrement au survol */
-}
-
-.iframe-button:active {
-    transform: scale(1); /* Rétablir la taille au clic */
-}
-
-.sources {
-    margin-top: 30px;
-    font-size: 14px;
-    color: #555;
-    background: #f9f9f9;
-    padding: 10px;
-    border-left: 5px solid #007BFF;
-}
-
