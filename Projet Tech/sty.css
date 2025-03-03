@@ -294,7 +294,7 @@ header {
     object-fit: cover;
     transition: transform 2s; /* Duration of the rotation */
     border-radius: 10px;
-    width: 200px; /* Fixed width */
+    width: 220px; /* Fixed width */
     height: 200px; /* Fixed height */
 }
 
