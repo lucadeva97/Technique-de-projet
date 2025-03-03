@@ -55,6 +55,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>Connexion</title>
     <link rel="stylesheet" href="../sty.css">
     <link rel="icon" href="minilogo.png" type="image/png">
+    <style>
+        .button-container {
+            display: flex;
+            justify-content: center;
+        }
+        .button-container a {
+            text-decoration: none;
+        }
+        .button-container button {
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
 <header>
@@ -74,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div></div>
         <div class="right-align">
             <a href="../apropos.html"><div class="apropos" data-tooltip="à propos"></div></a>
-            <a href="inscription.php"><div class="connexion" data-tooltip="connexion"></div></a>
+            <a href="connexion.php"><div class="connexion" data-tooltip="connexion"></div></a>
         </div>
     </div>
 </header>
@@ -87,6 +99,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="password" id="password" name="password" required>
         <button type="submit">Connexion</button>
     </form>
+    <br>
+    <div class="button-container" id="in-form" style="display:block"></div> 
+        <a href="inscription.php"><button>S'inscrire</button></a>
+    </div>
 </div>
 <script>
     function changeLanguage() {
