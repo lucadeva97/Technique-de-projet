@@ -14,7 +14,7 @@ function initMap() {
         { coords: { lat: 45.5017, lng: -73.5673 }, lang: 'fr', text: 'Montréal', img: 'images/montreal.jpeg', audio: 'extraits/montreal.mp3', href: 'montreal/quebec.html' }, // Montréal, Canada
         { coords: { lat: 40.4168, lng: -3.7038 }, lang: 'es', text: 'Madrid', img: 'images/madrid.jpg' }, // Madrid, Espagne
         { coords: { lat: 45.1885, lng: 5.7245 }, lang: 'fr', text: 'Grenoble', img: 'images/grenoble.jpg', audio: 'extraits/grenoble.mp3', href: 'grenoble.html' }, // Grenoble, France
-        { coords: { lat: 43.2965, lng: 5.3698 }, lang: 'fr', text: 'Marseille', img: 'images/marseille.jpeg', href: 'marseille.html' }, // Marseille, France
+        { coords: { lat: 43.2965, lng: 5.3698 }, lang: 'fr', text: 'Marseille', img: 'images/marseille.jpeg', }, // Marseille, France
         { coords: { lat: 45.4408, lng: 12.3155 }, lang: 'it', text: 'Venise', img: 'images/venise.jpeg' }, // Venise, Italie
         { coords: { lat: -23.5505, lng: -46.6333 }, lang: 'pt', text: 'São Paulo', img: 'images/sp.jpg', audio: 'extraits/saopaulo.mp4' }, // São Paulo, Brésil
         { coords: { lat: 41.9028, lng: 12.4964 }, lang: 'it', text: 'Roma', img: 'images/rome.jpeg' }, // Rome, Italie
@@ -23,12 +23,12 @@ function initMap() {
         { coords: { lat: -34.6037, lng: -58.3816 }, lang: 'es', text: 'Buenos Aires', img: 'images/buenosaires.jpg', audio: 'extraits/buenosaires.ogg' }, // Buenos Aires, Argentine
         { coords: { lat: 4.7110, lng: -74.0721 }, lang: 'es', text: 'Bogotá', img: 'images/bogota.jpg', audio: 'extraits/bogota.ogg' }, // Bogotá, Colombie
         { coords: { lat: 10.4806, lng: -66.9036 }, lang: 'es', text: 'Caracas', img: 'images/caracas.jpg', audio: 'extraits/caracas.ogg' }, // Caracas, Venezuela
-        { coords: { lat: 4.9224, lng: -52.3135 }, lang: 'fr', text: 'Cayenne', img: 'images/cayenne.jpg', audio: 'extraits/cayenne.mp3', href: 'cayenne.html' }, // Cayenne, Guyane française
+        { coords: { lat: 4.9224, lng: -52.3135 }, lang: 'fr', text: 'Cayenne', img: 'images/cayenne_.jpg', audio: 'extraits/cayenne.mp3' }, // Cayenne, Guyane française
         { coords: { lat: -23.8683, lng: -49.3324 }, lang: 'pt', text: 'Itararé', img: 'images/itarare.jpg', audio: 'extraits/itarare.ogg' }, // Itararé, Brésil
         { coords: { lat: 0.0355, lng: -51.0705 }, lang: 'pt', text: 'Macapá', img: 'images/macapa.jpg', audio: 'extraits/macapa.ogg' }, // Macapá, Brésil
         { coords: { lat: -30.0346, lng: -51.2177 }, lang: 'pt', text: 'Porto Alegre', img: 'images/portoalegre.jpg', audio: 'extraits/portoalegre.ogg' }, // Porto Alegre, Brésil
         { coords: { lat: -2.5307, lng: -44.3068 }, lang: 'pt', text: 'São Luís', img: 'images/saoluis.jpg', audio: 'extraits/saoluis.ogg' }, // São Luís, Brésil
-        { coords: { lat: 14.6161, lng: -61.0588 }, lang: 'fr', text: 'Fort-de-France', img: 'images/fortdefrance.jpg', audio: 'extraits/fortdefrance.mpeg' }, // Fort-de-France, Martinique
+        { coords: { lat: 14.6161, lng: -61.0588 }, lang: 'fr', text: 'Fort-de-France', img: 'images/fortdefrance_.png', audio: 'extraits/fortdefrance.mpeg' }, // Fort-de-France, Martinique
         { coords: { lat: 43.6045, lng: 1.4442 }, lang: 'fr', text: 'Toulouse', img: 'images/toulouse.jpeg', audio: ['extraits/toulouse.mp3', 'extraits/toulouse_greg.mp3'] } // Toulouse, France
     ];
     let currentInfoWindow = null;
