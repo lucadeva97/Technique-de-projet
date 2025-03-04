@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+if (isset($_SESSION['nom']) && isset($_SESSION['email']) && 
+isset($_SESSION['prenom']) && isset($_SESSION['niveau']) && 
+isset($_SESSION['statu'])) { 
+
 ?>
 
 <!DOCTYPE html>
@@ -93,3 +98,11 @@ session_start();
 <script src="scripts.js"></script>
 </body>
 </html>
+
+<?php 
+
+    } else {
+        header('Location: compte/inscription.php'); 
+    exit();
+    }
+    ?>
