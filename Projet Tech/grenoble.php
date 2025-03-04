@@ -18,19 +18,19 @@ session_start();
                 <select id="language-select" onchange="changeLanguage()">
                     <option value="" class="accent">Tu cherches une langue ? </option>
                     <option value="es" disabled style="color: grey;">Espagnol</option>
-                    <option value="fr" data-url="accentfr.php">Français</option>
+                    <option value="fr" data-url="accentfr.html">Français</option>
                     <option value="it" disabled style="color: grey;">Italien</option>
                     <option value="pt" disabled style="color: grey;">Portugais</option>
                 </select>
             </div>
         </div>
-        <a href="index.php"><div class="logo" data-tooltip="homepage">
+        <a href="index.html"><div class="logo" data-tooltip="homepage">
         </div></a>
         <div></div>
         <div class="right-align">
-            <a href="apropos.php"><div class="apropos" data-tooltip="à propos">
+            <a href="apropos.html"><div class="apropos" data-tooltip="à propos">
             </div></a>
-            <a href="compte/connexion.php"><div class="connexion" data-tooltip="connexion">
+            <a href="compte/inscription.php"><div class="connexion" data-tooltip="connexion">
             </div></a>
         </div>
     </div>
@@ -49,119 +49,161 @@ session_start();
         </ul>
       </nav>
 
-    <div class="titre">
-    <h1>Histoire de Grenoble</h1>
 
-    <!--HISTOIRE-->
+      <div class="titre">
+        <div id="introduction">
+
+            Grenoble, située au cœur des Alpes françaises, est une ville riche en histoire, en culture et en beauté naturelle. Entre montagnes majestueuses, patrimoine historique et innovations modernes, Grenoble offre un cadre unique à découvrir. Bienvenue sur notre page dédiée à cette ville captivante ! Nous sommes heureux de vous inviter à explorer Grenoble à travers un voyage interactif. Dans la section "Histoire", vous découvrirez l'évolution de la langue française à Grenoble et ses spécificités locales. La rubrique "Prononciation" vous permet d'écouter et de comparer les prononciations grenobloises et parisiennes. Dans "Exercices", vous pourrez tester vos connaissances et approfondir ce que vous avez appris. Enfin, dans "Sources", vous trouverez des références pour en savoir plus sur cette belle ville. Nous espérons que vous apprécierez cette immersion grenobloise ! 🌟
+            <br>
+            <audio controls>
+                <source src="extraits/grenoble.mp3.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+       
+   
+
+   
     <main id="main-content">
-     <div class="content" id="histoire">
-         
-            <h2>Antiquité : Cularo </h2>
-            <p>Grenoble apparaît dans l’histoire pour la première fois sous le nom de Cularo. Fondée par le peuple gaulois des Allobroges. Les habitants de Cularo parlaient une langue celtique propre aux Allobroges. A la fin du IIIème siècle, Cularo devient chef-lieu d’une cité. La population locale était composé de Gaulois et parlaient le gaulois, une langue celtique.</p>
-            <h2>Moyen-Âge : Gratianopolis et le francoprovençal</h2>
-            <p>Au IVème siècle, elle prend le nom de l’empereur romain Gratien et devient Gratianopolis. Après la conquête romaine, le latin s'est imposé. Cela a entrainé un bilinguisme ou le gaulois et le latin coexistaient avant d’écarter totalement le gaulois. 
-                La latin vulgaire était devenu la langue dominante à Gratianopolis.
-                Le christianisme se répandit dans la région et la création d’un évêché a eu lieu avec comme premier évêque Domnin. Ce sont les évêques qui ont détenuent l’autorité à Grenoble durant 14 siècles. On les surnommait “ les princes de Grenoble”. Cela jusqu’à la Révolution. La création d'un évêché à Gratianopolis a renforcé l'usage du latin car elle était utilisé dans l’administration, la religion et le commerce. 
-                Ce latin évolua progressivement, influencé par les langues locales et les invasions barbares. Cela menant a l’émérgence des langues romanes. 
-                Dans la région grenobloise, le francoprovençal ou arpitan, devient la langue vernaculaire mais le latin reste la langue de l’administration et de l’Église.</p>
-             <h2> Renaissance : diffusion du français standard</h2>
-     <p>Aux XVe et XVIe siècles, le français issu de l’Ile-de-France gagne en prestige. Les écrits littéraires et administratifs se standardisent, favorisant l’adoption du français et écartant les dialectes locaux comme le francoprovençal. Cette période marque une transition vers une uniformisation linguistique en France.</p>
-            <h2>Grenoble aujourd'hui</h2>
-            <p>De nos jours, à Grenoble, la langue majoritairmeent parlée est le 'français standard'. Cependant l'influence des dialectes régionaux et des langues issues de l'immigration enrichit la langue. Grenoble n'a pas un accent aussi marqué que certaines régions cependant il subsiste quelques particularités linguistiques. Les grenoblois ont un léger accent dauphinois surtout les personnes âgées. Cela est caractérisé par une intonation montante et des voyelles plus ouvertes. Des mots typiques de la région sont encore là aujourd'hui tel que "rechigner" qui veut dire hésiter. Il y a une grande influence francoprovençal dans les expressions locaux. 
-                Autrefois, le francoprovençal était très parlée et encore quelques personnes le parle cependant il n'est plus enseigné ni transmis aux nouvelles générations. 
-                Avec la forte présence d'étudiants et de population issues de l'immigration, Grenoble est une ville multilingue. 
-                Grenoble est aussi un centre de recherche et d’innovation. Elle joue un rôle clé dans la diffusion et l'enseignement de français.  La ville a de grandes institutions comme le CNRS et le CEA. En 1896, le Centre Universitaire d'Etudes Françaises (CUEF) a été fondée. C'est un des premiers centre dédiés à l'enseignement du français langue étrangère en France. Le CUEF, au début, reposait sur l'accueil des familles et des salariés émigrés établis et travaillant à Grenoble. Le CUEF aide à se loger, se restaurer, dans la préparation du séjour en France. Il aide également dans l'obtention du Diplôme Universitaire d'Etudes Françaises (DUEF). L'Alliance Française Grenoble Alpes (AFGA) promeut également la langue française et les cultures francophone à Grenoble. 
-                Entourée des hauts massifs de Belledonne, chartreuse et vercors et située au confluent de l’Isère et du Drac, Grenoble est réputée la ville la plus plate de France.  </p>
-                <h2>Grenoble et ses dates importantes :</h2>
-                <ul class="dates-list">
-                    <li>379 : Cularo devient Gratianopolis</li>
-                    <br>
-                    <li>XIIème siècle : Grenoble capitale des Dauphins et co-seigneurie</li>
-                    <br>
-                    <li>1562 : Guerres de religion</li>
-                    <br>
-                    <li>1590 : Le duc de Lesdiguières et ses successeurs</li>
-                    <br>
-                    <li>1830 : Construction du Fort de la Bastille</li>
-                    <br>
-                    <li>1842 : Création de la première cimenterie grenobloise</li>
-                    <br>
-                    <li>850 : Grenoble devient une capitale industrielle</li>
-                    <br>
-                    <li>1941 à 1944 : Seconde Guerre Mondiale et Résistance : Grenoble, capitale des maquis</li>
-                    <br>
-                    <li>1955 : Recherche scientifique et industrie de haute technologie ; université</li>
-                    <br>
-                    <li>1987 : Grenoble propose le premier tramway au monde à être accessible aux personnes à mobilité réduite</li>
-                    <br>
-                    <li>9 septembre 2005 : Grenoble, 1er territoire de tourisme adapté</li>
-                    <br>
-                    <li>2 juin 2006 : Inauguration du complexe scientifique européen MINATEC</li>
-                    <br>
-                    <li>4 novembre 2009 : Grenoble remporte le Grand Prix national des écoquartiers de France avec le "quartier de Bonne"</li>
-                </ul>
-            </div>
+
+        <!--Histoire de la langue-->
+        <div class="content" id="histoire" style="display: none;">
+
+    <h2>🏰 1. Antiquité : Cularo et les origines linguistiques</h2>
+    <p>Grenoble apparaît dans l’histoire sous le nom de <strong>Cularo</strong>, une cité fondée par le peuple gaulois des <strong>Allobroges</strong>. Les habitants parlaient alors une langue celtique propre aux Allobroges, le <strong>gaulois</strong>. À la fin du IIIᵉ siècle, Cularo devient un centre urbain plus important sous influence romaine.</p>
+    <p>Avec la conquête romaine, le <strong>latin</strong> commence à s’imposer. Durant plusieurs siècles, un <strong>bilinguisme</strong> entre le gaulois et le latin existe avant que ce dernier ne prenne totalement le dessus.</p>
+    <p><strong>👉 À retenir :</strong> Avant l’arrivée du français, le gaulois et le latin ont façonné les premières bases linguistiques de Grenoble !</p>
+    
+    <br><br>
+
+    <h2>📜 2. Moyen Âge : Gratianopolis et le franco-provençal</h2>
+    <p>Au IVᵉ siècle, la ville prend le nom de l’empereur romain <strong>Gratien</strong> et devient <strong>Gratianopolis</strong>. Le christianisme se développe, et un évêché est fondé, renforçant l’usage du latin dans l’administration, la religion et le commerce.</p>
+    <p>Au fil des siècles, le latin évolue sous l’influence des langues locales et des invasions barbares, donnant naissance aux langues romanes. Dans la région grenobloise, c’est le <strong>franco-provençal</strong> (ou arpitan) qui devient la langue vernaculaire, tandis que le latin reste dominant dans les écrits officiels.</p>
+    <p><strong>👉 Conséquence :</strong> Durant tout le Moyen Âge, Grenoble est une ville où le franco-provençal est parlé au quotidien, tandis que le latin reste la langue administrative.</p>
+    
+    <br><br>
+
+    <h2>📖 3. Renaissance : L’essor du français et le déclin du franco-provençal</h2>
+    <p>Aux XVᵉ et XVIᵉ siècles, le <strong>français</strong>, langue de l’Île-de-France, gagne en prestige. L’essor de l’imprimerie et l’unification administrative favorisent son adoption.</p>
+    <p>En <strong>1539</strong>, l’<strong>Ordonnance de Villers-Cotterêts</strong> impose le français comme langue des actes officiels, accélérant son implantation à Grenoble. Toutefois, dans la vie quotidienne, le franco-provençal reste encore très présent.</p>
+    <p><strong>👉 À noter :</strong> Cette période marque un tournant vers l’uniformisation linguistique qui se poursuivra jusqu’à la disparition progressive du franco-provençal.</p>
+    
+    <br><br>
+
+    <h2>⚔️ 4. La Révolution et l’uniformisation du français</h2>
+    <p>La Révolution française (1789) impose le <strong>français</strong> comme langue nationale, marginalisant les langues régionales. L’école publique sous <strong>Jules Ferry</strong> au XIXᵉ siècle achève cette transition en enseignant exclusivement en français.</p>
+    <p><strong>👉 Conséquence :</strong> Le franco-provençal disparaît peu à peu des foyers grenoblois, remplacé par le français standard.</p>
+    
+    <br><br>
+
+    <h2>🏭 5. Grenoble, ville moderne et influences linguistiques</h2>
+    <p>Au XXᵉ siècle, Grenoble devient un <strong>centre industriel et scientifique</strong>. L’Université de Grenoble et les échanges internationaux enrichissent le paysage linguistique.</p>
+    <p>Les anglicismes se multiplient, notamment dans les secteurs technologiques et universitaires :</p>
+    <ul>
+        <li><strong>*Week-end*</strong> → utilisé couramment</li>
+        <li><strong>*Start-up*</strong> → très présent dans l’écosystème technologique grenoblois</li>
+    </ul>
+    <p>Grenoble est aussi marquée par une influence <strong>roumaine et romani</strong>, visible dans l’argot :</p>
+    <ul>
+        <li><strong>*Nachave*</strong> → « partir » (du romani *nasval* : fuir)</li>
+        <li><strong>*Chourave*</strong> → « voler » (du romani *chorar* : voler, dérober)</li>
+    </ul>
+    <p><strong>👉 Conclusion :</strong> Grenoble, carrefour culturel et linguistique, a connu une évolution marquée par des influences successives, du gaulois au français moderne enrichi par divers apports.</p>
+    
+    <br><br>
+
+    <h3>💡 À retenir</h3>
+    <ul>
+        <li>Grenoble a d’abord parlé le gaulois, remplacé par le latin après la conquête romaine.</li>
+        <li>Le franco-provençal a longtemps été la langue vernaculaire avant d’être supplanté par le français.</li>
+        <li>Le français s’est imposé grâce à l’Ordonnance de Villers-Cotterêts et l’école républicaine.</li>
+        <li>Grenoble, ville universitaire et technologique, est influencée par l’anglais et d’autres langues.</li>
+        <li>L’argot grenoblois a intégré des mots d’origine roumaine et romani.</li>
+    </ul>
+  
+</div>
+
 
 
                 <!--PRONONCIATION-->
-                <div class="content" id="prononciation">
-                <h2>Les variations lexicales de Grenoble</h2>
-                <table>
-                    <tr>
-                        <th>Expression</th>
-                        <th>Signification</th>
-                    </tr>
-                    <tr><td>C’est quel heure <audio controls>
-                        <source src="cqlheure.mp3" type="audio/mpeg">
-                    </audio></td><td>Quelle heure est-il ? <audio controls>
-                        <source src="ilestqlheure.mp3" type="audio/mpeg">
-                    </audio></td></tr>
-
-                    <tr><td>Rincé</td><td>Être fatigué</td></tr>
-
-                    <tr><td>Avoir la mort <audio controls>
-                        <source src="jailamort.mp3" type="audio/mpeg">
-                    </audio></td><td>Être dégouté    <source src="degouté.mp3" type="audio/mpeg">
-                    </audio></td></tr>
-
-                    <tr><td>Y’a moyen (?)</td><td>C’est possible / Est-ce possible (?)</td></tr>
-
-                    <tr><td>Graille</td><td>Manger</td></tr>
-
-                    <tr><td>Comègue     <audio controls>
-                        <source src="cestcommeg.mp3" type="audio/mpeg">
-                    </audio></td><td>Comme ça     <audio controls>
-                        <source src="ccommeca.mp3" type="audio/mpeg">
-                    </audio></td></tr>
-
                 
-                    <tr><td>Gâche</td><td>(Une) place</td></tr>
+                <div class="content" id="prononciation" style="display: none;">
+            
+                <h2>🔊 Les variations lexicales à Grenoble</h2>
+                <p>Comme dans toute ville, Grenoble a son propre argot et ses expressions locales. Certaines sont issues du <strong>franco-provençal</strong>, d’autres viennent de l’<strong>argot parisien</strong>, et quelques-unes ont même des influences <strong>romani</strong> ou <strong>roumaines</strong>. Voici quelques expressions typiques avec leur prononciation !</p>
+                <br><br>
+                <h3>🕰️ Demander l'heure</h3>
+                <p>À Grenoble, on peut entendre :</p>
+                <p><strong>"C’est quel heure ?"</strong> (au lieu de "Quelle heure est-il ?")</p>
+                <p><strong>Grenoble :</strong></p>
+                <audio controls>
+                    <source src="cqlheure.mp3" type="audio/mpeg">
+                </audio>
+                <p><strong>Français standard :</strong></p>
+                <audio controls>
+                    <source src="ilestqlheure.mp3" type="audio/mpeg">
+                </audio>
+            <br><br><br><br>
 
-                    <tr><td>Tchi</td><td>Rien</td></tr>
 
-                    <tr><td>J(e) suis chauve</td><td>Choquer / Impressionner / Étonner</td></tr>
 
-                    <tr><td>Narvalo</td><td>Fou</td></tr>
+                <h3>😠 Exprimer sa frustration</h3>
+                <p>L’expression <strong>"Avoir la mort"</strong> signifie être très énervé ou dégoûté.</p>
+                <p><strong>Grenoble :</strong></p>
+                <audio controls>
+                    <source src="jailamort.mp3" type="audio/mpeg">
+                </audio>
+                <p><strong>Français standard :</strong> ("Être dégoûté")</p>
+                <audio controls>
+                    <source src="degouté.mp3" type="audio/mpeg">
+                </audio>
+            <br><br><br>
 
-                    <tr><td>Tchoukar</td><td>Cool / Trop bien</td></tr>
 
-                    <tr><td>Chourave</td><td>Voler</td></tr>
+                <h3>🧐 Dire "comme ça" autrement</h3>
+                <p>Le mot <strong>"Comègue"</strong> est utilisé à Grenoble à la place de "comme ça".</p>
+                <p><strong>Grenoble :</strong></p>
+                <audio controls>
+                    <source src="cestcommeg.mp3" type="audio/mpeg">
+                </audio>
+                <p><strong>Français standard :</strong></p>
+                <audio controls>
+                    <source src="ccommeca.mp3" type="audio/mpeg">
+                </audio>
+            <br><br><br>
 
-                    <tr><td>Pillave</td><td>Boire (de l’alcool)</td></tr>
 
-                    <tr><td>Mort pilo</td><td>Ivre</td></tr>
+                <h3>🏃‍♂️ Partir en vitesse</h3>
+                <p>Le verbe <strong>"Nachave"</strong> vient du romani et signifie "s’en aller".</p>
+                <p><strong>Grenoble :</strong></p>
+                <audio controls>
+                    <source src="nachave.mp3" type="audio/mpeg">
+                </audio>
+                <p><strong>Français standard :</strong> ("Partir")</p>
+                <audio controls>
+                    <source src="partir.mp3" type="audio/mpeg">
+                </audio>
+            
 
-                    <tr><td>Pélo</td><td>Garçon</td></tr>
-
-                    <tr><td>Dicave</td><td>Regarde</td></tr>
-
-                    <tr><td>Latche</td><td>La honte</td></tr>
-
-                    <tr><td>Nachave</td><td>S’en aller</td></tr>
-
-                </div>
-                </table>
+                <h3>🍴 Aller manger : "Je vais graille"</h3>
+                <p>À Grenoble, l'expression populaire <strong>"je vais graille"</strong> est utilisée pour dire "je vais manger". Le mot <strong>"graille"</strong> vient de l'argot et fait référence à la nourriture, souvent utilisée dans un contexte décontracté et amical.</p>
+                <p><strong>Grenoble :</strong></p>
+                <audio controls>
+                    <source src="jvgraille.mp3" type="audio/mpeg">
+                </audio>
+                <p><strong>Français standard :</strong> ("Je vais manger")</p>
+                <audio controls>
+                    <source src="jvmanger.mp3" type="audio/mpeg">
+                </audio>
+                
+                <br><br>
+                <h3>💡 À retenir</h3>
+                <ul>
+                    <li>Grenoble possède un argot riche avec des influences variées.</li>
+                    <li>Certains mots viennent du franco-provençal, du romani ou du roumain.</li>
+                    <li>La prononciation et l’usage de certaines expressions diffèrent du français standard.</li>
+                </ul>
             </div>
+            
     </div>
 
 
@@ -174,50 +216,63 @@ session_start();
     <!--EXERCICE-->
 
      <div class="content" id="exercices" style="display:none;">
-  <div style="width: 100%;"><div style="position: relative; padding-bottom: 56.25%; padding-top: 0; height: 0;"><iframe title="Apprendre le français" frameborder="0" width="1200" height="675" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://view.genially.com/67b5dcf665d03b35e2f01d7d" type="text/html" allowscriptaccess="always" allowfullscreen="true" scrolling="yes" allownetworking="all"></iframe> </div> </div>
-     </div>
+
+    <div style="width: 100%;"><div style="position: relative; padding-bottom: 56.25%; padding-top: 0; height: 0;"><iframe title="Apprendre le français" frameborder="0" width="1200" height="675" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://view.genially.com/67b5dcf665d03b35e2f01d7d" type="text/html" allowscriptaccess="always" allowfullscreen="true" scrolling="yes" allownetworking="all"></iframe> </div> </div>
+</div>
             
 <div class="content" id="sources" style="display:none;">        
-                    <h3>Sources :</h3>
-                    <p> Wikipédia. (2025). Histoire de Grenoble. Wikipédia. https://fr.wikipedia.org/wiki/Histoire_de_Grenoble <br>
-                        Ville de Grenoble. (2024). L’histoire de Grenoble. Grenoble.fr. https://www.grenoble.fr/326-l-histoire-de-grenoble.htm <br>
-                        Office de Tourisme de Grenoble. (2024). Histoire de la ville. Grenoble Tourisme. https://www.grenoble-tourisme.com/fr/decouvrir/culture-et-histoire/grenoble-ville-histoire/histoire-de-la-ville/ <br>
-                        Prudhomme, A. (1888). Histoire de Grenoble. A. Gratier.</p> <br> 
-                        
+                    <h3>Ressources :</h3>
+                    <p>L’histoire de Grenoble : (source : L'histoire de Grenoble - Grenoble.fr, Histoire de Grenoble — Wikipédia, Histoire de la ville de Grenoble)</p>
                 </div>
     </div>
 
 </main>
 <script>
-            document.querySelectorAll('.menu-item').forEach(item => {
-          item.addEventListener('click', (event) => {
-            event.preventDefault(); // Empêche le comportement par défaut du lien
-       
-            const contentId = item.getAttribute('data-content'); // Récupère l'id du contenu associé
-            const allContents = document.querySelectorAll('.content');
-           
-            // Masquer tous les contenus
-            allContents.forEach(content => {
-              content.style.display = 'none';
+    document.querySelectorAll('.menu-item').forEach(item => {
+  item.addEventListener('click', (event) => {
+    event.preventDefault(); // Empêche le comportement par défaut du lien
+
+    const contentId = item.getAttribute('data-content'); // Récupère l'id du contenu associé
+    const allContents = document.querySelectorAll('.content');
+   
+    // Masquer tous les contenus
+    allContents.forEach(content => {
+      content.style.display = 'none';
+    });
+
+    // Afficher le contenu correspondant
+    document.getElementById(contentId).style.display = 'block';
+  });
+});
+  
+  
+    document.addEventListener("DOMContentLoaded", function() {
+        const menuItems = document.querySelectorAll(".menu-item");
+        const introduction = document.getElementById("introduction"); // Sélectionne l'intro
+        const sections = document.querySelectorAll(".content"); // Sélectionne toutes les sections
+
+        menuItems.forEach(item => {
+            item.addEventListener("click", function(event) {
+                event.preventDefault(); // Empêche le rechargement de la page
+
+                // Masque l'introduction quand on clique sur un menu
+                if (introduction) {
+                    introduction.style.display = "none";
+                }
+
+                // Masque toutes les sections
+                sections.forEach(section => section.style.display = "none");
+
+                // Affiche la section correspondant au menu cliqué
+                const sectionId = this.getAttribute("data-content");
+                const targetSection = document.getElementById(sectionId);
+                if (targetSection) {
+                    targetSection.style.display = "block";
+                }
             });
-       
-            // Afficher le contenu correspondant
-            document.getElementById(contentId).style.display = 'block';
-          });
         });
-          </script>
-     
-       <script>
-        function changeLanguage() {
-            const select = document.getElementById('language-select');
-            const selectedOption = select.options[select.selectedIndex];
-            const url = selectedOption.getAttribute('data-url');
-            if (url) {
-                window.location.href = url;
-            }
-        }
-    </script>
+    });
+</script>
     
 </body>
-</html>
 </html>
