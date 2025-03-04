@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 echo 'inscription reussie';
                 // Rediriger vers la page d'accueil
-                header('Location: ../index.html');
+                header('Location: ../index.php');
                 exit();
             } else {
                 echo "Mot de passe incorrect.";
@@ -47,6 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -76,17 +77,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <select id="language-select" onchange="changeLanguage()">
                     <option value="" class="accent">Tu cherches une langue ? </option>
                     <option value="es" disabled style="color: grey;">Espagnol</option>
-                    <option value="fr" data-url="../accentfr.html">Français</option>
+                    <option value="fr" data-url="../accentfr.php">Français</option>
                     <option value="it" disabled style="color: grey;">Italien</option>
                     <option value="pt" disabled style="color: grey;">Portugais</option>
                 </select>
             </div>
         </div>
-        <a href="../index.html"><div class="logo" data-tooltip="homepage"></div></a>
+        <a href="../index.php"><div class="logo" data-tooltip="homepage"></div></a>
         <div></div>
         <div class="right-align">
-            <a href="../apropos.html"><div class="apropos" data-tooltip="à propos"></div></a>
-            <a href="connexion.php"><div class="connexion" data-tooltip="connexion"></div></a>
+            <a href="../apropos.php"><div class="apropos" data-tooltip="à propos"></div></a>
+            <a href="inscription.php"><div class="connexion" data-tooltip="connexion"></div></a>
         </div>
     </div>
 </header>
