@@ -18,19 +18,19 @@ session_start();
                 <select id="language-select" onchange="changeLanguage()">
                     <option value="" class="accent">Tu cherches une langue ? </option>
                     <option value="es" disabled style="color: grey;">Espagnol</option>
-                    <option value="fr" data-url="accentfr.html">Français</option>
+                    <option value="fr" data-url="accentfr.php">Français</option>
                     <option value="it" disabled style="color: grey;">Italien</option>
                     <option value="pt" disabled style="color: grey;">Portugais</option>
                 </select>
             </div>
         </div>
-        <a href="index.html"><div class="logo" data-tooltip="homepage">
+        <a href="index.php"><div class="logo" data-tooltip="homepage">
         </div></a>
         <div></div>
         <div class="right-align">
-            <a href="apropos.html"><div class="apropos" data-tooltip="à propos">
+            <a href="apropos.php"><div class="apropos" data-tooltip="à propos">
             </div></a>
-            <a href="compte/connexion.php"><div class="connexion" data-tooltip="connexion">
+            <a href="compte/inscription.php"><div class="connexion" data-tooltip="connexion">
             </div></a>
         </div>
     </div>
