@@ -5,7 +5,7 @@ session_start();
 if (!isset($_SESSION['nom']) || !isset($_SESSION['email']) || 
 !isset($_SESSION['prenom']) || !isset($_SESSION['niveau']) || 
 !isset($_SESSION['statu'])) { 
-    header('Location: connexion.php');
+    header('Location: inscription.php');
     exit();
 } else {
 }
@@ -86,6 +86,16 @@ unset($_SESSION['password']); // Ensure password is not accessible here
     </div>
 
 </div>
+<script>
+    function changeLanguage() {
+        const select = document.getElementById('language-select');
+        const selectedOption = select.options[select.selectedIndex];
+        const url = selectedOption.getAttribute('data-url');
+        if (url) {
+            window.location.href = url;
+        }
+    }
+</script>
 
 <?php
 if (isset($_POST['logout'])) {
@@ -101,6 +111,11 @@ if (isset($_POST['logout'])) {
 
 </body>
 </html>
+
+
+
+
+
 
 
 
