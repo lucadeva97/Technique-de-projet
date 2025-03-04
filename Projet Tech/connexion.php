@@ -77,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <select id="language-select" onchange="changeLanguage()">
                     <option value="" class="accent">Tu cherches une langue ? </option>
                     <option value="es" disabled style="color: grey;">Espagnol</option>
-                    <option value="fr" data-url="../accentfr.php">Français</option>
+                    <option value="fr" data-url="../index.php">Français</option>
                     <option value="it" disabled style="color: grey;">Italien</option>
                     <option value="pt" disabled style="color: grey;">Portugais</option>
                 </select>
