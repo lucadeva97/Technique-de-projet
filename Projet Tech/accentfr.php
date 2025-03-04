@@ -26,19 +26,19 @@ session_start();
                 <select id="language-select" onchange="changeLanguage()">
                     <option value="" class="accent">Tu cherches une langue ? </option>
                     <option value="es" disabled style="color: grey;">Espagnol</option>
-                    <option value="fr"><a href="accentfr.html" class="accent" data-lang="fr">Français</a></option>
+                    <option value="fr"><a href="accentfr.php" class="accent" data-lang="fr">Français</a></option>
                     <option value="it" disabled style="color: grey;">Italien</option>
                     <option value="pt" disabled style="color: grey;">Portugais</option>
                 </select>
             </div>
         </div>
-        <a href="index.html"><div class="logo" data-tooltip="homepage">
+        <a href="index.php"><div class="logo" data-tooltip="homepage">
         </div></a>
         <div></div>
         <div class="right-align">
-            <a href="apropos.html"><div class="apropos" data-tooltip="à propos">
+            <a href="apropos.php"><div class="apropos" data-tooltip="à propos">
             </div></a>
-            <a href="compte/connexion.php"><div class="connexion" data-tooltip="connexion">
+            <a href="compte/inscription.php"><div class="connexion" data-tooltip="connexion">
             </div></a>
         </div>
     </div>
@@ -59,7 +59,7 @@ session_start();
     <i>Fort de France (Martinique)</i>
 </div>
 <div id="tuile_grenoble" class="tuiles">
-    <a href="grenoble.html"><img src="images/grenoble.jpeg" alt="grenoble" class="image_tuile hover-effect"></a>
+    <a href="grenoble.php"><img src="images/grenoble.jpeg" alt="grenoble" class="image_tuile hover-effect"></a>
     <br>    
     <i>Grenoble</i>
 </div>
@@ -74,7 +74,7 @@ session_start();
     <i>Montpellier</i>
 </div>
 <div id="tuile_montreal" class="tuiles">
-    <a href="quebec.html"><img src="images/montreal.jpeg" alt="montreal" class="image_tuile hover-effect"></a>
+    <a href="quebec.php"><img src="images/montreal.jpeg" alt="montreal" class="image_tuile hover-effect"></a>
     <br> 
     <i>Montréal (Québec)</i>
 </div>
