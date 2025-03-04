@@ -1,12 +1,12 @@
 header {
     border-bottom: 1px solid black;
-    position: sticky;
+    position:static;
     z-index: 1000;
     top: 0;
     background-color: white;
     padding: 20px;
+    width: 105%;
 }
-
 
 .header-container {
     display: grid;
@@ -16,12 +16,10 @@ header {
     justify-items: space-between;
 }
 
-
 .left-align {
     display: flex;
     align-items: center;
 }
-
 
 #tutoriel-tooltip {
     height: 40px;
@@ -36,7 +34,6 @@ header {
     cursor: pointer;
 }
 
-
 #tutoriel-tooltip:hover::before,
 #tutoriel-tooltip:hover::after {
     content: attr(data-tooltip);
@@ -47,18 +44,16 @@ header {
     left: 4.7rem;
     border-radius: 3px;
     color:rgba(36, 36, 36, 0.483);
-    transform: translateY(-10px);
+    transform: translateY(-10px); 
     opacity: 0;
     transition: opacity 1s easy, transform 1s easy;
 }
-
 
 #tutoriel-tooltip:hover::before,
 #tutoriel-tooltip:hover::after {
     opacity: 1;  /* Fade-in */
     transform: translateY(0);  /* Move into its final position */
 }
-
 
 /* LOGO */
 .logo {
@@ -81,11 +76,10 @@ header {
     left: 14rem;
     border-radius: 3px;
     color:rgba(36, 36, 36, 0.483);
-    transform: translateY(-10px);
+    transform: translateY(-10px); 
     opacity: 0;
     transition: opacity 1s easy, transform 1s easy;
 }
-
 
 .logo:hover::before,
 .logo:hover::after {
@@ -93,14 +87,12 @@ header {
     transform: translateY(0);  /* Move into its final position */
 }
 
-
 .right-align {
     display: flex;
     justify-content: space-around;
     padding: 0px;
     margin: 0px;
 }
-
 
 /* APROPOS */
 .apropos {
@@ -123,10 +115,8 @@ header {
     border-radius: 3px;
     color:rgba(36, 36, 36, 0.483);
 
-
     white-space: nowrap;
 }
-
 
 /* CONNEXION */
 .connexion {
@@ -140,7 +130,6 @@ header {
     position: relative;
     white-space: nowrap;
 }
-
 
 .connexion:hover::before,
 .connexion:hover::after {
@@ -159,7 +148,6 @@ header {
     box-sizing: border-box;
 }
 
-
 body {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(180deg, #f0f8ff, #e0ebf7);
@@ -172,7 +160,6 @@ body {
     align-items: center;
 }
 
-
 /* Header */
 h1 {
     font-size: 3em;
@@ -184,8 +171,7 @@ h1 {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-
-/* Navbar */
+/* Navbar hist ex variation */
 nav {
     background: linear-gradient(90deg, #1c3d5a, #2980b9);
     padding: 15px;
@@ -196,13 +182,11 @@ nav {
     text-align: center;
 }
 
-
 #grid {
     display: flex;
     justify-content: center;
     gap: 15px;
 }
-
 
 .menu-item {
     color: #fff;
@@ -213,24 +197,20 @@ nav {
     transition: all 0.3s ease;
 }
 
-
 .menu-item:hover {
     background: #3498db;
     transform: translateY(-2px);
 }
 
-
 .menu-item:active {
     background: #1c3d5a;
 }
-
 
 /* Content Blocks */
 .content {
     max-width: 900px;
     width: 100%;
 }
-
 
 section {
     background: #ffffff;
@@ -241,7 +221,6 @@ section {
     animation: fadeIn 0.8s ease-in-out;
 }
 
-
 h2 {
     color: #1c3d5a;
     margin-bottom: 15px;
@@ -251,18 +230,24 @@ h2 {
     padding-bottom: 5px;
 }
 
-
 /* Pronunciation Section */
 #prononciation {
     background: #eaf2f8;
 }
-
 
 #prononciation audio {
     width: 100%;
     border-radius: 8px;
     padding: 5px;
     background: #fff;
+}
+
+
+#histoire {
+    max-width: 900px; /* ou la largeur que tu veux */
+    width: 100%;
+    margin: 0 auto; /* Centre horizontalement */
+    text-align: justify; /* Optionnel, pour un meilleur rendu du texte */
 }
 
 
@@ -280,17 +265,14 @@ button {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-
 button:hover {
     background: #1c3d5a;
     transform: scale(1.05);
 }
 
-
 button:active {
     background: #0e253a;
 }
-
 
 /* Tables */
 table {
@@ -299,34 +281,28 @@ table {
     margin-top: 20px;
 }
 
-
 table, th, td {
     border: 1px solid #ddd;
     text-align: center;
 }
-
 
 th, td {
     padding: 12px;
     font-size: 1.1em;
 }
 
-
 th {
     background: #1c3d5a;
     color: white;
 }
 
-
 tr:nth-child(even) {
     background: #f4f7fa;
 }
 
-
 tr:hover {
     background: #d6e9ff;
 }
-
 
 /* Fade-in animation */
 @keyframes fadeIn {
@@ -340,33 +316,26 @@ tr:hover {
     }
 }
 
-
 /* Responsive */
 @media screen and (max-width: 768px) {
     nav {
         width: 100%;
     }
 
-
     #grid {
         flex-direction: column;
     }
-
 
     .menu-item {
         padding: 10px 15px;
     }
 
-
     h1 {
         font-size: 2.5em;
     }
-
 
     button {
         padding: 10px 20px;
         font-size: 1em;
     }
 }
-
-
