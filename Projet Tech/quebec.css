@@ -230,6 +230,17 @@ h2 {
     padding-bottom: 5px;
 }
 
+/*INTRODUCTION*/
+
+#introduction {
+    font-family: 'Roboto', sans-serif; /* Police moderne et lisible */
+    background-color: #f9f9f9; /* Arrière-plan doux pour plus de confort */
+    color: #333; /* Couleur du texte pour une lecture facile */
+    line-height: 1.8;
+    padding: 20px;
+    margin: 0;
+}
+
 /* Pronunciation Section */
 #prononciation {
     background: #eaf2f8;
