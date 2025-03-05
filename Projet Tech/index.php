@@ -28,19 +28,19 @@ session_start();
         <div class="right-align">
             <a href="apropos.php"><div class="apropos" data-tooltip="à propos">
             </div></a>
-            <a href="compte/inscription.php"><div class="connexion" data-tooltip="connexion">
+            <a href="compte/compte.php"><div class="connexion" data-tooltip="connexion">
             </div></a>
         </div>
     </div>
 </header>
 <!-- Fin header -->
 <body>
-    <div id="barres-recherche">
+        <div id="barres-recherche">
         <div class="language-selector">
             <select id="language-select" onchange="changeLanguage()">
                 <option value="" class="accent">Tu cherches une langue ? </option>
                 <option value="es" disabled style="color: grey;">Espagnol</option>
-                <option value="fr"><a href="accentfr.php" class="accent" data-lang="fr">Français</a></option>
+                <option value="fr" data-url="accentfr.php">Français</option>
                 <option value="it" disabled style="color: grey;">Italien</option>
                 <option value="pt" disabled style="color: grey;">Portugais</option>
             </select>
@@ -57,6 +57,7 @@ session_start();
                 <option value="Florianópolis"></option>
                 <option value="Fortaleza"></option>
                 <option value="São Paulo"></option>
+                <option value="Santa Bárbara do Sul"></option>
                 <!-- Espagne -->
                 <option value="Espagne" disabled hidden></option>
                 <option value="Madrid"></option>
@@ -98,7 +99,8 @@ session_start();
             img1.src = 'images/tuto1.png'; // Change to the path of your first image
             img1.style.position = 'fixed';
             img1.style.top = '10px';
-            img1.style.left = '850px';
+            img1.style.left = '70%';
+            img1.style.transform = 'translateX(-50%)';
             img1.style.zIndex = '1000';
             img1.classList.add('hover-effect');
             document.body.appendChild(img1);
@@ -108,7 +110,7 @@ session_start();
                 img2.src = 'images/tuto2.png'; // Change to the path of your second image
                 img2.style.position = 'fixed';
                 img2.style.top = '100px';
-                img2.style.left = '200px'; // Adjust the position as needed
+                img2.style.left = '220px'; // Adjust the position as needed
                 img2.style.zIndex = '1000';
                 img2.classList.add('hover-effect');
                 document.body.appendChild(img2);
@@ -120,22 +122,42 @@ session_start();
                     img3.src = 'images/tuto3.png'; // Change to the path of your third image
                     img3.style.position = 'fixed';
                     img3.style.top = '100px';
-                    img3.style.right = '200px'; // Adjust the position as needed
+                    img3.style.right = '220px'; // Adjust the position as needed
                     img3.style.zIndex = '1000';
                     img3.classList.add('hover-effect');
                     document.body.appendChild(img3);
 
-                    img3.addEventListener('click', () => {
-                        document.body.removeChild(img3);
-                    });
-
                     document.body.removeChild(img2);
+
+                    img3.addEventListener('click', () => {
+                        const img4 = document.createElement('img');
+                        img4.src = 'images/tuto4.png'; // Change to the path of your fourth image
+                        img4.style.position = 'fixed';
+                        img4.style.top = '250px';
+                        img4.style.right = '390px'; // Adjust the position as needed
+                        img4.style.zIndex = '1000';
+                        img4.classList.add('hover-effect');
+                        document.body.appendChild(img4);
+
+                        document.body.removeChild(img3);
+
+                        img4.addEventListener('click', () => {
+                            document.body.removeChild(img4);
+                        });
+                    });
                 });
             });
         }
-    </script>
-    <!-- Ensure JavaScript compatibility with different browsers -->
-    <script>
+
+        function changeLanguage() {
+            const select = document.getElementById('language-select');
+            const selectedOption = select.options[select.selectedIndex];
+            const url = selectedOption.getAttribute('data-url');
+            if (url) {
+                window.location.href = url;
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
             if (typeof initMap === 'function') {
                 initMap();

@@ -5,7 +5,7 @@ session_start();
 if (!isset($_SESSION['nom']) || !isset($_SESSION['email']) || 
 !isset($_SESSION['prenom']) || !isset($_SESSION['niveau']) || 
 !isset($_SESSION['statu'])) { 
-    header('Location: inscription.php');
+    header('Location: connexion.php');
     exit();
 } else {
 }
@@ -53,7 +53,7 @@ unset($_SESSION['password']); // Ensure password is not accessible here
         <div class="right-align">
             <a href="../apropos.php"><div class="apropos" data-tooltip="à propos">
             </div></a>
-            <a href="inscription.php"><div class="connexion" data-tooltip="connexion">
+            <a href="connexion.php"><div class="connexion" data-tooltip="connexion">
             </div></a>
         </div>
     </div>

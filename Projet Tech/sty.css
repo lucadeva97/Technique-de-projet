@@ -41,12 +41,25 @@ header {
 #tutoriel {
     font-size: 30px;
     cursor: pointer;
+    animation: hoverEffect 3s ease-in-out;
+}
+
+@keyframes hoverEffect {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 #tutoriel-tooltip:hover::before,
 #tutoriel-tooltip:hover::after {
     content: attr(data-tooltip);
-    position: absolute;
+    position: fixed;
     background-color: #cccccc37;
     padding: 3px;
     top: 4rem;
@@ -61,9 +74,8 @@ header {
 #tutoriel-tooltip:hover::before,
 #tutoriel-tooltip:hover::after {
     opacity: 1;  /* Fade-in */
-    transform: translateY(0);  /* Move into its final position */
+    transform: translateY(0); 
 }
-
 /* LOGO */
 .logo {
     display: flex;
@@ -276,7 +288,7 @@ header {
     height: auto;
     background-color: rgb(250, 245, 245);
     margin: 20px auto;
-    padding: 15px;
+    padding: 5px;
     font-size: 16px;
     line-height: 1.4;
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
@@ -304,7 +316,7 @@ header {
     left: 50%;
     transform: translate(-50%, -50%);
     color: rgb(3, 3, 3);
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
     opacity: 0;
     transition: opacity 1s; /* Slow appearance of the text */
@@ -539,6 +551,12 @@ header {
     #map {
         height: 300px; /* Adjust height for small screens */
     }
+
+    .hover-effect {
+        top: 50px !important; /* Adjust the position of the image */
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
 }
 
 @media (max-width: 480px) {
@@ -573,6 +591,12 @@ header {
         width: 90%; /* Full width on small screens */
         margin: 5px 0; /* Add some margin between elements */
     }
+
+    .hover-effect {
+        top: 50px !important; /* Adjust the position of the image */
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
 }
 
 @media (max-width: 1200px) {
@@ -590,7 +614,7 @@ header {
     background-color: #e0b8c2;
     color: #070707;
     text-align: center;
-    padding: 10px 0;
+    padding: 5px 0;
     position: fixed;
     bottom: 0;
     left: 0;

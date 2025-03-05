@@ -31,7 +31,7 @@ session_start();
         <div></div>
         <div class="right-align">
             <a href="apropos.php"><div class="apropos" data-tooltip="à propos"></div></a>
-            <a href="compte/inscription.php"><div class="connexion" data-tooltip="connexion"></div></a>
+            <a href="compte/connexion.php"><div class="connexion" data-tooltip="connexion"></div></a>
         </div>
     </div>
 </header>
@@ -40,20 +40,22 @@ session_start();
         <div class="nous4">
             <div class="nous-div">
                 <img src="images/shishi.jpeg" alt="shishi"  class="nous_images">
-                <div class="text1">Cliente - Shirihane CHIBANI</div>
+                <div class="text1">Cliente <br> Shirihane CHIBANI</div>
             </div>
             <div class="nous-div">
                 <img src="images/nes.jpeg" alt="nes" class="nous_images">
-                <div class="text1">Product Owner - Neslihan OZCAN</div>
+                <div class="text1">Product Owner <br> Neslihan OZCAN</div>
             </div>
             <div class="nous-div">
                 <img src="images/luca.jpeg" alt="luca" class="nous_images">
-                <div class="text1">Scrum Master - Luca DE VALERIO</div>
+                <div class="text1">Scrum Master <br> Luca DE VALERIO</div>
             </div>
             <div class="nous-div">
                 <img src="images/shai.jpg" alt="shaiane" class="nous_images">
-                <div class="text1">Development Team - Shaiane NEVES</div>
+                <div class="text1">Development Team <br> Shaiane NEVES</div>
             </div>
+            <br>
+            <br>
         </div>
         <div class="informations">
             <p class="cadre_apropos">Qui sommes-nous ? <br>

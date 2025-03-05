@@ -24,19 +24,19 @@ isset($_SESSION['statu'])) {
                 <select id="language-select" onchange="changeLanguage()">
                     <option value="" class="accent">Tu cherches une langue ? </option>
                     <option value="es" disabled style="color: grey;">Espagnol</option>
-                    <option value="fr" data-url="accentfr.html">Français</option>
+                    <option value="fr" data-url="accentfr.php">Français</option>
                     <option value="it" disabled style="color: grey;">Italien</option>
                     <option value="pt" disabled style="color: grey;">Portugais</option>
                 </select>
             </div>
         </div>
-        <a href="index.html"><div class="logo" data-tooltip="homepage">
+        <a href="index.php"><div class="logo" data-tooltip="homepage">
         </div></a>
         <div></div>
         <div class="right-align">
-            <a href="apropos.html"><div class="apropos" data-tooltip="à propos">
+            <a href="apropos.php"><div class="apropos" data-tooltip="à propos">
             </div></a>
-            <a href="compte/inscription.php"><div class="connexion" data-tooltip="connexion">
+            <a href="compte/connexion.php"><div class="connexion" data-tooltip="connexion">
             </div></a>
         </div>
     </div>
@@ -62,7 +62,7 @@ isset($_SESSION['statu'])) {
             Grenoble, située au cœur des Alpes françaises, est une ville riche en histoire, en culture et en beauté naturelle. Entre montagnes majestueuses, patrimoine historique et innovations modernes, Grenoble offre un cadre unique à découvrir. Bienvenue sur notre page dédiée à cette ville captivante ! Nous sommes heureux de vous inviter à explorer Grenoble à travers un voyage interactif. Dans la section "Histoire", vous découvrirez l'évolution de la langue française à Grenoble et ses spécificités locales. La rubrique "Prononciation" vous permet d'écouter et de comparer les prononciations grenobloises et parisiennes. Dans "Exercices", vous pourrez tester vos connaissances et approfondir ce que vous avez appris. Enfin, dans "Sources", vous trouverez des références pour en savoir plus sur cette belle ville. Nous espérons que vous apprécierez cette immersion grenobloise ! 🌟
             <br>
             <audio controls>
-                <source src="extraits/grenoble.mp3.mp3" type="audio/mpeg">
+                <source src="extraits/grenoble.mp3" type="audio/mpeg">
             </audio>
         </div>
        
@@ -182,7 +182,7 @@ isset($_SESSION['statu'])) {
                 <p>Le verbe <strong>"Nachave"</strong> vient du romani et signifie "s’en aller".</p>
                 <p><strong>Grenoble :</strong></p>
                 <audio controls>
-                    <source src="nachave.mp3" type="audio/mpeg">
+                    <source src="nachav.mp3" type="audio/mpeg">
                 </audio>
                 <p><strong>Français standard :</strong> ("Partir")</p>
                 <audio controls>
@@ -234,30 +234,27 @@ isset($_SESSION['statu'])) {
                         Prudhomme, A. (1888). Histoire de Grenoble. A. Gratier. <br>
                         Vincenti, A. (2017). Les mots du bitume.</p> <br>
                     </p>
-                </div>
     </div>
-
 </main>
 <script>
-    document.querySelectorAll('.menu-item').forEach(item => {
-  item.addEventListener('click', (event) => {
-    event.preventDefault(); // Empêche le comportement par défaut du lien
-
-    const contentId = item.getAttribute('data-content'); // Récupère l'id du contenu associé
-    const allContents = document.querySelectorAll('.content');
-   
-    // Masquer tous les contenus
-    allContents.forEach(content => {
-      content.style.display = 'none';
+            document.querySelectorAll('.menu-item').forEach(item => {
+          item.addEventListener('click', (event) => {
+            event.preventDefault(); // Empêche le comportement par défaut du lien
+       
+            const contentId = item.getAttribute('data-content'); // Récupère l'id du contenu associé
+            const allContents = document.querySelectorAll('.content');
+           
+            // Masquer tous les contenus
+            allContents.forEach(content => {
+              content.style.display = 'none';
+            });
+       
+            // Afficher le contenu correspondant
+            document.getElementById(contentId).style.display = 'block';
+});
     });
 
-    // Afficher le contenu correspondant
-    document.getElementById(contentId).style.display = 'block';
-  });
-});
-  
-  
-    document.addEventListener("DOMContentLoaded", function() {
+            document.addEventListener("DOMContentLoaded", function() {
         const menuItems = document.querySelectorAll(".menu-item");
         const introduction = document.getElementById("introduction"); // Sélectionne l'intro
         const sections = document.querySelectorAll(".content"); // Sélectionne toutes les sections
@@ -283,16 +280,30 @@ isset($_SESSION['statu'])) {
             });
         });
     });
-</script>
-    
+          </script>
+     
+       <script>
+        function changeLanguage() {
+            const select = document.getElementById('language-select');
+            const selectedOption = select.options[select.selectedIndex];
+            const url = selectedOption.getAttribute('data-url');
+            if (url) {
+                window.location.href = url;
+            }
+        }
+    </script>
+
 </body>
 </html>
 
-          
 <?php 
-
-    } else {
-        header('Location: compte/inscription.php'); 
+} else {
+    echo "<script>
+        alert('Connecte-toi pour accéder à nos activités.');
+        setTimeout(function() {
+            window.location.href = 'compte/connexion.php';
+        }, 1000);
+    </script>";
     exit();
-    }
-    ?>
+}
+?>

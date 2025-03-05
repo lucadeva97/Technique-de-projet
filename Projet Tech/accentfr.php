@@ -15,6 +15,10 @@ isset($_SESSION['statu'])) {
     <title>Variations du français</title>
     <link rel="stylesheet" href="sty.css">
     <link rel="icon" href="minilogo.png" type="image/png">
+        <!-- Add meta tags for better mobile responsiveness -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes">
     <style>
         .hover-effect {
             transition: transform 0.3s;
@@ -43,7 +47,7 @@ isset($_SESSION['statu'])) {
         <div class="right-align">
             <a href="apropos.php"><div class="apropos" data-tooltip="à propos">
             </div></a>
-            <a href="compte/inscription.php"><div class="connexion" data-tooltip="connexion">
+            <a href="compte/connexion.php"><div class="connexion" data-tooltip="connexion">
             </div></a>
         </div>
     </div>
@@ -59,7 +63,7 @@ isset($_SESSION['statu'])) {
     <i>Cayenne (Guyane Française)</i>
 </div>
 <div id="tuile_fortdefrance" class="tuiles">
-    <img src="images/fortdefrance.jpg" alt="fortdefrance" class="image_tuile"></a>
+    <img src="images/fortdefrance.png" alt="fortdefrance" class="image_tuile"></a>
     <br>    
     <i>Fort de France (Martinique)</i>
 </div>
@@ -102,7 +106,12 @@ isset($_SESSION['statu'])) {
 <?php 
 
     } else {
-        header('Location: compte/inscription.php'); 
-    exit();
+        echo "<script>
+            alert('Connecte-toi pour accéder à nos activités.');
+            setTimeout(function() {
+                window.location.href = 'compte/connexion.php';
+            }, 1000);
+        </script>";
+        exit();
     }
     ?>

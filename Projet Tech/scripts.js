@@ -11,9 +11,9 @@ function initMap() {
         { coords: { lat: 48.8566, lng: 2.3522 }, lang: 'fr', text: 'Paris', img: 'images/paris.jpeg', audio: 'extraits/paris.mp3', href: 'paris.html' }, // Paris, France
         { coords: { lat: -27.5954, lng: -48.5480 }, lang: 'pt', text: 'Florianópolis', img: 'images/flo.jpg', audio: 'extraits/florianopolis.ogg' }, // Florianópolis, Brésil
         { coords: { lat: -3.7172, lng: -38.5434 }, lang: 'pt', text: 'Fortaleza', img: 'images/forta.jpg', audio: 'extraits/fortaleza.ogg' }, // Fortaleza, Brésil
-        { coords: { lat: 45.5017, lng: -73.5673 }, lang: 'fr', text: 'Montréal', img: 'images/montreal.jpeg', audio: 'extraits/montreal.mp3', href: 'montreal/quebec.html' }, // Montréal, Canada
+        { coords: { lat: 45.5017, lng: -73.5673 }, lang: 'fr', text: 'Montréal', img: 'images/montreal.jpeg', audio: 'extraits/montreal.mp3', href: 'quebec.php' }, // Montréal, Canada
         { coords: { lat: 40.4168, lng: -3.7038 }, lang: 'es', text: 'Madrid', img: 'images/madrid.jpg' }, // Madrid, Espagne
-        { coords: { lat: 45.1885, lng: 5.7245 }, lang: 'fr', text: 'Grenoble', img: 'images/grenoble.jpg', audio: 'extraits/grenoble.mp3', href: 'grenoble.html' }, // Grenoble, France
+        { coords: { lat: 45.1885, lng: 5.7245 }, lang: 'fr', text: 'Grenoble', img: 'images/grenoble.jpg', audio: 'extraits/grenoble.mp3', href: 'grenoble.php' }, // Grenoble, France
         { coords: { lat: 43.2965, lng: 5.3698 }, lang: 'fr', text: 'Marseille', img: 'images/marseille.jpeg', }, // Marseille, France
         { coords: { lat: 45.4408, lng: 12.3155 }, lang: 'it', text: 'Venise', img: 'images/venise.jpeg' }, // Venise, Italie
         { coords: { lat: -23.5505, lng: -46.6333 }, lang: 'pt', text: 'São Paulo', img: 'images/sp.jpg', audio: 'extraits/saopaulo.mp4' }, // São Paulo, Brésil
@@ -29,7 +29,8 @@ function initMap() {
         { coords: { lat: -30.0346, lng: -51.2177 }, lang: 'pt', text: 'Porto Alegre', img: 'images/portoalegre.jpg', audio: 'extraits/portoalegre.ogg' }, // Porto Alegre, Brésil
         { coords: { lat: -2.5307, lng: -44.3068 }, lang: 'pt', text: 'São Luís', img: 'images/saoluis.jpg', audio: 'extraits/saoluis.ogg' }, // São Luís, Brésil
         { coords: { lat: 14.6161, lng: -61.0588 }, lang: 'fr', text: 'Fort-de-France', img: 'images/fortdefrance_.png', audio: 'extraits/fortdefrance.mpeg' }, // Fort-de-France, Martinique
-        { coords: { lat: 43.6045, lng: 1.4442 }, lang: 'fr', text: 'Toulouse', img: 'images/toulouse.jpeg', audio: ['extraits/toulouse.mp3', 'extraits/toulouse_greg.mp3'] } // Toulouse, France
+        { coords: { lat: 43.6045, lng: 1.4442 }, lang: 'fr', text: 'Toulouse', img: 'images/toulouse.jpeg', audio: ['extraits/toulouse.mp3', 'extraits/toulouse_greg.mp3'] }, // Toulouse, France
+        { coords: { lat: -27.8926, lng: -53.2511 }, lang: 'pt', text: 'Santa Bárbara do Sul', img: 'images/stb.jpeg', audio: 'extraits/santabarbara.ogg' } // Santa Bárbara do Sul, Brésil
     ];
     let currentInfoWindow = null;
 

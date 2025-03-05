@@ -89,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div></div>
         <div class="right-align">
             <a href="../apropos.php"><div class="apropos" data-tooltip="à propos"></div></a>
-            <a href="inscription.php"><div class="connexion" data-tooltip="connexion"></div></a>
+            <a href="connexion.php"><div class="connexion" data-tooltip="connexion"></div></a>
         </div>
     </div>
 </header>

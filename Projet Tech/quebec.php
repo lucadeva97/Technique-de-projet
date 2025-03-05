@@ -17,23 +17,23 @@ isset($_SESSION['statu'])) {
     <link rel="icon" href="minilogo.png" type="image/png">
 </head>
 <header>
-    <div class="header-container">
+<div class="header-container">
         <div class="left-align">
             <div class="language-selector">
                 <select id="language-select" onchange="changeLanguage()">
-                    <option value="">Tu cherches une langue ? </option>
-                    <option value="es"><a href="accentesp.html" class="accent" data-lang="es"></a>Espagnol</option>
-                    <option value="fr"><a href="accentfr.html" class="accent" data-lang="fr">Français</a></option>
-                    <option value="it"><a href="accentita.html" class="accent" data-lang="it"></a>Italien</option>
-                    <option value="pt"><a href="accentpt.html" class="accent" data-lang="pt"></a>Portugais</option>
+                    <option value="" class="accent">Tu cherches une langue ? </option>
+                    <option value="es" disabled style="color: grey;">Espagnol</option>
+                    <option value="fr" data-url="accentfr.php">Français</option>
+                    <option value="it" disabled style="color: grey;">Italien</option>
+                    <option value="pt" disabled style="color: grey;">Portugais</option>
                 </select>
             </div>
         </div>
-        <a href="index.html"><div class="logo" data-tooltip="homepage">
+        <a href="index.php"><div class="logo" data-tooltip="homepage">
         </div></a>
         <div></div>
         <div class="right-align">
-            <a href="apropos.html"><div class="apropos" data-tooltip="à propos">
+            <a href="apropos.php"><div class="apropos" data-tooltip="à propos">
             </div></a>
             <a href="compte/inscription.php"><div class="connexion" data-tooltip="connexion">
             </div></a>
@@ -72,7 +72,7 @@ isset($_SESSION['statu'])) {
         Écoutez l’histoire d’un habitant du Québec qui partage son parcours, ses découvertes et son quotidien dans cette province pleine de richesse. Cliquez sur l’audio pour découvrir son récit.
     <br>
     <audio controls>
-        <source src="montreal.mp3" type="audio/mpeg">
+        <source src="extraits/montreal.mp3" type="audio/mpeg">
     </audio>
 </div>
 
@@ -198,9 +198,9 @@ isset($_SESSION['statu'])) {
             <p><div class="content" id="sources" style="display: none;">📚</span> <strong>Ressources :</strong></p>
             
                 <img src= "lalangueracontée.png" alt="la langue racontée" >
-                <img src= "dou vient laccent des quebecois.png" alt="d'où vient l'accent des quebecois" >
-                 <img src= "lamodernisation.png" alt="la modernisation de l'accent quebecois" >
-                <img src= "langue&politique.png" alt="langue & politique"></li>
+                <img src= "accentquebecois.jpeg" alt="d'où vient l'accent des quebecois" >
+                 <img src= "lamodernisation.jpeg" alt="la modernisation de l'accent quebecois" >
+                <img src= "langue&politique.jpeg" alt="langue & politique"></li>
                 <li><a href="https://fr.wikipedia.org/wiki/Histoire_du_français_québécois" target="_blank">Histoire du français québécois - Wikipédia (FR)</a></li>
                 <li><a href="https://en.wikipedia.org/wiki/Quebec_French" target="_blank">Quebec French - Wikipedia (EN)</a></li>
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/CQ46BbbLRrk?si=wc-c2Ul6MWSum39a" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -255,15 +255,28 @@ isset($_SESSION['statu'])) {
         });
     });
 </script>
-
+<script>
+        function changeLanguage() {
+            const select = document.getElementById('language-select');
+            const selectedOption = select.options[select.selectedIndex];
+            const url = selectedOption.getAttribute('data-url');
+            if (url) {
+                window.location.href = url;
+            }
+        }
+    </script>
 </body>
 </html>
 
 	
 <?php 
-
-    } else {
-        header('Location: compte/inscription.php'); 
+} else {
+    echo "<script>
+        alert('Connecte-toi pour accéder à nos activités.');
+        setTimeout(function() {
+            window.location.href = 'compte/connexion.php';
+        }, 1000);
+    </script>";
     exit();
-    }
-    ?>
+}
+?>

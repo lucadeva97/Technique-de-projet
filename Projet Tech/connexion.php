@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 echo 'inscription reussie';
                 // Rediriger vers la page d'accueil
-                header('Location: ../index.php');
+                header('Location: ../index.html');
                 exit();
             } else {
                 echo "Mot de passe incorrect.";
@@ -47,7 +47,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -56,18 +55,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>Connexion</title>
     <link rel="stylesheet" href="../sty.css">
     <link rel="icon" href="minilogo.png" type="image/png">
-    <style>
-        .button-container {
-            display: flex;
-            justify-content: center;
-        }
-        .button-container a {
-            text-decoration: none;
-        }
-        .button-container button {
-            width: 100%;
-        }
-    </style>
 </head>
 <body>
 <header>
@@ -77,16 +64,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <select id="language-select" onchange="changeLanguage()">
                     <option value="" class="accent">Tu cherches une langue ? </option>
                     <option value="es" disabled style="color: grey;">Espagnol</option>
-                    <option value="fr" data-url="../index.php">Français</option>
+                    <option value="fr" data-url="../accentfr.html">Français</option>
                     <option value="it" disabled style="color: grey;">Italien</option>
                     <option value="pt" disabled style="color: grey;">Portugais</option>
                 </select>
             </div>
         </div>
-        <a href="../index.php"><div class="logo" data-tooltip="homepage"></div></a>
+        <a href="../index.html"><div class="logo" data-tooltip="homepage"></div></a>
         <div></div>
         <div class="right-align">
-            <a href="../apropos.php"><div class="apropos" data-tooltip="à propos"></div></a>
+            <a href="../apropos.html"><div class="apropos" data-tooltip="à propos"></div></a>
             <a href="inscription.php"><div class="connexion" data-tooltip="connexion"></div></a>
         </div>
     </div>
@@ -101,10 +88,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <button type="submit">Connexion</button>
     </form>
     <br>
-    <div class="button-container" id="in-form" style="display:block"></div> 
-        <a href="inscription.php"><button>S'inscrire</button></a>
+    <div class="form-container" id="inscri-form" style="display:block;"></div>
+    <a href="inscription.php"><button> S'inscrire </button></a>
     </div>
-</div>
 <script>
     function changeLanguage() {
         const select = document.getElementById('language-select');
