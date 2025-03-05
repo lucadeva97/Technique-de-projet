@@ -228,7 +228,12 @@ isset($_SESSION['statu'])) {
             
 <div class="content" id="sources" style="display:none;">        
                     <h3>Ressources :</h3>
-                    <p>L’histoire de Grenoble : (source : L'histoire de Grenoble - Grenoble.fr, Histoire de Grenoble — Wikipédia, Histoire de la ville de Grenoble)</p>
+                    <p>Wikipédia. (2025). Histoire de Grenoble. Wikipédia. https://fr.wikipedia.org/wiki/Histoire_de_Grenoble <br>
+                        Ville de Grenoble. (2024). L’histoire de Grenoble. Grenoble.fr. https://www.grenoble.fr/326-l-histoire-de-grenoble.htm <br>
+                        Office de Tourisme de Grenoble. (2024). Histoire de la ville. Grenoble Tourisme. https://www.grenoble-tourisme.com/fr/decouvrir/culture-et-histoire/grenoble-ville-histoire/histoire-de-la-ville/ <br>
+                        Prudhomme, A. (1888). Histoire de Grenoble. A. Gratier. <br>
+                        Vincenti, A. (2017). Les mots du bitume.</p> <br>
+                    </p>
                 </div>
     </div>
 
