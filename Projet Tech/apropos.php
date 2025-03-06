@@ -12,6 +12,15 @@ session_start();
     <link rel="icon" href="minilogo.png" type="image/png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+    
+    <?php 
+
+if (!isset($_SESSION['nom']) && !isset($_SESSION['email']) && 
+!isset($_SESSION['prenom']) && isset($_SESSION['niveau']) && 
+isset($_SESSION['statu'])) { 
+
+?>
+    
 <header>
     <div class="header-container">
         <div class="left-align">
@@ -35,6 +44,41 @@ session_start();
         </div>
     </div>
 </header>
+
+    <?php 
+
+} else {
+
+    ?>
+
+    <header>
+    <div class="header-container">
+        <div class="left-align">
+            <div class="language-selector">
+                <div class="language-selector">
+                <select id="language-select" onchange="changeLanguage()">
+                <option value="" class="accent">Tu cherches une langue ? </option>
+                <option value="es" disabled style="color: grey;">Espagnol</option>
+                <option value="fr"><a href="accentfr.php" class="accent" data-lang="fr">Français</a></option>
+                <option value="it" disabled style="color: grey;">Italien</option>
+                <option value="pt" disabled style="color: grey;">Portugais</option>
+            </select>
+        </div>
+            </div>
+        </div>
+        <a href="index.php"><div class="logo" data-tooltip="homepage"></div></a>
+        <div></div>
+        <div class="right-align">
+            <a href="apropos.php"><div class="apropos" data-tooltip="à propos"></div></a>
+            <a href="compte/connexion.php"><div class="connexion2" data-tooltip="connexion"></div></a>
+        </div>
+    </div>
+</header>
+    
+    <?php
+}
+?>
+    
     <!-- Fin header -->
     <div class="contenu">
         <div class="nous4">
