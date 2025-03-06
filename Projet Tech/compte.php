@@ -53,7 +53,7 @@ unset($_SESSION['password']); // Ensure password is not accessible here
         <div class="right-align">
             <a href="../apropos.php"><div class="apropos" data-tooltip="à propos">
             </div></a>
-            <a href="connexion.php"><div class="connexion" data-tooltip="connexion">
+            <a href="connexion.php"><div class="connexion2" data-tooltip="connexion">
             </div></a>
         </div>
     </div>
