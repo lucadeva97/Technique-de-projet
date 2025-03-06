@@ -118,7 +118,7 @@ header {
     white-space: nowrap;
 }
 
-/* CONNEXION */
+/* CONNEXION - offline */
 .connexion {
     background-image: url('login.png');
     background-size: 50px 50px;
@@ -141,6 +141,30 @@ header {
     border-radius: 3px;
     color:rgba(36, 36, 36, 0.483);
 }
+/* CONNEXION - online */
+.connexion2 {
+    background-image: url('login2.png');
+    background-size: 50px 50px;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    white-space: nowrap;
+}
+
+.connexion:hover::before,
+.connexion:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    background-color: #cccccc37;
+    padding: 3px;
+    top: 2.9rem;
+    border-radius: 3px;
+    color:rgba(36, 36, 36, 0.483);
+}
+
 /*Fin header*//* Reset and Global Styles */
 * {
     margin: 0;
