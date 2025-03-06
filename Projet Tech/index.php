@@ -16,6 +16,14 @@ session_start();
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="mobile-web-app-capable" content="yes">
 </head>
+<?php 
+
+if (!isset($_SESSION['nom']) && !isset($_SESSION['email']) && 
+!isset($_SESSION['prenom']) && isset($_SESSION['niveau']) && 
+isset($_SESSION['statu'])) { 
+
+?>
+
 <header>
     <div class="header-container">
         <div class="left-align">
@@ -28,11 +36,39 @@ session_start();
         <div class="right-align">
             <a href="apropos.php"><div class="apropos" data-tooltip="à propos">
             </div></a>
-            <a href="compte/compte.php"><div class="connexion" data-tooltip="connexion">
+            <a href="compte/inscription.php"><div class="connexion" data-tooltip="connexion">
             </div></a>
         </div>
     </div>
 </header>
+
+<?php 
+
+} else {
+
+    ?>
+    <header>
+    <div class="header-container">
+        <div class="left-align">
+            <button id="tutoriel-tooltip" data-tooltip="tutoriel" onclick="showImage()">
+                <div id="tutoriel" >!</div></button>
+        </div>
+        <a href="index.php"><div class="logo" data-tooltip="homepage">
+        </div></a>
+        <div></div>
+        <div class="right-align">
+            <a href="apropos.php"><div class="apropos" data-tooltip="à propos">
+            </div></a>
+            <a href="compte/inscription.php"><div class="connexion2" data-tooltip="connexion">
+            </div></a>
+        </div>
+    </div>
+</header>
+    
+<?php
+}
+?>
+
 <!-- Fin header -->
 <body>
         <div id="barres-recherche">
