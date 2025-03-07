@@ -17,10 +17,10 @@ isset($_SESSION['statu'])) {
     <link rel="icon" href="minilogo.png" type="image/png">
 </head>
 <header>
-<div class="header-container">
+    <div class="header-container">
         <div class="left-align">
             <div class="language-selector">
-                <select id="language-select" onchange="changeLanguage()">
+            <select id="language-select" onchange="changeLanguage()">
                     <option value="" class="accent">Tu cherches une langue ? </option>
                     <option value="es" disabled style="color: grey;">Espagnol</option>
                     <option value="fr" data-url="accentfr.php">Français</option>
@@ -35,7 +35,7 @@ isset($_SESSION['statu'])) {
         <div class="right-align">
             <a href="apropos.php"><div class="apropos" data-tooltip="à propos">
             </div></a>
-            <a href="compte/inscription.php"><div class="connexion2" data-tooltip="connexion2">
+            <a href="compte/compte.php"><div class="connexion2" data-tooltip="mon compte">
             </div></a>
         </div>
     </div>
@@ -44,14 +44,18 @@ isset($_SESSION['statu'])) {
 
     <nav>
         <ul id="grid">
+        <li><a href="#" class="menu-item" data-content="intro">
+        Introduction</a></li>
+
           <li><a href="#" class="menu-item" data-content="histoire">
  Histoire</a></li>
+
+ <li><a href="#" class="menu-item" data-content="prononciation">
+    Variation</a></li>
 
           <li><a href="#" class="menu-item" data-content="exercices"
  >Exercices</a></li>
 
- <li><a href="#" class="menu-item" data-content="prononciation">
-    Variation</a></li>
 
          <li><a href="#" class="menu-item" data-content="sources">
  Ressources</a></li>      
@@ -61,22 +65,27 @@ isset($_SESSION['statu'])) {
       </nav>
 
 <div class="titre">
-    <div id="introduction">
-  
+      
+
+<main id="main-content">
+
+    <div class="content" id="intro">
+        <h2> Le Québec </h2>
+        <br>
         Le Québec, province francophone du Canada, est un carrefour de histoire, culture et langue. Entre paysages magnifiques, traditions uniques et une riche histoire, il offre une expérience fascinante à découvrir. Bienvenue sur notre page dédiée au Québec !
 
-        Parcourez cette région à travers un voyage interactif. Dans la rubrique "Histoire", plongez dans l’origine du français au Québec. La section "Prononciation" vous permettra de comparer les prononciations québécoises et françaises. Testez vos connaissances dans "Exercices" et explorez davantage dans "Sources".
-        
-        Nous vous souhaitons une belle aventure ! 🌟 <br> <br>
-        
-        Écoutez l’histoire d’un habitant du Québec qui partage son parcours, ses découvertes et son quotidien dans cette province pleine de richesse. Cliquez sur l’audio pour découvrir son récit.
-    <br>
+Parcourez cette région à travers un voyage interactif. Dans la rubrique "Histoire", plongez dans l’origine du français au Québec. La section "Prononciation" vous permettra de comparer les prononciations québécoises et françaises. Testez vos connaissances dans "Exercices" et explorez davantage dans "Sources".
+
+Nous vous souhaitons une belle aventure ! 🌟 <br> <br>
+
+Écoutez l’histoire d’un habitant du Québec qui partage son parcours, ses découvertes et son quotidien dans cette province pleine de richesse. Cliquez sur l’audio pour découvrir son récit.
+
+<br>
     <audio controls>
-        <source src="extraits/montreal.mp3" type="audio/mpeg">
+        <source src="montreal.mp3" type="audio/mpeg">
     </audio>
 </div>
 
-<main id="main-content">
     <!--Histoire de la langue-->
     <div class="content" id="histoire" style="display: none;">
 
@@ -198,9 +207,9 @@ isset($_SESSION['statu'])) {
             <p><div class="content" id="sources" style="display: none;">📚</span> <strong>Ressources :</strong></p>
             
                 <img src= "lalangueracontée.png" alt="la langue racontée" >
-                <img src= "accentquebecois.jpeg" alt="d'où vient l'accent des quebecois" >
-                 <img src= "lamodernisation.jpeg" alt="la modernisation de l'accent quebecois" >
-                <img src= "langue&politique.jpeg" alt="langue & politique"></li>
+                <img src= "dou vient laccent des quebecois.png" alt="d'où vient l'accent des quebecois" >
+                 <img src= "lamodernisation.png" alt="la modernisation de l'accent quebecois" >
+                <img src= "langue&politique.png" alt="langue & politique"></li>
                 <li><a href="https://fr.wikipedia.org/wiki/Histoire_du_français_québécois" target="_blank">Histoire du français québécois - Wikipédia (FR)</a></li>
                 <li><a href="https://en.wikipedia.org/wiki/Quebec_French" target="_blank">Quebec French - Wikipedia (EN)</a></li>
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/CQ46BbbLRrk?si=wc-c2Ul6MWSum39a" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -210,52 +219,25 @@ isset($_SESSION['statu'])) {
 </div>
 </main>
 <script>
-    document.querySelectorAll('.menu-item').forEach(item => {
-  item.addEventListener('click', (event) => {
-    event.preventDefault(); // Empêche le comportement par défaut du lien
-
-    const contentId = item.getAttribute('data-content'); // Récupère l'id du contenu associé
-    const allContents = document.querySelectorAll('.content');
-   
-    // Masquer tous les contenus
-    allContents.forEach(content => {
-      content.style.display = 'none';
-    });
-
-    // Afficher le contenu correspondant
-    document.getElementById(contentId).style.display = 'block';
-  });
-});
+       document.querySelectorAll('.menu-item').forEach(item => {
+     item.addEventListener('click', (event) => {
+       event.preventDefault(); // Empêche le comportement par défaut du lien
   
+       const contentId = item.getAttribute('data-content'); // Récupère l'id du contenu associé
+       const allContents = document.querySelectorAll('.content');
+      
+       // Masquer tous les contenus
+       allContents.forEach(content => {
+         content.style.display = 'none';
+       });
   
-    document.addEventListener("DOMContentLoaded", function() {
-        const menuItems = document.querySelectorAll(".menu-item");
-        const introduction = document.getElementById("introduction"); // Sélectionne l'intro
-        const sections = document.querySelectorAll(".content"); // Sélectionne toutes les sections
-
-        menuItems.forEach(item => {
-            item.addEventListener("click", function(event) {
-                event.preventDefault(); // Empêche le rechargement de la page
-
-                // Masque l'introduction quand on clique sur un menu
-                if (introduction) {
-                    introduction.style.display = "none";
-                }
-
-                // Masque toutes les sections
-                sections.forEach(section => section.style.display = "none");
-
-                // Affiche la section correspondant au menu cliqué
-                const sectionId = this.getAttribute("data-content");
-                const targetSection = document.getElementById(sectionId);
-                if (targetSection) {
-                    targetSection.style.display = "block";
-                }
-            });
-        });
-    });
-</script>
-<script>
+       // Afficher le contenu correspondant
+       document.getElementById(contentId).style.display = 'block';
+     });
+   });
+     </script>
+     
+       <script>
         function changeLanguage() {
             const select = document.getElementById('language-select');
             const selectedOption = select.options[select.selectedIndex];
@@ -265,10 +247,10 @@ isset($_SESSION['statu'])) {
             }
         }
     </script>
+
 </body>
 </html>
 
-	
 <?php 
 } else {
     echo "<script>
