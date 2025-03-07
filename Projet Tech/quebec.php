@@ -35,7 +35,7 @@ isset($_SESSION['statu'])) {
         <div class="right-align">
             <a href="apropos.php"><div class="apropos" data-tooltip="à propos">
             </div></a>
-            <a href="compte/inscription.php"><div class="connexion2" data-tooltip="connexion">
+            <a href="compte/inscription.php"><div class="connexion2" data-tooltip="connexion2">
             </div></a>
         </div>
     </div>

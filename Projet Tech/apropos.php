@@ -7,20 +7,17 @@ session_start();
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Sobre nós</title>
+    <title>À propos</title>
     <link rel="stylesheet" href="sty.css">
     <link rel="icon" href="minilogo.png" type="image/png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-    
-    <?php 
-
-if (!isset($_SESSION['nom']) && !isset($_SESSION['email']) && 
-!isset($_SESSION['prenom']) && isset($_SESSION['niveau']) && 
-isset($_SESSION['statu'])) { 
+<?php
+if (!isset($_SESSION['nom']) || !isset($_SESSION['email']) || 
+!isset($_SESSION['prenom']) || !isset($_SESSION['niveau']) || 
+!isset($_SESSION['statu'])) { 
 
 ?>
-    
 <header>
     <div class="header-container">
         <div class="left-align">
@@ -40,18 +37,14 @@ isset($_SESSION['statu'])) {
         <div></div>
         <div class="right-align">
             <a href="apropos.php"><div class="apropos" data-tooltip="à propos"></div></a>
-            <a href="compte/connexion.php"><div class="connexion" data-tooltip="connexion"></div></a>
+            <a href="compte/compte.php"><div class="connexion" data-tooltip="connexion"></div></a>
         </div>
     </div>
 </header>
-
-    <?php 
-
-} else {
-
-    ?>
-
-    <header>
+<?php 
+} else { 
+?>
+<header>
     <div class="header-container">
         <div class="left-align">
             <div class="language-selector">
@@ -70,15 +63,13 @@ isset($_SESSION['statu'])) {
         <div></div>
         <div class="right-align">
             <a href="apropos.php"><div class="apropos" data-tooltip="à propos"></div></a>
-            <a href="compte/connexion.php"><div class="connexion2" data-tooltip="connexion"></div></a>
+            <a href="compte/compte.php"><div class="connexion2" data-tooltip="connexion2"></div></a>
         </div>
     </div>
 </header>
-    
-    <?php
+<?php
 }
 ?>
-    
     <!-- Fin header -->
     <div class="contenu">
         <div class="nous4">

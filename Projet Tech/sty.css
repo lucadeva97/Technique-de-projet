@@ -76,6 +76,7 @@ header {
     opacity: 1;  /* Fade-in */
     transform: translateY(0); 
 }
+
 /* LOGO */
 .logo {
     display: flex;
@@ -139,9 +140,45 @@ header {
     white-space: nowrap;
 }
 
-/* CONNEXION - offline */
+/* CONNEXION */
 .connexion {
     background-image: url('login.png');
+    background-size: 50px 50px;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    white-space: nowrap;
+}
+
+.connexion:hover::before,
+.connexion:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    background-color: #cccccc37;
+    padding: 3px;
+    top: 2.9rem;
+    border-radius: 3px;
+    color:rgba(36, 36, 36, 0.483);
+}
+/*Fin header*/
+
+.connexion:hover::before,
+.connexion:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    background-color: #cccccc37;
+    padding: 3px;
+    top: 2.9rem;
+    border-radius: 3px;
+    color:rgba(36, 36, 36, 0.483);
+}
+
+/* CONNEXION - offline */
+.connexion {
+    background-image: url('imagesbarre/login.png');
     background-size: 50px 50px;
     background-position: center;
     width: 50px;
@@ -165,7 +202,7 @@ header {
 
 /* CONNEXION - online */
 .connexion2 {
-    background-image: url('login2.png');
+    background-image: url('imagesbarre/login2.png');
     background-size: 50px 50px;
     background-position: center;
     width: 50px;
@@ -176,8 +213,8 @@ header {
     white-space: nowrap;
 }
 
-.connexion:hover::before,
-.connexion:hover::after {
+.connexion2:hover::before,
+.connexion2:hover::after {
     content: attr(data-tooltip);
     position: absolute;
     background-color: #cccccc37;
@@ -235,6 +272,21 @@ header {
 #language-select, #search {
     background-color: white; /* Assurez-vous qu'ils ont la même couleur de fond */
     border: 1px solid #ccc;
+    border-radius: 4px;
+    text-decoration-color: #000;
+}
+/* Fin barre de recherche */
+
+#language-select1 {
+    width: 200px;
+    height: 40px;
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+#language-select1, #search {
+    background-color: white; /* Assurez-vous qu'ils ont la même couleur de fond */
+    border: 0.5px solid #ccc;
     border-radius: 4px;
     text-decoration-color: #000;
 }
@@ -555,6 +607,16 @@ header {
     float: right;
     font-size: 28px;
     font-weight: bold;
+}
+
+/* Message Styling */
+.message-error {
+    font-size: 1.5em; /* Augmente la taille du texte */
+    color: rgb(148, 18, 18); /* Change la couleur du texte en rouge */
+    font-weight: bold; /* Met le texte en gras */
+    text-align: center; /* Centre le texte */
+    padding: 5px; /* Ajoute un peu d'espace autour du texte */
+    border-radius: 50%; /* Optionnel : adoucit les coins du carré */
 }
 
 /* Media Queries pour rendre le site adaptable */

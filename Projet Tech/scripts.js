@@ -23,14 +23,15 @@ function initMap() {
         { coords: { lat: -34.6037, lng: -58.3816 }, lang: 'es', text: 'Buenos Aires', img: 'images/buenosaires.jpg', audio: 'extraits/buenosaires.ogg' }, // Buenos Aires, Argentine
         { coords: { lat: 4.7110, lng: -74.0721 }, lang: 'es', text: 'Bogotá', img: 'images/bogota.jpg', audio: 'extraits/bogota.ogg' }, // Bogotá, Colombie
         { coords: { lat: 10.4806, lng: -66.9036 }, lang: 'es', text: 'Caracas', img: 'images/caracas.jpg', audio: 'extraits/caracas.ogg' }, // Caracas, Venezuela
-        { coords: { lat: 4.9224, lng: -52.3135 }, lang: 'fr', text: 'Cayenne', img: 'images/cayenne_.jpg', audio: 'extraits/cayenne.mp3' }, // Cayenne, Guyane française
-        { coords: { lat: -23.8683, lng: -49.3324 }, lang: 'pt', text: 'Itararé', img: 'images/itarare.jpg', audio: 'extraits/itarare.ogg' }, // Itararé, Brésil
+        { coords: { lat: 4.9224, lng: -52.3135 }, lang: 'fr', text: 'Cayenne', img: 'images/cayenne_.jpg', audio: 'extraits/cayenne.mp3', href: 'https://ladigitale.dev/digiflashcards/#/f/67a765fb7a5b1' }, // Cayenne, Guyane française
+        { coords: { lat: -23.8683, lng: -49.3324 }, lang: 'pt', text: 'Itararé', img: 'images/itarare.jpg', audio: 'extraits/itarare.ogg' }, // Itararé, Brésil0
         { coords: { lat: 0.0355, lng: -51.0705 }, lang: 'pt', text: 'Macapá', img: 'images/macapa.jpg', audio: 'extraits/macapa.ogg' }, // Macapá, Brésil
         { coords: { lat: -30.0346, lng: -51.2177 }, lang: 'pt', text: 'Porto Alegre', img: 'images/portoalegre.jpg', audio: 'extraits/portoalegre.ogg' }, // Porto Alegre, Brésil
         { coords: { lat: -2.5307, lng: -44.3068 }, lang: 'pt', text: 'São Luís', img: 'images/saoluis.jpg', audio: 'extraits/saoluis.ogg' }, // São Luís, Brésil
         { coords: { lat: 14.6161, lng: -61.0588 }, lang: 'fr', text: 'Fort-de-France', img: 'images/fortdefrance_.png', audio: 'extraits/fortdefrance.mpeg' }, // Fort-de-France, Martinique
         { coords: { lat: 43.6045, lng: 1.4442 }, lang: 'fr', text: 'Toulouse', img: 'images/toulouse.jpeg', audio: ['extraits/toulouse.mp3', 'extraits/toulouse_greg.mp3'] }, // Toulouse, France
-        { coords: { lat: -27.8926, lng: -53.2511 }, lang: 'pt', text: 'Santa Bárbara do Sul', img: 'images/stb.jpeg', audio: 'extraits/santabarbara.ogg' } // Santa Bárbara do Sul, Brésil
+        { coords: { lat: -27.8926, lng: -53.2511 }, lang: 'pt', text: 'Santa Bárbara do Sul', img: 'images/stb.jpeg', audio: 'extraits/santabarbara.ogg' }, // Santa Bárbara do Sul, Brésil
+        { coords: { lat: 43.6119, lng: 3.8772 }, lang: 'fr', text: 'Montpellier', img: 'images/montpellier.jpeg' } // Montpellier, France
     ];
     let currentInfoWindow = null;
 
@@ -43,7 +44,7 @@ function initMap() {
 
         let contentString = `<div class="custom-infowindow ${point.lang}"><b>${point.text}</b>`;
         if (point.href) {
-            contentString += `<br><a href="${point.href}"><img src="${point.img}" alt="${point.text}" class="clickable-image" style="width:300px;height:auto;"></a>`;
+            contentString += `<br><a href="${point.href}" target="_self"><img src="${point.img}" alt="${point.text}" class="clickable-image" style="width:300px;height:auto;"></a>`;
         } else {
             contentString += `<br><img src="${point.img}" alt="${point.text}" style="width:300px;height:auto;">`;
         }
@@ -101,7 +102,7 @@ function initMap() {
 
             let contentString = `<div class="custom-infowindow ${point.lang}"><b>${point.text}</b>`;
             if (point.href) {
-                contentString += `<br><a href="${point.href}"><img src="${point.img}" alt="${point.text}" class="clickable-image" style="width:300px;height:auto;"></a>`;
+                contentString += `<br><a href="${point.href}" target="_self"><img src="${point.img}" alt="${point.text}" class="clickable-image" style="width:300px;height:auto;"></a>`;
             } else {
                 contentString += `<br><img src="${point.img}" alt="${point.text}" style="width:300px;height:auto;">`;
             }

@@ -28,6 +28,12 @@ isset($_SESSION['statu'])) {
         }
     </style>
 </head>
+<?php
+if (!isset($_SESSION['nom']) || !isset($_SESSION['email']) || 
+!isset($_SESSION['prenom']) || !isset($_SESSION['niveau']) || 
+!isset($_SESSION['statu'])) { 
+
+?>
 <header>
     <div class="header-container">
         <div class="left-align">
@@ -47,12 +53,43 @@ isset($_SESSION['statu'])) {
         <div class="right-align">
             <a href="apropos.php"><div class="apropos" data-tooltip="à propos">
             </div></a>
-            <a href="compte/connexion.php"><div class="connexion2" data-tooltip="connexion">
+            <a href="compte/compte.php"><div class="connexion" data-tooltip="connexion">
             </div></a>
         </div>
     </div>
 </header>
 <!-- Fin header -->
+<?php 
+} else { 
+?>
+<header>
+    <div class="header-container">
+        <div class="left-align">
+            <div class="language-selector">
+                <select id="language-select" onchange="changeLanguage()">
+                    <option value="" class="accent">Tu cherches une langue ? </option>
+                    <option value="es" disabled style="color: grey;">Espagnol</option>
+                    <option value="fr"><a href="accentfr.php" class="accent" data-lang="fr">Français</a></option>
+                    <option value="it" disabled style="color: grey;">Italien</option>
+                    <option value="pt" disabled style="color: grey;">Portugais</option>
+                </select>
+            </div>
+        </div>
+        <a href="index.php"><div class="logo" data-tooltip="homepage">
+        </div></a>
+        <div></div>
+        <div class="right-align">
+            <a href="apropos.php"><div class="apropos" data-tooltip="à propos">
+            </div></a>
+            <a href="compte/compte.php"><div class="connexion2" data-tooltip="connexion2">
+            </div></a>
+        </div>
+    </div>
+</header>
+<!-- Fin header -->
+<?php
+}
+?>
 
 <h1 class="titre">Les variations du français</h1>
 

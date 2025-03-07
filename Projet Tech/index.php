@@ -18,12 +18,11 @@ session_start();
 </head>
 <?php 
 
-if (!isset($_SESSION['nom']) && !isset($_SESSION['email']) && 
-!isset($_SESSION['prenom']) && isset($_SESSION['niveau']) && 
-isset($_SESSION['statu'])) { 
+if (!isset($_SESSION['nom']) || !isset($_SESSION['email']) || 
+!isset($_SESSION['prenom']) || !isset($_SESSION['niveau']) || 
+!isset($_SESSION['statu'])) { 
 
 ?>
-
 <header>
     <div class="header-container">
         <div class="left-align">
@@ -36,18 +35,15 @@ isset($_SESSION['statu'])) {
         <div class="right-align">
             <a href="apropos.php"><div class="apropos" data-tooltip="à propos">
             </div></a>
-            <a href="compte/inscription.php"><div class="connexion" data-tooltip="connexion">
+            <a href="compte/compte.php"><div class="connexion" data-tooltip="connexion">
             </div></a>
         </div>
     </div>
 </header>
-
 <?php 
-
-} else {
-
-    ?>
-    <header>
+} else { 
+?>
+<header>
     <div class="header-container">
         <div class="left-align">
             <button id="tutoriel-tooltip" data-tooltip="tutoriel" onclick="showImage()">
@@ -59,16 +55,14 @@ isset($_SESSION['statu'])) {
         <div class="right-align">
             <a href="apropos.php"><div class="apropos" data-tooltip="à propos">
             </div></a>
-            <a href="compte/inscription.php"><div class="connexion2" data-tooltip="connexion">
+            <a href="compte/compte.php"><div class="connexion2" data-tooltip="connexion2">
             </div></a>
         </div>
     </div>
 </header>
-    
 <?php
 }
 ?>
-
 <!-- Fin header -->
 <body>
         <div id="barres-recherche">
@@ -92,6 +86,9 @@ isset($_SESSION['statu'])) {
                 <option value="Curitiba"></option>
                 <option value="Florianópolis"></option>
                 <option value="Fortaleza"></option>
+                <option value="Itararé"></option>
+                <option value="Macapá"></option>
+                <option value="São Luís"></option>
                 <option value="São Paulo"></option>
                 <option value="Santa Bárbara do Sul"></option>
                 <!-- Espagne -->
@@ -109,6 +106,7 @@ isset($_SESSION['statu'])) {
                 <option value="Fort-de-France"></option>
                 <option value="Grenoble"></option>
                 <option value="Marseille"></option>
+                <option value="Montpellier"></option>
                 <option value="Paris"></option>
                 <option value="Toulouse"></option>
                 <!-- Italie -->

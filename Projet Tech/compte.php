@@ -33,7 +33,12 @@ unset($_SESSION['password']); // Ensure password is not accessible here
     <link rel="icon" href="minilogo.png" type="image/png">
 </head>
 
+<?php
+if (!isset($_SESSION['nom']) || !isset($_SESSION['email']) || 
+!isset($_SESSION['prenom']) || !isset($_SESSION['niveau']) || 
+!isset($_SESSION['statu'])) { 
 
+?>
 <header>
 <div class="header-container">
         <div class="left-align">
@@ -53,12 +58,41 @@ unset($_SESSION['password']); // Ensure password is not accessible here
         <div class="right-align">
             <a href="../apropos.php"><div class="apropos" data-tooltip="à propos">
             </div></a>
-            <a href="connexion.php"><div class="connexion2" data-tooltip="connexion">
+            <a href="connexion.php"><div class="connexion" data-tooltip="connexion">
             </div></a>
         </div>
     </div>
 </header>
-
+<?php 
+} else { 
+?>
+<header>
+<div class="header-container">
+        <div class="left-align">
+            <div class="language-selector">
+                <select id="language-select" onchange="changeLanguage()">
+                    <option value="" class="accent">Tu cherches une langue ? </option>
+                    <option value="es" disabled style="color: grey;">Espagnol</option>
+                    <option value="fr" data-url="../accentfr.php">Français</option>
+                    <option value="it" disabled style="color: grey;">Italien</option>
+                    <option value="pt" disabled style="color: grey;">Portugais</option>
+                </select>
+            </div>
+        </div>
+        <a href="../index.php"><div class="logo" data-tooltip="homepage">
+        </div></a>
+        <div></div>
+        <div class="right-align">
+            <a href="../apropos.php"><div class="apropos" data-tooltip="à propos">
+            </div></a>
+            <a href="connexion.php"><div class="connexion2" data-tooltip="connexion2">
+            </div></a>
+        </div>
+    </div>
+</header>
+<?php
+}
+?>
 
 <body>
 
@@ -73,7 +107,7 @@ unset($_SESSION['password']); // Ensure password is not accessible here
         <p><b>Ton niveau :</b> <?php echo htmlspecialchars($niveau); ?></p><br>
         <p><b>Ton statut :</b> <?php echo htmlspecialchars($statu); ?></p><br>
         <p><b>Change la langue du site :</b><p><br>
-        <select id="language-select">
+        <select id="language-select1">
                     <option value="fr" class="accent">Français</option>
                     <option value="es" disabled style="color: grey;">Español</option>
                     <option value="it" disabled style="color: grey;">Italiano</option>
@@ -81,7 +115,7 @@ unset($_SESSION['password']); // Ensure password is not accessible here
                 </select>
                 <br>
     <form method="POST" action="compte.php">
-        <button type="submit" name="logout" class="logout-button">Disconnection</button>
+        <button type="submit" name="logout" class="logout-button">Se déconnecter</button>
     </form>
     </div>
 
